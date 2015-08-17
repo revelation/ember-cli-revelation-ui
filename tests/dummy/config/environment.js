@@ -25,9 +25,17 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+
+    ENV.contentSecurityPolicy = {
+      'default-src': "'self'",
+      'font-src': "'self' http://fonts.gstatic.com",
+      'img-src': "'self'",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
+      'media-src': "'self'"
+    }
   }
 
-  if (environment === 'test') {
+  if (environment === 'staging') {
     // Testem prefers this...
     ENV.baseURL = '/';
     ENV.locationType = 'none';
@@ -37,10 +45,24 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+
+    ENV.contentSecurityPolicy = {
+      'default-src': "'self'",
+      'font-src': "'self' http://fonts.gstatic.com",
+      'img-src': "'self'",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
+      'media-src': "'self'"
+    }
   }
 
   if (environment === 'production') {
-
+    ENV.contentSecurityPolicy = {
+      'default-src': "'self'",
+      'font-src': "'self' http://fonts.gstatic.com",
+      'img-src': "'self'",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
+      'media-src': "'self'"
+    }
   }
 
   return ENV;
