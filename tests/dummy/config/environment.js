@@ -25,6 +25,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+
     ENV.contentSecurityPolicy = {
       'default-src': "'self'",
       'font-src': "'self' http://fonts.gstatic.com",
@@ -34,7 +35,7 @@ module.exports = function(environment) {
     }
   }
 
-  if (environment === 'test') {
+  if (environment === 'staging') {
     // Testem prefers this...
     ENV.baseURL = '/';
     ENV.locationType = 'none';
