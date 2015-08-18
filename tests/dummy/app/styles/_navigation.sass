@@ -9,13 +9,19 @@ main
         border-left: 5px solid transparent
       dt
         padding: 11px 30px
-        font-weight: bold
+        font-weight: 700
         i
           margin-right: .75rem
       dd
         margin-left: 0
-        padding: 11.5px 30px 11.5px 3.5rem
         font-size: 13px
-      .active
-        background-color: #fbfaf8
-        border-color: #f7941e
+        &:hover
+          border-color: #e5e3e0
+        &.active
+          background-color: #fbfaf8
+          border-color: #f7941e
+        a
+          display: block
+          padding: 11.5px 30px 11.5px 3.5rem
+          &:hover
+            text-decoration: none
