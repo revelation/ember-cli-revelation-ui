@@ -2,6 +2,8 @@
 /* global require, module */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-addon');
+var iconFontPath = 'bower_components/font-awesome/fonts/';
+var bootstrapPath = 'bower_components/bootstrap-sass/assets/javascripts/bootstrap/'
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
@@ -14,9 +16,18 @@ module.exports = function(defaults) {
     }
   });
 
-  // NOTE: Import syntax examples below.
-  // app.import("file1.js");
-  // app.import("file2.js");
+  app.import(iconFontPath + 'fontawesome-webfont.eot', { destDir: 'assets/fonts' });
+  app.import(iconFontPath + 'fontawesome-webfont.svg', { destDir: 'assets/fonts' });
+  app.import(iconFontPath + 'fontawesome-webfont.ttf', { destDir: 'assets/fonts' });
+  app.import(iconFontPath + 'fontawesome-webfont.woff', { destDir: 'assets/fonts' });
+  app.import(iconFontPath + 'fontawesome-webfont.woff2', { destDir: 'assets/fonts' });
+
+  app.import(bootstrapPath + 'button.js', { type: 'vendor' });
+  app.import(bootstrapPath + 'collapse.js', { type: 'vendor' });
+  app.import(bootstrapPath + 'dropdown.js', { type: 'vendor' });
+  app.import(bootstrapPath + 'modal.js', { type: 'vendor' });
+  app.import(bootstrapPath + 'tooltip.js', { type: 'vendor' });
+  app.import(bootstrapPath + 'popover.js', { type: 'vendor' });
 
   return app.toTree();
 };
