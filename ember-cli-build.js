@@ -6,6 +6,12 @@ var EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 module.exports = function(defaults) {
   var app = new EmberAddon(defaults, {
     // NOTE: Options go here.
+
+    // sassOptions required to compile sass in addons
+    // https://github.com/aexmachina/ember-cli-sass#using-in-addons
+    sassOptions: {
+      extension: "sass"
+    }
   });
 
   // NOTE: Import syntax examples below.
