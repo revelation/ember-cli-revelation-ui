@@ -29,9 +29,9 @@ module.exports = function(environment) {
     ENV.contentSecurityPolicyHeader = 'Content-Security-Policy';
     ENV.contentSecurityPolicy = {
       'default-src': "'self'",
-      'font-src': "'self' fonts.gstatic.com https://maxcdn.bootstrapcdn.com",
+      'font-src': "'self' fonts.gstatic.com",
       'img-src': "'self'",
-      'style-src': "'self' 'unsafe-inline' fonts.googleapis.com https://maxcdn.bootstrapcdn.com",
+      'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
       'media-src': "'self'"
     }
   }
@@ -50,9 +50,9 @@ module.exports = function(environment) {
     ENV.contentSecurityPolicyHeader = 'Content-Security-Policy';
     ENV.contentSecurityPolicy = {
       'default-src': "'self'",
-      'font-src': "'self' fonts.gstatic.com https://maxcdn.bootstrapcdn.com",
+      'font-src': "'self' fonts.gstatic.com",
       'img-src': "'self'",
-      'style-src': "'self' 'unsafe-inline' fonts.googleapis.com https://maxcdn.bootstrapcdn.com",
+      'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
       'media-src': "'self'"
     }
   }
@@ -61,9 +61,9 @@ module.exports = function(environment) {
     ENV.contentSecurityPolicyHeader = 'Content-Security-Policy';
     ENV.contentSecurityPolicy = {
       'default-src': "'self'",
-      'font-src': "'self' fonts.gstatic.com https://maxcdn.bootstrapcdn.com",
+      'font-src': "'self' fonts.gstatic.com",
       'img-src': "'self'",
-      'style-src': "'self' 'unsafe-inline' fonts.googleapis.com https://maxcdn.bootstrapcdn.com",
+      'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
       'media-src': "'self'"
     }
   }
