@@ -23,3 +23,13 @@ This README outlines the details of collaborating on this Ember addon.
 * `ember build`
 
 For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+
+## Dependencies
+Managed by bower/npm but for posterity
+
+* "ember-cli-sass": "4.1.0"
+  * **Important Notes**
+  * https://github.com/aexmachina/ember-cli-sass#using-in-addons
+
+* "bootstrap-sass": "~3.3.5"
+* "font-awesome": "~4.4.0"

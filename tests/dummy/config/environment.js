@@ -26,11 +26,12 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
+    ENV.contentSecurityPolicyHeader = 'Content-Security-Policy';
     ENV.contentSecurityPolicy = {
       'default-src': "'self'",
-      'font-src': "'self' http://fonts.gstatic.com",
+      'font-src': "'self' fonts.gstatic.com",
       'img-src': "'self'",
-      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
+      'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
       'media-src': "'self'"
     }
   }
@@ -46,21 +47,23 @@ module.exports = function(environment) {
 
     ENV.APP.rootElement = '#ember-testing';
 
+    ENV.contentSecurityPolicyHeader = 'Content-Security-Policy';
     ENV.contentSecurityPolicy = {
       'default-src': "'self'",
-      'font-src': "'self' http://fonts.gstatic.com",
+      'font-src': "'self' fonts.gstatic.com",
       'img-src': "'self'",
-      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
+      'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
       'media-src': "'self'"
     }
   }
 
   if (environment === 'production') {
+    ENV.contentSecurityPolicyHeader = 'Content-Security-Policy';
     ENV.contentSecurityPolicy = {
       'default-src': "'self'",
-      'font-src': "'self' http://fonts.gstatic.com",
+      'font-src': "'self' fonts.gstatic.com",
       'img-src': "'self'",
-      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
+      'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
       'media-src': "'self'"
     }
   }
