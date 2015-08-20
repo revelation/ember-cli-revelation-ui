@@ -51,14 +51,43 @@ export default Ember.Component.extend({
   }),
 
   blockComputed: Ember.computed('block', function() {
+    // Builds block button class
     if (this.get('block')) {
       return this.get('classPrefix') + '-block';
     } else {
       return null;
     }
-  })
+  }),
 
+  click() {
+    // Set action name via action property to be handled by application
+    // Pass action params using properties with syntax param1=parameter1 param2=parameter2
+    // TBD: A bit fragile
+    // Only works with 0, 1, or 2 params
+    // Only verifies property is prefixed with param
+    // Ensure touch support
 
+    var properties = this.attrs;
+    var params = [];
+    for (var property in properties) {
+      console.log(property.indexOf('param'));
+      if (property.indexOf('param') === 0) {
+        params.push(property);
+      }
+    }
+    var l = params.length;
 
+    if (l > 2) {
+      Ember.Logger.warn('rui-button: You specified and unsupported \'size\' property so we\'ve defaulted to the standard size: choose from \'lg sm xs or omit for standard size.\'');
+      this.sendAction('action', this.get('param1'), this.get('param2'));
+    } else if (l > 1) {
+      this.sendAction('action', this.get('param1'), this.get('param2'));
+    } else if (l > 0) {
+      this.sendAction('action', this.get('param1'));
+    } else {
+      // According to docs, this does nothing if no action specified
+      this.sendAction('action');
+    }
+  }
 
 });

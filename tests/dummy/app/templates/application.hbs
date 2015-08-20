@@ -10,10 +10,21 @@
 {{#rui-button style='link'}}Link{{/rui-button}}
 
 <h6>Sizes</h6>
-{{#rui-button style='default' size='lg'}}Large{{/rui-button}}
-{{#rui-button style='default'}}Standard{{/rui-button}}
-{{#rui-button style='default' size='sm'}}Small{{/rui-button}}
-{{#rui-button style='default' size='xs'}}Extra-Small{{/rui-button}}
+{{#rui-button size='lg'}}Large{{/rui-button}}
+{{#rui-button}}Standard{{/rui-button}}
+{{#rui-button size='sm'}}Small{{/rui-button}}
+{{#rui-button size='xs'}}Extra-Small{{/rui-button}}
 
+<h6>Block</h6>
+
+<div style="width: 400px; padding: 20px; background: #f2f2f2;">
+  {{#rui-button block=true}}Block Button 1{{/rui-button}}
+  {{#rui-button block=true}}Block Button 1{{/rui-button}}
+  {{#rui-button block=true}}Block Button 1{{/rui-button}}
+</div>
+
+<h6>Actions</h6>
+
+{{#rui-button action='alertSomething' param1='A simple parameter passed in' param2='Another parameter along for the ride'}}Trigger Action{{/rui-button}}
 
 {{outlet}}
