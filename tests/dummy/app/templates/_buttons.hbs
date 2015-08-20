@@ -1,16 +1,24 @@
 <section>
-  <h2 class="page-header"><a href="#buttons">Buttons</a></h2>
+  <h2 class="page-header"><a href="#buttons">Buttons <code>&lbrace;&lbrace;rui-button&rbrace;&rbrace;</code></a></h2>
   <p>A button is used to trigger an immediate action such as form submission. Buttons should not be used for navigation.</p>
   <p>An <code>rui-button</code> block renders an HTML <code>button</code> element. The <code>button</code>'s content&thinsp;—&thinsp;text, an icon, or both&thinsp;—&thinsp;is contained within the <code>rui-button</code> block and passed through safely.</p>
 
   <h3>Properties</h3>
   <h4><a href="#button-styles">Styles</a></h4>
   <p>Button styles provide context through visual cues. <code>style</code> is a required attribute.</p>
-  <pre>
-    Style: [string]
-    Available values: 'standard', 'primary', 'success', 'info', 'warning', 'danger', 'link'
-    Required attribute
-  </pre>
+  <dl class="dl-horizontal list-group">
+    <span class="list-group-item">
+      <dt>Style:</dt>
+      <dd>[string]</dd>
+    </span>
+    <span class="list-group-item">
+      <dt>Available values:</dt>
+      <dd>'standard', 'primary', 'success', 'info', 'warning', 'danger', 'link'</dd>
+    </span>
+    <span class="list-group-item">
+      <dd>Required attribute</dd>
+    </span>
+  </dl>
 
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -71,8 +79,11 @@
   </div>
 
   <h6>Actions</h6>
+  {{#rui-button action='sendActionsWithParams' param1='A simple parameter passed in' param2='Another parameter along for the ride'}}Trigger Action{{/rui-button}}
 
-  {{#rui-button action='alertSomething' param1='A simple parameter passed in' param2='Another parameter along for the ride'}}Trigger Action{{/rui-button}}
+  <h6>Loading State</h6>
+  {{#rui-button action='asyncAction1' isLoading=asyncAction1 param1='asyncOp1'}}Loading Button{{/rui-button}}
+  {{#rui-button action='asyncAction2' isLoading=asyncAction2 param1='asyncOp2' style='primary'}}Loading Button{{/rui-button}}
   -->
   <h3>Actions</h3>
 </section>
