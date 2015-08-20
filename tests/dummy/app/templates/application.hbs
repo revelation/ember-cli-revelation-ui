@@ -1,41 +1,13 @@
-<h2 id="title">Revelation UI</h2>
+<header>
+  <h1 id="title">Revelation UI</h1>
+</header>
 
-<h5>Buttons</h5>
-<h6>Styles</h6>
-{{#rui-button style='default'}}Default{{/rui-button}}
-{{#rui-button style='primary'}}Primary{{/rui-button}}
-{{#rui-button style='success'}}Success{{/rui-button}}
-{{#rui-button style='warning'}}Warning{{/rui-button}}
-{{#rui-button style='danger'}}Danger{{/rui-button}}
-{{#rui-button style='link'}}Link{{/rui-button}}
+<main class="row">
+  {{partial "navigation"}}
+  <article class="col-md-9">
+    {{partial "buttons"}}
+    <!-- {{outlet}} -->
+  </article>
+</main>
 
-<h6>Sizes</h6>
-{{#rui-button size='lg'}}Large{{/rui-button}}
-{{#rui-button}}Standard{{/rui-button}}
-{{#rui-button size='sm'}}Small{{/rui-button}}
-{{#rui-button size='xs'}}Extra-Small{{/rui-button}}
-
-<h6>Block</h6>
-
-<div style="width: 400px; padding: 20px; background: #f2f2f2;">
-  {{#rui-button block=true}}Block Button 1{{/rui-button}}
-  {{#rui-button block=true}}Block Button 1{{/rui-button}}
-  {{#rui-button block=true}}Block Button 1{{/rui-button}}
-</div>
-
-<h6>Actions</h6>
-{{#rui-button action='sendActionsWithParams' param1='A simple parameter passed in' param2='Another parameter along for the ride'}}Trigger Action{{/rui-button}}
-
-<h6>Loading State</h6>
-{{#rui-button action='asyncAction1' isLoading=asyncAction1 param1='asyncOp1'}}Loading Button{{/rui-button}}
-{{#rui-button action='asyncAction2' isLoading=asyncAction2 param1='asyncOp2' style='primary'}}Loading Button{{/rui-button}}
-
-<h6>Disabled</h6>
-{{#rui-button style='default' disabled=true}}Default{{/rui-button}}
-{{#rui-button style='primary' disabled=true}}Primary{{/rui-button}}
-{{#rui-button style='success' disabled=true}}Success{{/rui-button}}
-{{#rui-button style='warning' disabled=true}}Warning{{/rui-button}}
-{{#rui-button style='danger' disabled=true}}Danger{{/rui-button}}
-{{#rui-button style='link' disabled=true}}Link{{/rui-button}}
-
-{{outlet}}
+<footer></footer>
