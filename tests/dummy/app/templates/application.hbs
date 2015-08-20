@@ -29,4 +29,13 @@
 <h6>Loading State</h6>
 {{#rui-button action='asyncAction1' isLoading=asyncAction1 param1='asyncOp1'}}Loading Button{{/rui-button}}
 {{#rui-button action='asyncAction2' isLoading=asyncAction2 param1='asyncOp2' style='primary'}}Loading Button{{/rui-button}}
+
+<h6>Disabled</h6>
+{{#rui-button style='default' disabled=true}}Default{{/rui-button}}
+{{#rui-button style='primary' disabled=true}}Primary{{/rui-button}}
+{{#rui-button style='success' disabled=true}}Success{{/rui-button}}
+{{#rui-button style='warning' disabled=true}}Warning{{/rui-button}}
+{{#rui-button style='danger' disabled=true}}Danger{{/rui-button}}
+{{#rui-button style='link' disabled=true}}Link{{/rui-button}}
+
 {{outlet}}
