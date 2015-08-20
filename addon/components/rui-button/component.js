@@ -5,7 +5,8 @@ export default Ember.Component.extend({
   layout: layout,
   tagName: 'button',
   classNames: ['btn'],
-  classNameBindings: ['styleComputed', 'sizeComputed', 'blockComputed'],
+  classNameBindings: ['styleComputed', 'sizeComputed', 'blockComputed', 'isLoading'],
+  isLoading: false,
 
   // Defaults
   style: 'default', //default
@@ -59,6 +60,7 @@ export default Ember.Component.extend({
     }
   }),
 
+  //Actions
   click() {
     // Set action name via action property to be handled by application
     // Pass action params using properties with syntax param1=parameter1 param2=parameter2
@@ -70,7 +72,6 @@ export default Ember.Component.extend({
     var properties = this.attrs;
     var params = [];
     for (var property in properties) {
-      console.log(property.indexOf('param'));
       if (property.indexOf('param') === 0) {
         params.push(property);
       }
