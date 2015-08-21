@@ -1,0 +1,87 @@
+<section>
+  <h2 class="page-header"><a href="#buttons">Buttons <code>&lbrace;&lbrace;rui-button&rbrace;&rbrace;</code></a></h2>
+  <p>A button is used to trigger an immediate action such as form submission. Buttons should not be used for navigation.</p>
+  <p>An <code>rui-button</code> block renders an HTML <code>button</code> element. The <code>button</code>'s content&thinsp;—&thinsp;text, an icon, or both&thinsp;—&thinsp;is contained within the <code>rui-button</code> block and passed through safely.</p>
+
+  <h3>Properties</h3>
+  <h4><a href="#button-styles">Styles</a></h4>
+  <p>Button styles provide context through visual cues. <code>style</code> is a required attribute.</p>
+  <dl class="dl-horizontal list-group">
+    <span class="list-group-item">
+      <dt>Style:</dt>
+      <dd>[string]</dd>
+    </span>
+    <span class="list-group-item">
+      <dt>Available values:</dt>
+      <dd>'standard', 'primary', 'success', 'info', 'warning', 'danger', 'link'</dd>
+    </span>
+    <span class="list-group-item">
+      <dd>Required attribute</dd>
+    </span>
+  </dl>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <strong class="text-uppercase text-muted">Example</strong>
+    </div>
+    <div class="panel-body">
+      {{#rui-button style="standard"}}Standard{{/rui-button}}
+      {{#rui-button style="primary"}}Primary{{/rui-button}}
+      {{#rui-button style="success"}}Success{{/rui-button}}
+      {{#rui-button style="info"}}Info{{/rui-button}}
+      {{#rui-button style="warning"}}Warning{{/rui-button}}
+      {{#rui-button style="danger"}}Danger{{/rui-button}}
+      {{#rui-button style="link"}}Link{{/rui-button}}
+      {{#rui-button style="standard"}}<i class="fa fa-download" />{{/rui-button}}
+    </div>
+    <div class="panel-footer"><pre><code class="handlebars">
+  &lt;!-- Standard Button --&gt;
+  &lbrace;&lbrace;#rui-button style="standard"&rbrace;&rbrace;Standard&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+
+  &lt;!-- Provides visual weight and identifies the primary action in a set of buttons --&gt;
+  &lbrace;&lbrace;#rui-button style="primary"&rbrace;&rbrace;Primary&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+
+  &lt;!-- Indicates a successful or positive action --&gt;
+  &lbrace;&lbrace;#rui-button style="success"&rbrace;&rbrace;Success&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+
+  &lt;!-- Contextual button for informational alert messages --&gt;
+  &lbrace;&lbrace;#rui-button style="info"&rbrace;&rbrace;Info&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+
+  &lt;!-- Indicates caution should be taken with this action --&gt;
+  &lbrace;&lbrace;#rui-button style="warning"&rbrace;&rbrace;Warning&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+
+  &lt;!-- Indicates a dangerous or potentially negative action --&gt;
+  &lbrace;&lbrace;#rui-button style="danger"&rbrace;&rbrace;Danger&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+
+  &lt;!-- Deemphasize a button by making it look like a link while maintaining button behavior --&gt;
+  &lbrace;&lbrace;#rui-button style="link"&rbrace;&rbrace;Link&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+
+  &lt;!-- FontAwesome icons can be used in lieu of or in addition to text --&gt;
+  &lbrace;&lbrace;#rui-button style="standard"&rbrace;&rbrace;&lt;i class=&quot;fa fa-download&quot; /&gt;&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+    </code></pre></div>
+  </div>
+
+{{!--   <h4><a href="button-sizes">Sizes</a></h4>
+
+  {{#rui-button style='default' size='lg'}}Large{{/rui-button}}
+  {{#rui-button style='default'}}Standard{{/rui-button}}
+  {{#rui-button style='default' size='sm'}}Small{{/rui-button}}
+  {{#rui-button style='default' size='xs'}}Extra-Small{{/rui-button}}
+
+  <h6>Block</h6>
+
+  <div style="width: 400px; padding: 20px; background: #f2f2f2;">
+    {{#rui-button block=true}}Block Button 1{{/rui-button}}
+    {{#rui-button block=true}}Block Button 1{{/rui-button}}
+    {{#rui-button block=true}}Block Button 1{{/rui-button}}
+  </div>
+
+  <h6>Actions</h6>
+  {{#rui-button action='sendActionsWithParams' param1='A simple parameter passed in' param2='Another parameter along for the ride'}}Trigger Action{{/rui-button}}
+
+  <h6>Loading State</h6>
+  {{#rui-button action='asyncAction1' isLoading=asyncAction1 param1='asyncOp1'}}Loading Button{{/rui-button}}
+  {{#rui-button action='asyncAction2' isLoading=asyncAction2 param1='asyncOp2' style='primary'}}Loading Button{{/rui-button}}
+
+  <h3>Actions</h3> --}}
+</section>

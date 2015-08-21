@@ -1,7 +1,13 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<header>
+  <h1 id="title">Revelation UI</h1>
+</header>
 
-<button class="btn btn-default">
-  <i class='fa fa-user'></i>
-</button>
+<main class="row">
+  {{partial "navigation"}}
+  <article class="col-md-9">
+    {{partial "buttons"}}
+    <!-- {{outlet}} -->
+  </article>
+</main>
 
-{{outlet}}
+<footer></footer>

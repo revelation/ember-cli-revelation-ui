@@ -2,8 +2,6 @@
 /* global require, module */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-addon');
-var iconFontPath = 'bower_components/font-awesome/fonts/';
-var bootstrapPath = 'bower_components/bootstrap-sass/assets/javascripts/bootstrap/'
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
@@ -15,6 +13,9 @@ module.exports = function(defaults) {
       extension: "sass"
     }
   });
+
+  var iconFontPath = app.bowerDirectory + '/font-awesome/fonts/';
+  var bootstrapPath = app.bowerDirectory + '/bootstrap-sass/assets/javascripts/bootstrap/'
 
   app.import(iconFontPath + 'fontawesome-webfont.eot', { destDir: 'assets/fonts' });
   app.import(iconFontPath + 'fontawesome-webfont.svg', { destDir: 'assets/fonts' });
