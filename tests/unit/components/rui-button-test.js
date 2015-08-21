@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -30,34 +31,4 @@ test('it changes color when style property is set', function(assert) {
   var color2 = this.$().css('background-color');
 
   assert.notEqual(color2, color1);
-});
-
-test('it changes size when size property is set', function(assert) {
-  assert.expect(4);
-  var component = this.subject();
-
-  var lg;
-  var def;
-  var sm;
-  var xs;
-
-  this.render();
-
-  def = this.$().height();
-
-  Ember.run(function(){
-    component.set('size', 'lg');
-  });
-
-  lg = this.$().css('font-size');
-
-  Ember.run(function(){
-    component.set('size', 'sm');
-  });
-
-  sm = this.$().css('font-size');
-
-  console.log(def + ', ' + lg  + ', ' + sm  + ', ' + xs);
-
-
 });
