@@ -9,12 +9,16 @@
 
     {{content-for 'head'}}
 
+    <link rel="stylesheet" href="libraries/hljs/styles/solarized_light.css">
+    <script src="libraries/hljs/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
     <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/dummy.css">
 
     {{content-for 'head-footer'}}
   </head>
-  <body>
+  <body class="container">
     {{content-for 'body'}}
 
     <script src="assets/vendor.js"></script>
