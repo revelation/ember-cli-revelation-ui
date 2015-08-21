@@ -5,7 +5,7 @@ export default Ember.Route.extend({
   actions: {
 
     sendActionsWithParams(param1, param2) {
-      alert(param1 + ', ' + param2 );
+      Ember.alert(param1 + ', ' + param2 );
     },
 
     asyncAction1() {
