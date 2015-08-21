@@ -29,7 +29,8 @@ module.exports = function(environment) {
       'default-src': "'self'",
       'font-src': "'self' http://fonts.gstatic.com",
       'img-src': "'self'",
-      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
+      'script-src': "'self' 'unsafe-inline'",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com http://cdnjs.cloudflare.com",
       'media-src': "'self'"
     }
   }
@@ -49,7 +50,8 @@ module.exports = function(environment) {
       'default-src': "'self'",
       'font-src': "'self' http://fonts.gstatic.com",
       'img-src': "'self'",
-      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
+      'script-src': "'self' 'unsafe-inline'",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com http://cdnjs.cloudflare.com",
       'media-src': "'self'"
     }
   }
@@ -59,7 +61,8 @@ module.exports = function(environment) {
       'default-src': "'self'",
       'font-src': "'self' http://fonts.gstatic.com",
       'img-src': "'self'",
-      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
+      'script-src': "'self' 'unsafe-inline'",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com http://cdnjs.cloudflare.com",
       'media-src': "'self'"
     }
   }
