@@ -2,7 +2,31 @@ import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
 moduleForComponent('rui-button', 'Integration | Component | rui button', {
-  integration: true
+  integration: true,
+});
+
+test('it changes color', function(assert){
+  assert.expect(2);
+
+  this.render(hbs`
+    {{#rui-button style='default'}}
+      template block text
+    {{/rui-button}}
+  `);
+
+
+
+
+  console.log(color1 + ', ' + color2 + ', ' + this.get('style'));
+
+  this.set('style', 'danger');
+
+  var color2 = this.$().css('background-color');
+
+  console.log(color1 + ', ' + color2 + ', ' + this.get('style'));
+
+  assert.notEqual(color1, color2, 'These colors are the same!');
+
 });
 
 test('it renders', function(assert) {

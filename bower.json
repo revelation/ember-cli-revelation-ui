@@ -14,7 +14,8 @@
     "qunit": "~1.18.0"
   },
   "resolutions": {
-    "ember": "^2.0.0"
+    "ember": "^2.0.0",
+    "ember-qunit": "0.4.9"
   },
   "devDependencies": {
     "bootstrap-sass": "~3.3.5",
