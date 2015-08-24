@@ -3,7 +3,7 @@
 {{#rui-dropdown type='dropdown'}}
   {{#rui-dropdown-trigger id='myDropdown' style='default'}}
     Menu
-    <span class="caret"></span>
+    <span class='caret'></span>
   {{/rui-dropdown-trigger}}
 
   {{#rui-dropdown-menu aria-labelledby='myDropdown'}}
@@ -21,7 +21,7 @@
   </button>
   {{#rui-dropdown type='btn-group' role='group'}}
     {{#rui-dropdown-trigger id='myDropdown2' style='default'}}
-      <span class="caret"></span>
+      <span class='caret'></span>
     {{/rui-dropdown-trigger}}
 
     {{#rui-dropdown-menu aria-labelledby='myDropdown2' align='right'}}
@@ -42,7 +42,7 @@
   {{#rui-dropdown type='btn-group'}}
     {{#rui-dropdown-trigger id='myDropdown3' style='default'}}
       Dropdown
-      <span class="caret"></span>
+      <span class='caret'></span>
     {{/rui-dropdown-trigger}}
 
     {{#rui-dropdown-menu align='right' aria-labelledby='myDropdown3'}}
@@ -57,7 +57,7 @@
 {{#rui-dropdown type='dropup'}}
   {{#rui-dropdown-trigger id='myDropup' style='default'}}
     Drop Up
-    <span class="caret"></span>
+    <span class='caret'></span>
   {{/rui-dropdown-trigger}}
 
   {{#rui-dropdown-menu aria-labelledby='myDropup' align='right'}}
@@ -67,3 +67,102 @@
   {{/rui-dropdown-menu}}
 {{/rui-dropdown}}
 </div>
+
+<section>
+  <h1 class='page-header'>Dropdown
+    <a href='#dropdown' name='dropdown' class='anchor-link'><i class='fa fa-link'></i></a>
+    <code>&lbrace;&lbrace;rui-dropdown&rbrace;&rbrace;</code>
+  </h1>
+  <p>The <code>&lbrace;&lbrace;rui-dropdown&rbrace;&rbrace;</code> is a wrapper component that must include a <code>&lbrace;&lbrace;rui-dropdown-trigger&rbrace;&rbrace;</code> and a <code>&lbrace;&lbrace;rui-dropdown-menu&rbrace;&rbrace;</code> components as a block.</p>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Attribute Types</th>
+        <th>Available Options</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href='#button-styles'>type</a></td>
+        <td>[string]</td>
+        <td>'dropdown', 'dropup', 'button-group'</td>
+        <td>'dropdown'</td>
+      </tr>
+      <tr>
+        <td><a href='#button-sizes'>role</a></td>
+        <td>[string]</td>
+        <td>'group'</td>
+        <td>null</td>
+      </tr>
+    </tbody>
+  </table>
+
+</section>
+
+<section>
+  <h1 class='page-header'>
+    <a href='#dropdownTrigger' name='dropdownTrigger' class='anchor-link'><i class='fa fa-link'></i></a>
+    Dropdown Trigger
+    <code>&lbrace;&lbrace;rui-dropdown-trigger&rbrace;&rbrace;</code>
+  </h1>
+  <p>The <code>&lbrace;&lbrace;rui-dropdown-trigger&rbrace;&rbrace;</code> must be contained within a <code>&lbrace;&lbrace;rui-dropdown&rbrace;&rbrace;</code> and is the button element which triggers the sibling <code>&lbrace;&lbrace;rui-dropdown-menu&rbrace;&rbrace;</code> on click.  It accepts a block and is built to be highly customizable, therefore we do not inlcude any styling by default.</p>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Attribute Types</th>
+        <th>Available Options</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href='#button-styles'>tagName</a></td>
+        <td>[string]</td>
+        <td>'button', 'a'</td>
+        <td>'button'</td>
+      </tr>
+      <tr>
+        <td><a href='#button-styles'>styles</a></td>
+        <td>[string]</td>
+        <td>'standard', 'primary', 'success', 'info', 'warning', 'danger', 'link'</td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td><a href='#button-sizes'>size</a></td>
+        <td>[string]</td>
+        <td>'lg', 'sm', 'xs'</td>
+        <td>null</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h1 class='page-header'>
+    <a href='#dropdownMenu' name='dropdownMenu' class='anchor-link'><i class='fa fa-link'></i></a>
+    Dropdown Menu
+    <code>&lbrace;&lbrace;rui-dropdown-menu&rbrace;&rbrace;</code>
+  </h1>
+  <p>The <code>&lbrace;&lbrace;rui-dropdown-menu&rbrace;&rbrace;</code> must be contained within a <code>&lbrace;&lbrace;rui-dropdown&rbrace;&rbrace;</code> and accepts a block containing the menu items to be shown when the sibling <code>&lbrace;&lbrace;rui-dropdown-trigger&rbrace;&rbrace;</code> is clicked.</p>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Attribute Types</th>
+        <th>Available Options</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href='#button-styles'>align</a></td>
+        <td>[string]</td>
+        <td>'left', 'right'</td>
+        <td>null</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
