@@ -29,7 +29,7 @@ export default Ember.Component.extend({
 
     if (styles.indexOf(findStyle) === -1) {
       resolvedStyle = 'default';
-      Ember.Logger.warn('rui-button: You specified and unsupported \'style\' property so we\'ve defaulted to the default style: choose from \'default primary success warning danger info link.\'');
+      Ember.Logger.warn('rui-button: You specified an unsupported \'style\' property so we\'ve defaulted to the default style: choose from \'default primary success warning danger info link.\'');
     }
 
     return this.get('classPrefix') + '-' + resolvedStyle;
@@ -46,7 +46,7 @@ export default Ember.Component.extend({
     }
 
     if (sizes.indexOf(findSize) === -1) {
-      Ember.Logger.warn('rui-button: You specified and unsupported \'size\' property so we\'ve defaulted to the standard size: choose from \'lg sm xs or omit for standard size.\'');
+      Ember.Logger.warn('rui-button: You specified an unsupported \'size\' property so we\'ve defaulted to the standard size: choose from \'lg sm xs or omit for standard size.\'');
       return null;
     }
 
