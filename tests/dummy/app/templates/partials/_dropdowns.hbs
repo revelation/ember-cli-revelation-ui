@@ -1,1 +1,12 @@
-hello
+{{#rui-dropdown type='dropdown'}}
+  {{#rui-dropdown-trigger id='myDropdown' style='default'}}
+    Menu
+    <span class="caret"></span>
+  {{/rui-dropdown-trigger}}
+
+  {{#rui-dropdown-menu aria-labelledby='myDropdown'}}
+    <li><a href='#'>Item 1</a></li>
+    <li><a href='#'>Item 2</a></li>
+    <li><a href='#'>Item 3</a></li>
+  {{/rui-dropdown-menu}}
+{{/rui-dropdown}}

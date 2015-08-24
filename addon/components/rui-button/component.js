@@ -41,7 +41,7 @@ export default Ember.Component.extend({
     var findSize = this.get('size');
     var resolvedSize = findSize;
 
-    if (findSize === null) {
+    if (!findSize) {
       return null;
     }
 
