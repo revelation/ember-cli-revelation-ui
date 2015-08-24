@@ -3,14 +3,15 @@ import layout from './template';
 
 export default Ember.Component.extend({
   layout: layout,
-  classNames: [],
   classNameBindings: ['typeComputed'],
+  attributeBindings: ['role'],
 
   // Constructors
   types: ['dropdown', 'dropup', 'btn-group'],
 
   // Defaults
   type: null,
+  role: null,
 
   // Computed
   typeComputed: Ember.computed('type', function(){
@@ -18,7 +19,7 @@ export default Ember.Component.extend({
     var type = this.get('type');
     var resolvedType = type;
 
-    // Set default and bail our early if nothing is passed in
+    // Set default and bail out if nothing is passed in
     if (!this.get('type')) {
       return 'dropdown';
     }

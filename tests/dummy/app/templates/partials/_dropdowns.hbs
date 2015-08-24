@@ -1,3 +1,5 @@
+<h5>Basic</h5>
+
 {{#rui-dropdown type='dropdown'}}
   {{#rui-dropdown-trigger id='myDropdown' style='default'}}
     Menu
@@ -10,3 +12,58 @@
     <li><a href='#'>Item 3</a></li>
   {{/rui-dropdown-menu}}
 {{/rui-dropdown}}
+
+<h5>Variations</h5>
+
+<div class='btn-group'>
+  <button type='button' class='btn btn-default'>
+    Button
+  </button>
+  {{#rui-dropdown type='btn-group' role='group'}}
+    {{#rui-dropdown-trigger id='myDropdown2' style='default'}}
+      <span class="caret"></span>
+    {{/rui-dropdown-trigger}}
+
+    {{#rui-dropdown-menu aria-labelledby='myDropdown2' align='right'}}
+      <li><a href='#'>Item 1</a></li>
+      <li><a href='#'>Item 2</a></li>
+      <li><a href='#'>Item 3</a></li>
+    {{/rui-dropdown-menu}}
+  {{/rui-dropdown}}
+</div>
+
+<div class='btn-group'>
+  <button type='button' class='btn btn-default'>
+    Button
+  </button>
+  <button type='button' class='btn btn-default'>
+    Button
+  </button>
+  {{#rui-dropdown type='btn-group'}}
+    {{#rui-dropdown-trigger id='myDropdown3' style='default'}}
+      Dropdown
+      <span class="caret"></span>
+    {{/rui-dropdown-trigger}}
+
+    {{#rui-dropdown-menu align='right' aria-labelledby='myDropdown3'}}
+      <li><a href='#'>Item 1</a></li>
+      <li><a href='#'>Item 2</a></li>
+      <li><a href='#'>Item 3</a></li>
+    {{/rui-dropdown-menu}}
+  {{/rui-dropdown}}
+</div>
+
+<div class='btn-group'>
+{{#rui-dropdown type='dropup'}}
+  {{#rui-dropdown-trigger id='myDropup' style='default'}}
+    Drop Up
+    <span class="caret"></span>
+  {{/rui-dropdown-trigger}}
+
+  {{#rui-dropdown-menu aria-labelledby='myDropup' align='right'}}
+    <li><a href='#'>Item 1</a></li>
+    <li><a href='#'>Item 2</a></li>
+    <li><a href='#'>Item 3</a></li>
+  {{/rui-dropdown-menu}}
+{{/rui-dropdown}}
+</div>
