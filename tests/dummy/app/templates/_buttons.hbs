@@ -1,31 +1,48 @@
 <section>
-  <h2 class="page-header"><a href="#buttons">Buttons <code>&lbrace;&lbrace;rui-button&rbrace;&rbrace;</code></a></h2>
+  <h2 class="page-header"><a name="buttons" href="#buttons">Buttons <code>&lbrace;&lbrace;rui-button&rbrace;&rbrace;</code></a></h2>
   <p>A button is used to trigger an immediate action such as form submission. Buttons should not be used for navigation.</p>
   <p>An <code>rui-button</code> block renders an HTML <code>button</code> element. The <code>button</code>'s content&thinsp;—&thinsp;text, an icon, or both&thinsp;—&thinsp;is contained within the <code>rui-button</code> block and passed through safely.</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Attribute Types</th>
+        <th>Available Options</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="#button-styles">style</a></td>
+        <td>[string]</td>
+        <td>"default", "primary", "success", "info", "warning", "danger", "link"</td>
+        <td>"default"</td>
+      </tr>
+      <tr>
+        <td><a href="#button-sizes">size</a></td>
+        <td>[string]</td>
+        <td>"lg", "sm", "xs"</td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td><a href="#button-blocks">block</a></td>
+        <td>[boolean]</td>
+        <td>true/false</td>
+        <td>false</td>
+      </tr>
+    </tbody>
+  </table>
 
   <h3>Properties</h3>
-  <h4><a href="#button-styles">Styles</a></h4>
-  <p>Button styles provide context through visual cues. <code>style</code> is a required attribute.</p>
-  <dl class="dl-horizontal list-group">
-    <span class="list-group-item">
-      <dt>Style:</dt>
-      <dd>[string]</dd>
-    </span>
-    <span class="list-group-item">
-      <dt>Available values:</dt>
-      <dd>'standard', 'primary', 'success', 'info', 'warning', 'danger', 'link'</dd>
-    </span>
-    <span class="list-group-item">
-      <dd>Required attribute</dd>
-    </span>
-  </dl>
 
+  <h4><a name="button-styles" href="#button-styles">Styles</a></h4>
+  <p>Button styles provide context through visual cues. <code>style</code> is a required attribute.</p>
   <div class="panel panel-default">
     <div class="panel-heading">
       <strong class="text-uppercase text-muted">Example</strong>
     </div>
     <div class="panel-body">
-      {{#rui-button style="standard"}}Standard{{/rui-button}}
+      {{#rui-button}}Default{{/rui-button}}
       {{#rui-button style="primary"}}Primary{{/rui-button}}
       {{#rui-button style="success"}}Success{{/rui-button}}
       {{#rui-button style="info"}}Info{{/rui-button}}
@@ -36,7 +53,7 @@
     </div>
     <div class="panel-footer"><pre><code class="handlebars">
   &lt;!-- Standard Button --&gt;
-  &lbrace;&lbrace;#rui-button style="standard"&rbrace;&rbrace;Standard&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+  &lbrace;&lbrace;#rui-button&rbrace;&rbrace;Default&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
 
   &lt;!-- Provides visual weight and identifies the primary action in a set of buttons --&gt;
   &lbrace;&lbrace;#rui-button style="primary"&rbrace;&rbrace;Primary&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
@@ -61,35 +78,54 @@
     </code></pre></div>
   </div>
 
-<!--   <h4><a href="button-sizes">Sizes</a></h4>
+  <h4><a name="button-sizes" href="#button-sizes">Sizes</a></h4>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <strong class="text-uppercase text-muted">Example</strong>
+    </div>
+    <div class="panel-body">
+      <p>
+        {{#rui-button size="lg"}}Large{{/rui-button}}
+        {{#rui-button style="primary" size="lg"}}Large{{/rui-button}}
+      </p>
+      <p>
+        {{#rui-button}}Standard{{/rui-button}}
+        {{#rui-button style="primary"}}Standard{{/rui-button}}
+      </p>
+      <p>
+        {{#rui-button size="sm"}}Small{{/rui-button}}
+        {{#rui-button style="primary" size="sm"}}Small{{/rui-button}}
+      </p>
+      <p>
+        {{#rui-button size="xs"}}Extra Small{{/rui-button}}
+        {{#rui-button style="primary" size="xs"}}Extra Small{{/rui-button}}
+      </p>
+    </div>
+    <div class="panel-footer"><pre><code class="handlebars">
+  &lt;p&gt;
+    &lbrace;&lbrace;#rui-button size="lg"&rbrace;&rbrace;Large&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+    &lbrace;&lbrace;#rui-button style="primary" size="lg"&rbrace;&rbrace;Large&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lbrace;&lbrace;#rui-button&rbrace;&rbrace;Standard&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+    &lbrace;&lbrace;#rui-button style="primary"&rbrace;&rbrace;Standard&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lbrace;&lbrace;#rui-button size="sm"&rbrace;&rbrace;Small&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+    &lbrace;&lbrace;#rui-button style="primary" size="sm"&rbrace;&rbrace;Small&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lbrace;&lbrace;#rui-button size="xs"&rbrace;&rbrace;Extra Small&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+    &lbrace;&lbrace;#rui-button style="primary" size="xs"&rbrace;&rbrace;Extra Small&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+  &lt;/p&gt;
+    </code></pre></div>
+  </div>
 
-  {{#rui-button style='default' size='lg'}}Large{{/rui-button}}
-  {{#rui-button style='default'}}Standard{{/rui-button}}
-  {{#rui-button style='default' size='sm'}}Small{{/rui-button}}
-  {{#rui-button style='default' size='xs'}}Extra-Small{{/rui-button}}
-
-  <h6>Block</h6>
-
+  <h4><a name="button-blocks" href="#button-blocks">Block-Level</a></h4>
   <div style="width: 400px; padding: 20px; background: #f2f2f2;">
     {{#rui-button block=true}}Block Button 1{{/rui-button}}
     {{#rui-button block=true}}Block Button 1{{/rui-button}}
     {{#rui-button block=true}}Block Button 1{{/rui-button}}
   </div>
 
-  <h6>Actions</h6>
-  {{#rui-button action='sendActionsWithParams' param1='A simple parameter passed in' param2='Another parameter along for the ride'}}Trigger Action{{/rui-button}}
-
-  <h6>Loading State</h6>
-  {{#rui-button action='asyncAction1' isLoading=asyncAction1 param1='asyncOp1'}}Loading Button{{/rui-button}}
-  {{#rui-button action='asyncAction2' isLoading=asyncAction2 param1='asyncOp2' style='primary'}}Loading Button{{/rui-button}}
-
-  <h6>Disabled</h6>
-  {{#rui-button style='default' disabled=true}}Default{{/rui-button}}
-  {{#rui-button style='primary' disabled=true}}Primary{{/rui-button}}
-  {{#rui-button style='success' disabled=true}}Success{{/rui-button}}
-  {{#rui-button style='warning' disabled=true}}Warning{{/rui-button}}
-  {{#rui-button style='danger' disabled=true}}Danger{{/rui-button}}
-  {{#rui-button style='link' disabled=true}}Link{{/rui-button}}
-  -->
-  <h3>Actions</h3>
 </section>
