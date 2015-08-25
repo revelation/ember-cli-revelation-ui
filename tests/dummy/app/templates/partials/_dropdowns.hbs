@@ -71,7 +71,7 @@
 <section>
   <h1 class='page-header'>Dropdown
     <a href='#dropdown' name='dropdown' class='anchor-link'><i class='fa fa-link'></i></a>
-    <code>&lbrace;&lbrace;rui-dropdown&rbrace;&rbrace;</code>
+    <small><code>&lbrace;&lbrace;rui-dropdown&rbrace;&rbrace;</code></small>
   </h1>
   <p>The <code>&lbrace;&lbrace;rui-dropdown&rbrace;&rbrace;</code> is a wrapper component that must include a <code>&lbrace;&lbrace;rui-dropdown-trigger&rbrace;&rbrace;</code> and a <code>&lbrace;&lbrace;rui-dropdown-menu&rbrace;&rbrace;</code> components as a block.</p>
   <table class='table'>
@@ -98,14 +98,13 @@
       </tr>
     </tbody>
   </table>
-
 </section>
 
 <section>
   <h1 class='page-header'>
     <a href='#dropdownTrigger' name='dropdownTrigger' class='anchor-link'><i class='fa fa-link'></i></a>
     Dropdown Trigger
-    <code>&lbrace;&lbrace;rui-dropdown-trigger&rbrace;&rbrace;</code>
+    <small><code>&lbrace;&lbrace;rui-dropdown-trigger&rbrace;&rbrace;</code></small>
   </h1>
   <p>The <code>&lbrace;&lbrace;rui-dropdown-trigger&rbrace;&rbrace;</code> must be contained within a <code>&lbrace;&lbrace;rui-dropdown&rbrace;&rbrace;</code> and is the button element which triggers the sibling <code>&lbrace;&lbrace;rui-dropdown-menu&rbrace;&rbrace;</code> on click.  It accepts a block and is built to be highly customizable, therefore we do not inlcude any styling by default.</p>
   <table class='table'>
@@ -118,6 +117,12 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><a href='#button-sizes'>id</a></td>
+        <td>[string]</td>
+        <td>user defined - should correspond to <code>aria-labelledby</code> of <code>&lbrace;&lbrace;rui-dropdown-menu&rbrace;&rbrace;</code></td>
+        <td>-</td>
+      </tr>
       <tr>
         <td><a href='#button-styles'>tagName</a></td>
         <td>[string]</td>
@@ -144,7 +149,7 @@
   <h1 class='page-header'>
     <a href='#dropdownMenu' name='dropdownMenu' class='anchor-link'><i class='fa fa-link'></i></a>
     Dropdown Menu
-    <code>&lbrace;&lbrace;rui-dropdown-menu&rbrace;&rbrace;</code>
+    <small><code>&lbrace;&lbrace;rui-dropdown-menu&rbrace;&rbrace;</code></small>
   </h1>
   <p>The <code>&lbrace;&lbrace;rui-dropdown-menu&rbrace;&rbrace;</code> must be contained within a <code>&lbrace;&lbrace;rui-dropdown&rbrace;&rbrace;</code> and accepts a block containing the menu items to be shown when the sibling <code>&lbrace;&lbrace;rui-dropdown-trigger&rbrace;&rbrace;</code> is clicked.</p>
   <table class='table'>
@@ -163,6 +168,40 @@
         <td>'left', 'right'</td>
         <td>null</td>
       </tr>
+      <tr>
+        <td><a href='#button-sizes'>aria-labelledby</a></td>
+        <td>[string]</td>
+        <td>user defined - should correspond to <code>id</code> of <code>&lbrace;&lbrace;rui-dropdown-trigger&rbrace;&rbrace;</code></td>
+        <td>-</td>
+      </tr>
     </tbody>
   </table>
 </section>
+
+<h2>
+  <a name="button-styles" href="#button-styles"></a>
+  Examples
+</h2>
+<p>Button styles provide context through visual cues. <code>style</code> is a required attribute.</p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <strong class="text-uppercase text-muted">Example</strong>
+  </div>
+  <div class="panel-body">
+    {{#rui-button}}Default{{/rui-button}}
+    {{#rui-button style="primary"}}Primary{{/rui-button}}
+    {{#rui-button style="success"}}Success{{/rui-button}}
+    {{#rui-button style="info"}}Info{{/rui-button}}
+    {{#rui-button style="warning"}}Warning{{/rui-button}}
+    {{#rui-button style="danger"}}Danger{{/rui-button}}
+    {{#rui-button style="link"}}Link{{/rui-button}}
+    {{#rui-button style="standard"}}<i class="fa fa-download" />{{/rui-button}}
+  </div>
+  <div class="panel-footer">
+    <pre>
+      <code class="handlebars">
+
+      </code>
+    </pre>
+  </div>
+</div>
