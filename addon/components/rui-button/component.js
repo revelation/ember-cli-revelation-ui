@@ -81,7 +81,7 @@ export default Ember.Component.extend({
     var l = params.length;
 
     if (l > 2) {
-      Ember.Logger.warn('rui-button: You specified and unsupported \'size\' property so we\'ve defaulted to the standard size: choose from \'lg sm xs or omit for standard size.\'');
+      Ember.Logger.warn('rui-button: You specified an unsupported \'size\' property so we\'ve defaulted to the standard size: choose from \'lg sm xs or omit for standard size.\'');
       this.sendAction('action', this.get('param1'), this.get('param2'));
     } else if (l > 1) {
       this.sendAction('action', this.get('param1'), this.get('param2'));
