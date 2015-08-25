@@ -1,76 +1,6 @@
-<h5>Basic</h5>
-
-{{#rui-dropdown type='dropdown'}}
-  {{#rui-dropdown-trigger id='myDropdown' style='default'}}
-    Menu
-    <span class='caret'></span>
-  {{/rui-dropdown-trigger}}
-
-  {{#rui-dropdown-menu aria-labelledby='myDropdown'}}
-    <li><a href='#'>Item 1</a></li>
-    <li><a href='#'>Item 2</a></li>
-    <li><a href='#'>Item 3</a></li>
-  {{/rui-dropdown-menu}}
-{{/rui-dropdown}}
-
-<h5>Variations</h5>
-
-<div class='btn-group'>
-  <button type='button' class='btn btn-default'>
-    Button
-  </button>
-  {{#rui-dropdown type='btn-group' role='group'}}
-    {{#rui-dropdown-trigger id='myDropdown2' style='default'}}
-      <span class='caret'></span>
-    {{/rui-dropdown-trigger}}
-
-    {{#rui-dropdown-menu aria-labelledby='myDropdown2' align='right'}}
-      <li><a href='#'>Item 1</a></li>
-      <li><a href='#'>Item 2</a></li>
-      <li><a href='#'>Item 3</a></li>
-    {{/rui-dropdown-menu}}
-  {{/rui-dropdown}}
-</div>
-
-<div class='btn-group'>
-  <button type='button' class='btn btn-default'>
-    Button
-  </button>
-  <button type='button' class='btn btn-default'>
-    Button
-  </button>
-  {{#rui-dropdown type='btn-group'}}
-    {{#rui-dropdown-trigger id='myDropdown3' style='default'}}
-      Dropdown
-      <span class='caret'></span>
-    {{/rui-dropdown-trigger}}
-
-    {{#rui-dropdown-menu align='right' aria-labelledby='myDropdown3'}}
-      <li><a href='#'>Item 1</a></li>
-      <li><a href='#'>Item 2</a></li>
-      <li><a href='#'>Item 3</a></li>
-    {{/rui-dropdown-menu}}
-  {{/rui-dropdown}}
-</div>
-
-<div class='btn-group'>
-{{#rui-dropdown type='dropup'}}
-  {{#rui-dropdown-trigger id='myDropup' style='default'}}
-    Drop Up
-    <span class='caret'></span>
-  {{/rui-dropdown-trigger}}
-
-  {{#rui-dropdown-menu aria-labelledby='myDropup' align='right'}}
-    <li><a href='#'>Item 1</a></li>
-    <li><a href='#'>Item 2</a></li>
-    <li><a href='#'>Item 3</a></li>
-  {{/rui-dropdown-menu}}
-{{/rui-dropdown}}
-</div>
-
 <section>
   <h1 class='page-header'>Dropdown
-    <a href='#dropdown' name='dropdown' class='anchor-link'><i class='fa fa-link'></i></a>
+    {{anchor-link name='dropdown'}}
     <small><code>&lbrace;&lbrace;rui-dropdown&rbrace;&rbrace;</code></small>
   </h1>
   <p>The <code>&lbrace;&lbrace;rui-dropdown&rbrace;&rbrace;</code> is a wrapper component that must include a <code>&lbrace;&lbrace;rui-dropdown-trigger&rbrace;&rbrace;</code> and a <code>&lbrace;&lbrace;rui-dropdown-menu&rbrace;&rbrace;</code> components as a block.</p>
@@ -102,7 +32,7 @@
 
 <section>
   <h1 class='page-header'>
-    <a href='#dropdownTrigger' name='dropdownTrigger' class='anchor-link'><i class='fa fa-link'></i></a>
+    {{anchor-link name='dropdown-trigger'}}
     Dropdown Trigger
     <small><code>&lbrace;&lbrace;rui-dropdown-trigger&rbrace;&rbrace;</code></small>
   </h1>
@@ -147,7 +77,7 @@
 
 <section>
   <h1 class='page-header'>
-    <a href='#dropdownMenu' name='dropdownMenu' class='anchor-link'><i class='fa fa-link'></i></a>
+    {{anchor-link name='dropdown-menu'}}
     Dropdown Menu
     <small><code>&lbrace;&lbrace;rui-dropdown-menu&rbrace;&rbrace;</code></small>
   </h1>
@@ -178,30 +108,200 @@
   </table>
 </section>
 
-<h2>
-  <a name="button-styles" href="#button-styles"></a>
-  Examples
-</h2>
-<p>Button styles provide context through visual cues. <code>style</code> is a required attribute.</p>
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <strong class="text-uppercase text-muted">Example</strong>
-  </div>
+{{!-- Basic Example --}}
+<h3>
+  {{anchor-link name='dropdown-basic-example'}}
+  Basic Examples
+</h3>
+<p>Basic dropdown configurations required are shown below.  The <code>id</code> and <code>aria-labelledby</code> should match for accessability compliance.  You must define a style attribute on the dropdown trigger as we omit all styles by default to allow for greatest felxibility.</p>
+<div class="panel panel-default panel-code-example">
   <div class="panel-body">
-    {{#rui-button}}Default{{/rui-button}}
-    {{#rui-button style="primary"}}Primary{{/rui-button}}
-    {{#rui-button style="success"}}Success{{/rui-button}}
-    {{#rui-button style="info"}}Info{{/rui-button}}
-    {{#rui-button style="warning"}}Warning{{/rui-button}}
-    {{#rui-button style="danger"}}Danger{{/rui-button}}
-    {{#rui-button style="link"}}Link{{/rui-button}}
-    {{#rui-button style="standard"}}<i class="fa fa-download" />{{/rui-button}}
+    {{#rui-dropdown type='btn-group'}}
+      {{#rui-dropdown-trigger id='myDropdown' style='default'}}
+        Menu
+      {{/rui-dropdown-trigger}}
+
+      {{#rui-dropdown-menu aria-labelledby='myDropdown'}}
+        <li><a href='#'>Item 1</a></li>
+        <li><a href='#'>Item 2</a></li>
+        <li><a href='#'>Item 3</a></li>
+      {{/rui-dropdown-menu}}
+    {{/rui-dropdown}}
+
+    {{#rui-dropdown type='btn-group'}}
+      {{#rui-dropdown-trigger id='myDropdown' style='primary'}}
+        Menu
+      {{/rui-dropdown-trigger}}
+
+      {{#rui-dropdown-menu aria-labelledby='myDropdown'}}
+        <li><a href='#'>Item 1</a></li>
+        <li><a href='#'>Item 2</a></li>
+        <li><a href='#'>Item 3</a></li>
+      {{/rui-dropdown-menu}}
+    {{/rui-dropdown}}
   </div>
   <div class="panel-footer">
-    <pre>
-      <code class="handlebars">
+    <pre><code class="handlebars">
+&lt;!-- Basic Dropdown --&gt;
+&lbrace;&lbrace;#rui-dropdown type='dropdown'&rbrace;&rbrace;
 
-      </code>
-    </pre>
+  &lt;!-- Include a trigger component --&gt;
+  &lbrace;&lbrace;#rui-dropdown-trigger id='myDropdown' style='default'&rbrace;&rbrace;
+    Menu
+  &lbrace;&lbrace;/rui-dropdown-trigger&rbrace;&rbrace;
+
+  &lt;!-- Include a menu component --&gt;
+  &lbrace;&lbrace;#rui-dropdown-menu aria-labelledby='myDropdown'&rbrace;&rbrace;
+    &lt;li&gt;&lt;a href='#'&gt;Item 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href='#'&gt;Item 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href='#'&gt;Item 3&lt;/a&gt;&lt;/li&gt;
+  &lbrace;&lbrace;/rui-dropdown-menu&rbrace;&rbrace;
+
+&lbrace;&lbrace;/rui-dropdown&rbrace;&rbrace;
+    </code></pre>
+  </div>
+</div>
+
+{{!-- Split Button Dropdown --}}
+<h3>
+  {{anchor-link name='dropdown-split-button'}}
+  Split Button Dropdown
+</h3>
+<p>Split button and dropdowns included must be wrapped within a <code>btn-group</code> and have the <code>type='btn-group'</code> on the dropdown component.  Don't forget to specify the <code>role='group'</code> to help out the screen readers.</p>
+<div class="panel panel-default panel-code-example">
+  <div class="panel-body">
+    <div class='btn-group'>
+      {{#rui-button}}Button{{/rui-button}}
+      {{#rui-dropdown type='btn-group' role='group'}}
+        {{rui-dropdown-trigger id='myDropdown2' style='default'}}
+        {{#rui-dropdown-menu aria-labelledby='myDropdown2' align='right'}}
+          <li><a href='#'>Item 1</a></li>
+          <li><a href='#'>Item 2</a></li>
+          <li><a href='#'>Item 3</a></li>
+        {{/rui-dropdown-menu}}
+      {{/rui-dropdown}}
+    </div>
+    <div class='btn-group'>
+      {{#rui-button style='primary'}}Button{{/rui-button}}
+      {{#rui-button style='primary'}}Button{{/rui-button}}
+      {{#rui-dropdown type='btn-group' role='group'}}
+        {{#rui-dropdown-trigger id='myDropdown2' style='primary'}}
+          Dropdown
+        {{/rui-dropdown-trigger}}
+        {{#rui-dropdown-menu aria-labelledby='myDropdown2' align='right'}}
+          <li><a href='#'>Item 1</a></li>
+          <li><a href='#'>Item 2</a></li>
+          <li><a href='#'>Item 3</a></li>
+        {{/rui-dropdown-menu}}
+      {{/rui-dropdown}}
+    </div>
+
+  </div>
+  <div class="panel-footer">
+    <pre><code class="handlebars">
+&lt;!-- Basic Dropdown --&gt;
+&lt;div class='btn-group'&gt;
+  &lbrace;&lbrace;#rui-button&rbrace;&rbrace;Button&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+
+  &lt;!-- Set type'btn-group' and role='group' --&gt;
+  &lbrace;&lbrace;#rui-dropdown type='btn-group' role='group'&rbrace;&rbrace;
+    &lbrace;&lbrace;rui-dropdown-trigger id='myDropdown2' style='default'&rbrace;&rbrace;
+    &lbrace;&lbrace;#rui-dropdown-menu aria-labelledby='myDropdown2' align='right'&rbrace;&rbrace;
+      &lt;li&gt;&lt;a href='#'&gt;Item 1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href='#'&gt;Item 2&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href='#'&gt;Item 3&lt;/a&gt;&lt;/li&gt;
+    &lbrace;&lbrace;/rui-dropdown-menu&rbrace;&rbrace;
+  &lbrace;&lbrace;/rui-dropdown&rbrace;&rbrace;
+&lt;/div&gt;
+    </code></pre>
+  </div>
+</div>
+
+{{!-- Dropups --}}
+<h3>
+  {{anchor-link name='dropdown-dropups'}}
+  Dropups
+</h3>
+<p>Add <code>type='dropup'</code> to the dropdown component to position the menu above the trigger element.</p>
+<div class="panel panel-default panel-code-example">
+  <div class="panel-body">
+    <div class='btn-group'>
+      {{#rui-dropdown type='dropup' role='group'}}
+        {{#rui-dropdown-trigger id='myDropdown2' style='default'}}
+          Dropup
+        {{/rui-dropdown-trigger}}
+        {{#rui-dropdown-menu aria-labelledby='myDropdown2'}}
+          <li><a href='#'>Item 1</a></li>
+          <li><a href='#'>Item 2</a></li>
+          <li><a href='#'>Item 3</a></li>
+        {{/rui-dropdown-menu}}
+      {{/rui-dropdown}}
+    </div>
+  </div>
+  <div class="panel-footer">
+    <pre><code class="handlebars">
+&lt;!-- Basic Dropup --&gt;
+
+&lt;!-- Add type='dropup' --&gt;
+&lbrace;&lbrace;#rui-dropdown type='dropup' &rbrace;&rbrace;
+  &lbrace;&lbrace;#rui-dropdown-trigger id='myDropup' style='default'&rbrace;&rbrace;
+    Dropup
+  &lbrace;&lbrace;/rui-dropdown-trigger&rbrace;&rbrace;
+  &lbrace;&lbrace;#rui-dropdown-menu aria-labelledby='myDropup'&rbrace;&rbrace;
+    &lt;li&gt;&lt;a href='#'&gt;Item 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href='#'&gt;Item 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href='#'&gt;Item 3&lt;/a&gt;&lt;/li&gt;
+  &lbrace;&lbrace;/rui-dropdown-menu&rbrace;&rbrace;
+&lbrace;&lbrace;/rui-dropdown&rbrace;&rbrace;
+    </code></pre>
+  </div>
+</div>
+
+{{!-- Alignment --}}
+<h3>
+  {{anchor-link name='dropdown-alignment'}}
+  Alignment
+</h3>
+<p>Add <code>align='right'</code> to the dropdown-menu component align the menu to the right of the button. Alignment defaults to the left without declaring.  You can declare <code>align='left'</code> to override other behavoirs which might align it right.</p>
+<div class="panel panel-default panel-code-example">
+  <div class="panel-body">
+    {{#rui-dropdown type='btn-group' role='group'}}
+      {{#rui-dropdown-trigger id='myDropdown2' style='default'}}
+        Left
+      {{/rui-dropdown-trigger}}
+      {{#rui-dropdown-menu aria-labelledby='myDropdown2'}}
+        <li><a href='#'>Item 1</a></li>
+        <li><a href='#'>Item 2</a></li>
+        <li><a href='#'>Item 3</a></li>
+      {{/rui-dropdown-menu}}
+    {{/rui-dropdown}}
+
+    {{#rui-dropdown type='btn-group' role='group'}}
+      {{#rui-dropdown-trigger id='myDropdown2' style='default'}}
+        Right
+      {{/rui-dropdown-trigger}}
+      {{#rui-dropdown-menu aria-labelledby='myDropdown2' align='right'}}
+        <li><a href='#'>Item 1</a></li>
+        <li><a href='#'>Item 2</a></li>
+        <li><a href='#'>Item 3</a></li>
+      {{/rui-dropdown-menu}}
+    {{/rui-dropdown}}
+  </div>
+  <div class="panel-footer">
+    <pre><code class="handlebars">
+&lt;!-- Align right --&gt;
+&lbrace;&lbrace;#rui-dropdown type='btn-group' role='group'&rbrace;&rbrace;
+  &lbrace;&lbrace;#rui-dropdown-trigger id='myDropdown2' style='default'&rbrace;&rbrace;
+    Right
+  &lbrace;&lbrace;/rui-dropdown-trigger&rbrace;&rbrace;
+
+  &lt;!-- Add align='right' or align='left' to override however defaults to left --&gt;
+  &lbrace;&lbrace;#rui-dropdown-menu aria-labelledby='myDropdown2' align='right'&rbrace;&rbrace;
+    &lt;li&gt;&lt;a href='#'&gt;Item 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href='#'&gt;Item 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href='#'&gt;Item 3&lt;/a&gt;&lt;/li&gt;
+  &lbrace;&lbrace;/rui-dropdown-menu&rbrace;&rbrace;
+&lbrace;&lbrace;/rui-dropdown&rbrace;&rbrace;
+    </code></pre>
   </div>
 </div>

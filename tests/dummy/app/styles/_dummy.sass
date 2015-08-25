@@ -7,4 +7,26 @@
   padding: 8px 10px
   width: 32px
   height: 32px
-  margin-top: 5px
+  h1 &
+    margin-top: 5px
+  h3 &
+    margin-top: -2px
+
+.panel-code-example
+  position: relative
+  padding-top: 45px
+  &:after
+    position: absolute
+    top: 12px
+    left: 15px
+    font-size: 12px
+    text-transform: uppercase
+    font-weight: bold
+    letter-spacing: 1px
+    content: "Example"
+  pre
+    padding: 0
+    margin: 0
+    border: 0 none
+  code
+    padding: 0
