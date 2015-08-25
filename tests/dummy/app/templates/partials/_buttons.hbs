@@ -1,5 +1,8 @@
 <section>
-  <h2 class='page-header'><a name='buttons' href='#buttons'>Buttons <code>&lbrace;&lbrace;rui-button&rbrace;&rbrace;</code></a></h2>
+  <h1 class='page-header'>
+    {{header-anchor name='buttons' data-title='Buttons'}}
+    <small><code>&lbrace;&lbrace;rui-button&rbrace;&rbrace;</code></small>
+  </h1>
   <p>A button is used to trigger an immediate action such as form submission. Buttons should not be used for navigation.</p>
   <p>An <code>rui-button</code> block renders an HTML <code>button</code> element. The <code>button</code>'s content&thinsp;—&thinsp;text, an icon, or both&thinsp;—&thinsp;is contained within the <code>rui-button</code> block and passed through safely. All attributes may be omitted and will fall-back onto their defaults.</p>
   <table class='table'>
@@ -57,14 +60,14 @@
     </tbody>
   </table>
 
-  <h3>Properties</h3>
+  <h2>Properties</h2>
 
-  <h4><a name='button-styles' href='#button-styles'>Styles</a></h4>
+  {{!-- Styles --}}
+  <h3>
+    {{header-anchor name='button-styles' data-title='Styles'}}
+  </h3>
   <p>Button styles provide context through visual cues.</p>
-  <div class='panel panel-default'>
-    <div class='panel-heading'>
-      <strong class='text-uppercase text-muted'>Example</strong>
-    </div>
+  <div class="panel panel-default panel-code-example">
     <div class='panel-body'>
       {{#rui-button}}Default{{/rui-button}}
       {{#rui-button style='primary'}}Primary{{/rui-button}}
@@ -102,12 +105,12 @@
     </code></pre></div>
   </div>
 
-  <h4><a name='button-sizes' href='#button-sizes'>Sizes</a></h4>
+  {{!-- Sizes --}}
+  <h3>
+    {{header-anchor name='button-sizes' data-title="Sizes"}}
+  </h3>
   <p>Buttons are available in four sizes.</p>
-  <div class='panel panel-default'>
-    <div class='panel-heading'>
-      <strong class='text-uppercase text-muted'>Example</strong>
-    </div>
+  <div class="panel panel-default panel-code-example">
     <div class='panel-body'>
       <p>
         {{#rui-button size='lg'}}Large{{/rui-button}}
@@ -146,12 +149,12 @@
     </code></pre></div>
   </div>
 
-  <h4><a name='button-blocks' href='#button-blocks'>Block-Level</a></h4>
+  {{!-- Block-Level --}}
+  <h3>
+    {{header-anchor name='button-blocks' data-title='Block-Level'}}
+  </h3>
   <p>Create block-level buttons&thinsp;&mdash;&thinsp;those that span the full width of a parent&thinsp;&mdash;&thinsp;by setting the <code>block</code> attribute to <code>'true'</code>.</p>
-  <div class='panel panel-default'>
-    <div class='panel-heading'>
-      <strong class='text-uppercase text-muted'>Example</strong>
-    </div>
+  <div class="panel panel-default panel-code-example">
     <div class='panel-body'>
       <p>
         {{#rui-button size='lg' block='true'}}Large Block-Level Button{{/rui-button}}
@@ -170,12 +173,12 @@
     </code></pre></div>
   </div>
 
-  <h4><a name='button-loading' href='#button-loading'>Loading State</a></h4>
+  {{!-- Loading State --}}
+  <h3>
+    {{header-anchor name='button-loading' data-title="Loading State"}}
+  </h3>
   <p>Indicate whether an action is currently being performed by passing the action name to the <code>isLoading</code> attribute. This will add a spinner to the button until the action is completed. The value of <code>isLoading</code> must <em>not</em> be wrapped in quotes.</p>
-  <div class='panel panel-default'>
-    <div class='panel-heading'>
-      <strong class='text-uppercase text-muted'>Example</strong>
-    </div>
+  <div class="panel panel-default panel-code-example">
     <div class='panel-body'>
       <p>
         {{#rui-button action='asyncAction1' isLoading=asyncAction1}}Loading Button{{/rui-button}}
@@ -194,12 +197,12 @@
     </code></pre></div>
   </div>
 
-  <h4><a name='button-disabled' href='#button-disabled'>Disabled</a></h4>
+  {{!-- Disabled --}}
+  <h3>
+    {{header-anchor name='button-disabled' data-title='Disabled'}}
+  </h3>
   <p>Provide visual cues that a button is not clickable by setting the <code>disabled</code> attribute to <code>'true'</code>.</p>
-  <div class='panel panel-default'>
-    <div class='panel-heading'>
-      <strong class='text-uppercase text-muted'>Example</strong>
-    </div>
+  <div class="panel panel-default panel-code-example">
     <div class='panel-body'>
       {{#rui-button disabled='true'}}Default{{/rui-button}}
       {{#rui-button style='primary' disabled='true'}}Primary{{/rui-button}}
@@ -228,13 +231,14 @@
     </code></pre></div>
   </div>
 
-  <h3>Actions</h3>
-  <h4><a name="button-action" href="#button-action">Action</a></h4>
+  <h2>Actions</h2>
+
+  {{!-- Action --}}
+  <h3>
+    {{header-anchor name='button-action' data-title='Action'}}
+  </h3>
   <p>Supply the action name to be handled by the application with the <code>action</code> property.</p>
-  <div class='panel panel-default'>
-    <div class='panel-heading'>
-      <strong class='text-uppercase text-muted'>Example</strong>
-    </div>
+  <div class="panel panel-default panel-code-example">
     <div class='panel-body'>
       {{#rui-button action='sendAction'}}Trigger Action{{/rui-button}}
     </div>
@@ -243,12 +247,11 @@
     </code></pre></div>
   </div>
 
-  <h4><a name="button-params" href="#button-action">Action Parameters</a></h4>
-  <p>An action can be sent up to two parameters by using the <code>params1</code> and <code>params2</code> attributes.</p>
-  <div class='panel panel-default'>
-    <div class='panel-heading'>
-      <strong class='text-uppercase text-muted'>Example</strong>
-    </div>
+  <h3>
+    {{header-anchor name='button-params' data-title='Action Parameters'}}
+  </h3>
+<p>An action can be sent up to two parameters by using the <code>params1</code> and <code>params2</code> attributes.</p>
+  <div class="panel panel-default panel-code-example">
     <div class='panel-body'>
       {{#rui-button action='sendActionWithParams' param1='A simple parameter passed in' param2='Another parameter along for the ride'}}Trigger Action with Parameters{{/rui-button}}
     </div>
