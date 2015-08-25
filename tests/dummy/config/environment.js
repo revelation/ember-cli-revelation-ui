@@ -30,7 +30,7 @@ module.exports = function(environment) {
       'font-src': "'self' http://fonts.gstatic.com",
       'img-src': "'self'",
       'script-src': "'self' 'unsafe-inline'",
-      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com http://cdnjs.cloudflare.com",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
       'media-src': "'self'"
     }
   }
@@ -51,7 +51,7 @@ module.exports = function(environment) {
       'font-src': "'self' http://fonts.gstatic.com",
       'img-src': "'self'",
       'script-src': "'self' 'unsafe-inline'",
-      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com http://cdnjs.cloudflare.com",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
       'media-src': "'self'"
     }
   }
@@ -62,7 +62,7 @@ module.exports = function(environment) {
       'font-src': "'self' http://fonts.gstatic.com",
       'img-src': "'self'",
       'script-src': "'self' 'unsafe-inline'",
-      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com http://cdnjs.cloudflare.com",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
       'media-src': "'self'"
     }
   }
