@@ -1,6 +1,6 @@
 <section>
-  <h1 class='page-header'>Dropdown
-    {{anchor-link name='dropdown' data-title='Dropdown'}}
+  <h1 class='page-header'>
+    {{header-anchor name='dropdown' data-title='Dropdown'}}
     <small><code>&lbrace;&lbrace;rui-dropdown&rbrace;&rbrace;</code></small>
   </h1>
   <p>The <code>&lbrace;&lbrace;rui-dropdown&rbrace;&rbrace;</code> is a wrapper component that must include a <code>&lbrace;&lbrace;rui-dropdown-trigger&rbrace;&rbrace;</code> and a <code>&lbrace;&lbrace;rui-dropdown-menu&rbrace;&rbrace;</code> components as a block.</p>
@@ -32,8 +32,7 @@
 
 <section>
   <h1 class='page-header'>
-    {{anchor-link name='dropdown-trigger' data-title='Dropdown Trigger'}}
-    Dropdown Trigger
+    {{header-anchor name='dropdown-trigger' data-title='Dropdown Trigger'}}
     <small><code>&lbrace;&lbrace;rui-dropdown-trigger&rbrace;&rbrace;</code></small>
   </h1>
   <p>The <code>&lbrace;&lbrace;rui-dropdown-trigger&rbrace;&rbrace;</code> must be contained within a <code>&lbrace;&lbrace;rui-dropdown&rbrace;&rbrace;</code> and is the button element which triggers the sibling <code>&lbrace;&lbrace;rui-dropdown-menu&rbrace;&rbrace;</code> on click.  It accepts a block and is built to be highly customizable, therefore we do not inlcude any styling by default.</p>
@@ -83,8 +82,7 @@
 
 <section>
   <h1 class='page-header'>
-    {{anchor-link name='dropdown-menu' data-title='Dropdown Menu'}}
-    Dropdown Menu
+    {{header-anchor name='dropdown-menu' data-title='Dropdown Menu'}}
     <small><code>&lbrace;&lbrace;rui-dropdown-menu&rbrace;&rbrace;</code></small>
   </h1>
   <p>The <code>&lbrace;&lbrace;rui-dropdown-menu&rbrace;&rbrace;</code> must be contained within a <code>&lbrace;&lbrace;rui-dropdown&rbrace;&rbrace;</code> and accepts a block containing the menu items to be shown when the sibling <code>&lbrace;&lbrace;rui-dropdown-trigger&rbrace;&rbrace;</code> is clicked.</p>
@@ -116,8 +114,7 @@
 
 {{!-- Basic Example --}}
 <h3>
-  {{anchor-link name='dropdown-basic-example' data-title='Basic Example'}}
-  Basic Examples
+  {{header-anchor name='dropdown-basic-example' data-title='Basic Example'}}
 </h3>
 <p>Basic dropdown configurations required are shown below.  The <code>id</code> and <code>aria-labelledby</code> should match for accessability compliance.  You must define a style attribute on the dropdown trigger as we omit all styles by default to allow for greatest felxibility.</p>
 <div class="panel panel-default panel-code-example">
@@ -170,8 +167,7 @@
 
 {{!-- Split Button Dropdown --}}
 <h3>
-  {{anchor-link name='dropdown-split-button' data-title='Split Button'}}
-  Split Button Dropdown
+  {{header-anchor name='dropdown-split-button' data-title='Split Button'}}
 </h3>
 <p>Split button and dropdowns included must be wrapped within a <code>btn-group</code> and have the <code>type='btn-group'</code> on the dropdown component.  Don't forget to specify the <code>role='group'</code> to help out the screen readers.</p>
 <div class="panel panel-default panel-code-example">
@@ -225,8 +221,7 @@
 
 {{!-- Dropups --}}
 <h3>
-  {{anchor-link name='dropdown-dropups' data-title='Dropups'}}
-  Dropups
+  {{header-anchor name='dropdown-dropups' data-title='Dropups'}}
 </h3>
 <p>Add <code>type='dropup'</code> to the dropdown component to position the menu above the trigger element.</p>
 <div class="panel panel-default panel-code-example">
@@ -265,8 +260,7 @@
 
 {{!-- Alignment --}}
 <h3>
-  {{anchor-link name='dropdown-alignment' data-title='Alignment'}}
-  Alignment
+  {{header-anchor name='dropdown-alignment' data-title='Alignment'}}
 </h3>
 <p>Add <code>align='right'</code> to the dropdown-menu component to align the menu to the right of the button. Alignment defaults to the left without declaring.  You can declare <code>align='left'</code> to override other behavoirs which might align it right.</p>
 <div class="panel panel-default panel-code-example">
