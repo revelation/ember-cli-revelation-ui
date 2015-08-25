@@ -14,6 +14,7 @@ export default Ember.Component.extend({
   role: 'button',
   style: null,
   size: null,
+  caret: true,
 
   //Constructors
   classPrefix: 'btn',
