@@ -6,12 +6,11 @@ export default Ember.Component.extend({
   tagName: 'button',
   classNames: ['dropdown-toggle'],
   classNameBindings: ['computedStyle', 'computedSize'],
-  attributeBindings: ['type', 'role', 'data-toggle', 'haspopup', 'aria-expanded'],
+  attributeBindings: ['type', 'data-toggle', 'haspopup', 'aria-expanded'],
   id: '',
 
   //Defaults
   type: 'button',
-  role: 'button',
   style: null,
   size: null,
   caret: true,
