@@ -2,33 +2,69 @@
   <h1 class='page-header'>
     {{header-anchor name='colors' data-title='Colors'}}
   </h1>
-  <p>Really lazy lipsum text.</p>
+  <p>Colors are handled by variables to aid in maintaining a consistent look.</p>
 
   {{!-- Brand Colors --}}
   <h3>
     {{header-anchor name='colors-brand' data-title='Brand Colors'}}
   </h3>
+  <p>Brand colors provide contextual values.</p>
   <div class='card card-code-example'>
     <div class='card-block'>
-      {{color-swatch class='swatch-brand-primary' data-variable='$brand-primary'}}
-      {{color-swatch class='swatch-brand-success' data-variable='$brand-success'}}
-      {{color-swatch class='swatch-brand-info' data-variable='$brand-info'}}
-      {{color-swatch class='swatch-brand-warning'  data-variable='$brand-warning'}}
-      {{color-swatch class='swatch-brand-danger'  data-variable='$brand-danger'}}
+      {{color-swatch color='brand-primary'}}
+      {{color-swatch color='brand-success'}}
+      {{color-swatch color='brand-info'}}
+      {{color-swatch color='brand-warning'}}
+      {{color-swatch color='brand-danger'}}
     </div>
+    <div class="card-footer"><pre><code class='css'>
+$brand-primary:             #0275d8 !default;
+$brand-success:             #5cb85c !default;
+$brand-info:                #5bc0de !default;
+$brand-warning:             #f0ad4e !default;
+$brand-danger:              #d9534f !default;
+    </code></pre></div>
   </div>
   {{!-- Structural Colors --}}
   <h3>
     {{header-anchor name='colors-structure' data-title='Structural Colors'}}
   </h3>
+  <p>Structural colors are handled by varying shades of gray.</p>
   <div class='card card-code-example'>
     <div class='card-block'>
-      {{color-swatch class='swatch-brand-primary' data-variable='$brand-primary'}}
-      {{color-swatch class='swatch-brand-success' data-variable='$brand-success'}}
-      {{color-swatch class='swatch-brand-info' data-variable='$brand-info'}}
-      {{color-swatch class='swatch-brand-warning'  data-variable='$brand-warning'}}
-      {{color-swatch class='swatch-brand-danger'  data-variable='$brand-danger'}}
+      {{color-swatch color='gray-dark'}}
+      {{color-swatch color='gray'}}
+      {{color-swatch color='gray-light'}}
+      {{color-swatch color='gray-lighter'}}
+      {{color-swatch color='gray-lightest'}}
     </div>
+    <div class="card-footer"><pre><code class='css'>
+$gray-dark:                 #373a3c !default;
+$gray:                      #55595c !default;
+$gray-light:                #818a91 !default;
+$gray-lighter:              #eceeef !default;
+$gray-lightest:             #f7f7f9 !default;
+    </code></pre></div>
   </div>
   {{!-- Typographical Colors --}}
+  <h3>
+    {{header-anchor name='colors-typography' data-title='Typographical Colors'}}
+  </h3>
+  <p><code>$body-color</code> is the default for all text elements. <code>$text-muted</code> is for diminished text. <code>$link-color</code> and <code>$link-hover-color</code> are used for anchor states. <code>$state-warning-bg</code> is the background color applied to highlighted text.</p>
+  <div class='card card-code-example'>
+    <div class='card-block'>
+      {{color-swatch color='body-color'}}
+      {{color-swatch color='text-muted'}}
+      {{color-swatch color='link-color'}}
+      {{color-swatch color='link-hover-color'}}
+      {{color-swatch color='state-warning-bg'}}
+    </div>
+    <div class="card-footer"><pre><code class='css'>
+$body-color:                $gray-dark !default;
+$text-muted:                $gray-light !default;
+$link-color:                $brand-primary !default;
+$link-hover-color:          darken($link-color, 15%) !default;
+$state-warning-bg:          #fcf8e3 !default;
+    </code></pre></div>
+  </div>
 </section>

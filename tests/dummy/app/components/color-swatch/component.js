@@ -3,7 +3,9 @@ import layout from './template';
 
 export default Ember.Component.extend({
   layout: layout,
-  attributeBindings: ['data-variable'],
   classNames: ['color-swatch'],
-  'data-variable': ''
+  classNameBindings: ['computedClass'],
+  computedClass: Ember.computed('color', function() {
+    return 'swatch-' + this.get('color');
+  })
 });
