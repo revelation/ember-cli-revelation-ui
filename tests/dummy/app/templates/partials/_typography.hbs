@@ -1,0 +1,204 @@
+<section>
+  <h1 class='page-header'>
+    {{header-anchor name='typography' data-title='Typography'}}
+  </h1>
+  <p>This list is not meant to be the end all of typographic styles but users should try to utilize the most basic of forms whenever possible.  This list is mainly meant to express the look feel in action and show basic usage.  Additional utility classes are available as per the bootstrap specs.</p>
+  <h3>
+  {{header-anchor name='typography-headers' data-title='Headers'}}
+  </h3>
+  <p>Use headers symantically!</p>
+  <div class="panel panel-default panel-code-example">
+    <div class="panel-body">
+      <h1>h1 Heading</h1>
+      <h2>h2 Heading</h2>
+      <h3>h3 Heading</h3>
+      <h4>h4 Heading</h4>
+      <h5>h5 Heading</h5>
+      <h6>h6 Heading</h6>
+
+
+
+    </div>
+    <div class="panel-footer">
+      <pre><code class="handlebars">
+&lt;!-- Headers --&gt;
+&lt;h1&gt;h1 Heading&lt;/h1&gt;
+&lt;h2&gt;h2 Heading&lt;/h2&gt;
+&lt;h3&gt;h3 Heading&lt;/h3&gt;
+&lt;h4&gt;h4 Heading&lt;/h4&gt;
+&lt;h5&gt;h5 Heading&lt;/h5&gt;
+&lt;h6&gt;h6 Heading&lt;/h6&gt;
+      </code></pre>
+    </div>
+  </div>
+
+  <h3>
+  {{header-anchor name='typography-body' data-title='Body'}}
+  </h3>
+  {{!-- <p>Description</p> --}}
+  <div class="panel panel-default panel-code-example">
+    <div class="panel-body">
+
+      <p class='lead'>Aenean eget nunc eget leo luctus posuere. Nullam sit amet facilisis mi, sed auctor elit. Praesent vel enim vehicula, placerat orci vel, volutpat sapien.</p>
+
+      <p>This is the basic paragraph text.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt ac metus ac dignissim. Aenean eget nunc eget leo luctus posuere. Nullam sit amet facilisis mi, sed auctor elit.  Praesent vel enim vehicula, placerat orci vel, volutpat sapien. Cras dictum pretium est, in varius dui finibus non. Suspendisse imperdiet purus lacus, vel malesuada lorem semper nec. Praesent consectetur ornare lectus, vel suscipit massa vulputate eu.</p>
+
+    </div>
+    <div class="panel-footer">
+      <pre><code class="handlebars">
+&lt;!-- Lead copy --&gt;
+&lt;p class='lead'&gt;...&lt;/p&gt;
+
+&lt;!-- Body copy --&gt;
+&lt;p&gt;...&lt;/p&gt;
+      </code></pre>
+    </div>
+  </div>
+
+  <h3>{{header-anchor name='typography-inline' data-title='Inline'}}</h3>
+  {{!-- <p>Description</p> --}}
+  <div class="panel panel-default panel-code-example">
+    <div class="panel-body">
+      <p>Here is a <a href='#'>link text</a>.</p>
+      <p>Here is some <strong>bold</strong> text.</p>
+      <p>Here is some <em>italic</em> text.</p>
+      <p>Here is some <mark>highlighted</mark> text.</p>
+      <p class='text-muted'>Here is some muted text.</p>
+      <p><small>Here is some small text.</small></p>
+    </div>
+    <div class="panel-footer">
+      <pre><code class="handlebars">
+&lt;!-- Link --&gt;
+&lt;p&gt;Here is a &lt;a href='#'&gt;link text&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!-- Bold --&gt;
+&lt;p&gt;Here is some &lt;strong&gt;bold&lt;/strong&gt; text.&lt;/p&gt;
+
+&lt;!-- Italic --&gt;
+&lt;p&gt;Here is some &lt;em&gt;italic&lt;/em&gt; text.&lt;/p&gt;
+
+&lt;!-- Highlight --&gt;
+&lt;p&gt;Here is some &lt;mark&gt;highlighted&lt;/mark&gt; text.&lt;/p&gt;
+
+&lt;!-- Muted --&gt;
+&lt;p class='text-muted'&gt;Here is some muted text.&lt;/p&gt;
+
+&lt;!-- Small --&gt;
+&lt;p&gt;&lt;small&gt;Here is some small text.&lt;/small&gt;&lt;/p&gt;
+      </code></pre>
+    </div>
+  </div>
+
+  <h3>{{header-anchor name='typography-lists' data-title='Lists'}}</h3>
+  {{!-- <p>Description</p> --}}
+  <div class="panel panel-default panel-code-example">
+    <div class="panel-body">
+      <h6 class='text-muted'>Unordered</h6>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>
+          Item 3
+          <ul>
+            <li>Sub-item 1</li>
+            <li>Sub-item 2</li>
+            <li>Sub-item 3</li>
+          </ul>
+        </li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+      </ul>
+
+      <br />
+      <h6 class='text-muted'>Ordered</h6>
+      <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+      </ol>
+
+      <br />
+      <h6 class='text-muted'>Unstyled</h6>
+      <ul class='list-unstyled'>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+      </ul>
+    </div>
+    <div class="panel-footer">
+      <pre><code class="handlebars">
+&lt;!-- Unordered --&gt;
+&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+  ...
+&lt;/ul&gt;
+
+&lt;!-- Ordered --&gt;
+&lt;ol&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+  ...
+&lt;/ol&gt;
+
+&lt;!-- Unstyled --&gt;
+&lt;ul class='list-unstyled'&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+  ...
+&lt;/ul&gt;
+      </code></pre>
+    </div>
+  </div>
+
+  <h3>{{header-anchor name='typography-definition-list' data-title='Definition List'}}</h3>
+  {{!-- <p>Description</p> --}}
+  <div class="panel panel-default panel-code-example">
+    <div class="panel-body">
+
+      <h6 class='text-muted'>Default</h6>
+      <dl>
+        <dt>Term</dt>
+        <dd>Description list definition</dd>
+        <dt>Another Term</dt>
+        <dd>Description list definition</dd>
+        <dt>Decription Term</dt>
+        <dd>Description list definition</dd>
+      </dl>
+
+      <br />
+      <h6 class='text-muted'>Horizontal</h6>
+      <dl class='dl-horizontal'>
+        <dt>Term</dt>
+        <dd>Description list definition</dd>
+        <dt>Another Term</dt>
+        <dd>Description list definition</dd>
+        <dt>Some Other Term</dt>
+        <dd>Description list definition</dd>
+      </dl>
+    </div>
+    <div class="panel-footer">
+      <pre><code class="handlebars">
+&lt;!-- Default --&gt;
+&lt;dl&gt;
+  &lt;dt&gt;Term&lt;/dt&gt;
+  &lt;dd&gt;Description&lt;/dd&gt;
+  ...
+&lt;/dl&gt;
+
+&lt;br /&gt;
+
+&lt;!-- Horizontal alignment --&gt;
+&lt;dl class='dl-horizontal'&gt;
+  &lt;dt&gt;Term&lt;/dt&gt;
+  &lt;dd&gt;Description&lt;/dd&gt;
+  ...
+&lt;/dl&gt;
+      </code></pre>
+    </div>
+  </div>
+</section>
