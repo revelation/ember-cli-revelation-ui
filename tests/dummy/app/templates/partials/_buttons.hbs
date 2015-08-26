@@ -67,7 +67,7 @@
     {{header-anchor name='button-styles' data-title='Styles'}}
   </h3>
   <p>Button styles provide context through visual cues.</p>
-  <div class="panel panel-default panel-code-example">
+  <div class='panel panel-default panel-code-example'>
     <div class='panel-body'>
       {{#rui-button}}Default{{/rui-button}}
       {{#rui-button style='primary'}}Primary{{/rui-button}}
@@ -107,10 +107,10 @@
 
   {{!-- Sizes --}}
   <h3>
-    {{header-anchor name='button-sizes' data-title="Sizes"}}
+    {{header-anchor name='button-sizes' data-title='Sizes'}}
   </h3>
   <p>Buttons are available in four sizes.</p>
-  <div class="panel panel-default panel-code-example">
+  <div class='panel panel-default panel-code-example'>
     <div class='panel-body'>
       <p>
         {{#rui-button size='lg'}}Large{{/rui-button}}
@@ -154,7 +154,7 @@
     {{header-anchor name='button-blocks' data-title='Block-Level'}}
   </h3>
   <p>Create block-level buttons&thinsp;&mdash;&thinsp;those that span the full width of a parent&thinsp;&mdash;&thinsp;by setting the <code>block</code> attribute to <code>'true'</code>.</p>
-  <div class="panel panel-default panel-code-example">
+  <div class='panel panel-default panel-code-example'>
     <div class='panel-body'>
       <p>
         {{#rui-button size='lg' block='true'}}Large Block-Level Button{{/rui-button}}
@@ -175,10 +175,10 @@
 
   {{!-- Loading State --}}
   <h3>
-    {{header-anchor name='button-loading' data-title="Loading State"}}
+    {{header-anchor name='button-loading' data-title='Loading State'}}
   </h3>
   <p>Indicate whether an action is currently being performed by passing the action name to the <code>isLoading</code> attribute. This will add a spinner to the button until the action is completed. The value of <code>isLoading</code> must <em>not</em> be wrapped in quotes.</p>
-  <div class="panel panel-default panel-code-example">
+  <div class='panel panel-default panel-code-example'>
     <div class='panel-body'>
       <p>
         {{#rui-button action='asyncAction1' isLoading=asyncAction1}}Loading Button{{/rui-button}}
@@ -202,7 +202,7 @@
     {{header-anchor name='button-disabled' data-title='Disabled'}}
   </h3>
   <p>Provide visual cues that a button is not clickable by setting the <code>disabled</code> attribute to <code>'true'</code>.</p>
-  <div class="panel panel-default panel-code-example">
+  <div class='panel panel-default panel-code-example'>
     <div class='panel-body'>
       {{#rui-button disabled='true'}}Default{{/rui-button}}
       {{#rui-button style='primary' disabled='true'}}Primary{{/rui-button}}
@@ -238,7 +238,7 @@
     {{header-anchor name='button-action' data-title='Action'}}
   </h3>
   <p>Supply the action name to be handled by the application with the <code>action</code> property.</p>
-  <div class="panel panel-default panel-code-example">
+  <div class='panel panel-default panel-code-example'>
     <div class='panel-body'>
       {{#rui-button action='sendAction'}}Trigger Action{{/rui-button}}
     </div>
@@ -251,7 +251,7 @@
     {{header-anchor name='button-params' data-title='Action Parameters'}}
   </h3>
 <p>An action can be sent up to two parameters by using the <code>params1</code> and <code>params2</code> attributes.</p>
-  <div class="panel panel-default panel-code-example">
+  <div class='panel panel-default panel-code-example'>
     <div class='panel-body'>
       {{#rui-button action='sendActionWithParams' param1='A simple parameter passed in' param2='Another parameter along for the ride'}}Trigger Action with Parameters{{/rui-button}}
     </div>

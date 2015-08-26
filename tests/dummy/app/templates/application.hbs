@@ -5,9 +5,13 @@
 <main class='row'>
   {{partial 'navigation'}}
   <article class='col-md-9'>
+    {{!-- Style Guides --}}
+    {{partial "partials/colors"}}
     {{partial 'partials/typography'}}
-    {{partial 'partials/dropdowns'}}
-    {{partial 'partials/buttons'}}
+
+    {{!-- Component Guides --}}
+    {{partial "partials/buttons"}}
+    {{partial "partials/dropdowns"}}
     <!-- {{outlet}} -->
   </article>
 </main>
