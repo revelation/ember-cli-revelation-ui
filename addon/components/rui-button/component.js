@@ -18,7 +18,7 @@ export default Ember.Component.extend({
   // Constructors
   classPrefix: 'btn',
   styles: ['primary', 'secondary', 'success', 'warning', 'danger', 'info', 'link'],
-  sizes: ['lg', 'sm', 'xs'],
+  sizes: ['lg', 'sm'],
 
   // Computed
   styleComputed: Ember.computed('style', function() {
@@ -46,7 +46,7 @@ export default Ember.Component.extend({
     }
 
     if (sizes.indexOf(findSize) === -1) {
-      Ember.Logger.warn('rui-button: You specified an unsupported \'size\' property so we\'ve defaulted to the standard size: choose from \'lg sm xs or omit for standard size.\'');
+      Ember.Logger.warn('rui-button: You specified an unsupported \'size\' property, so we\'ve set it to the standard size. Please either omit the attribute for standard size or choose from one of the following: [\'lg\', \'sm\'].');
       return null;
     }
 
