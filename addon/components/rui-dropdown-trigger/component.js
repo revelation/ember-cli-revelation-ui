@@ -4,22 +4,21 @@ import layout from './template';
 export default Ember.Component.extend({
   layout: layout,
   tagName: 'button',
-  type: 'button',
   classNames: ['dropdown-toggle'],
   classNameBindings: ['computedStyle', 'computedSize'],
-  attributeBindings: ['type', 'role', 'data-toggle', 'haspopup', 'aria-expanded'],
+  attributeBindings: ['type', 'data-toggle', 'haspopup', 'aria-expanded'],
   id: '',
 
   //Defaults
-  role: 'button',
+  type: 'button',
   style: null,
   size: null,
   caret: true,
 
   //Constructors
   classPrefix: 'btn',
-  styles: ['default', 'primary', 'success', 'warning', 'danger', 'info', 'link'],
-  sizes: ['lg', 'sm', 'xs'],
+  styles: ['secondary', 'primary', 'success', 'warning', 'danger', 'info', 'link'],
+  sizes: ['lg', 'sm'],
 
   // Data Attrs, required by bootstrap
   'data-toggle': 'dropdown',

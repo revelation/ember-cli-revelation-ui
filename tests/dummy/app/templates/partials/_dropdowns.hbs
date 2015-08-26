@@ -8,23 +8,17 @@
     <thead>
       <tr>
         <th>Property</th>
-        <th>Attribute Types</th>
-        <th>Available Options</th>
+        <th>Type</th>
+        <th>Options</th>
         <th>Default</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>type</td>
-        <td>[string]</td>
-        <td>'dropdown', 'dropup', 'button-group'</td>
-        <td>'dropdown'</td>
-      </tr>
-      <tr>
-        <td>role</td>
-        <td>[string]</td>
-        <td>'group'</td>
-        <td>null</td>
+        <td><strong>dropup</strong></td>
+        <td>[boolean]</td>
+        <td>true/false</td>
+        <td>false</td>
       </tr>
     </tbody>
   </table>
@@ -35,45 +29,39 @@
     {{header-anchor name='dropdown-trigger' data-title='Dropdown Trigger'}}
     <small><code>&lbrace;&lbrace;rui-dropdown-trigger&rbrace;&rbrace;</code></small>
   </h1>
-  <p>The <code>&lbrace;&lbrace;rui-dropdown-trigger&rbrace;&rbrace;</code> must be contained within a <code>&lbrace;&lbrace;rui-dropdown&rbrace;&rbrace;</code> and is the button element which triggers the sibling <code>&lbrace;&lbrace;rui-dropdown-menu&rbrace;&rbrace;</code> on click.  It accepts a block and is built to be highly customizable, therefore we do not inlcude any styling by default.</p>
+  <p>The <code>&lbrace;&lbrace;rui-dropdown-trigger&rbrace;&rbrace;</code> must be contained within a <code>&lbrace;&lbrace;rui-dropdown&rbrace;&rbrace;</code> and is the button element which triggers the sibling <code>&lbrace;&lbrace;rui-dropdown-menu&rbrace;&rbrace;</code> on click.  It accepts a block and is built to be highly customizable, therefore we do not inlcude any styling by secondary.</p>
   <table class='table'>
     <thead>
       <tr>
         <th>Property</th>
-        <th>Attribute Types</th>
-        <th>Available Options</th>
+        <th>Type</th>
+        <th>Options</th>
         <th>Default</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>id</td>
+        <td><strong>id</strong></td>
         <td>[string]</td>
         <td>user defined - should correspond to <code>aria-labelledby</code> of <code>&lbrace;&lbrace;rui-dropdown-menu&rbrace;&rbrace;</code></td>
         <td>-</td>
       </tr>
       <tr>
-        <td>tagName</td>
+        <td><strong>styles</strong></td>
         <td>[string]</td>
-        <td>'button', 'a'</td>
-        <td>'button'</td>
-      </tr>
-      <tr>
-        <td>styles</td>
-        <td>[string]</td>
-        <td>'standard', 'primary', 'success', 'info', 'warning', 'danger', 'link'</td>
+        <td>'primary', 'secondary', 'success', 'warning', 'danger', 'info', 'link'</td>
         <td>null</td>
       </tr>
       <tr>
-        <td>size</td>
+        <td><strong>size</strong></td>
         <td>[string]</td>
-        <td>'lg', 'sm', 'xs'</td>
+        <td>'lg', 'sm'</td>
         <td>null</td>
       </tr>
       <tr>
-        <td>caret</td>
+        <td><strong>caret</strong></td>
         <td>[boolean]</td>
-        <td>true/false</td>
+        <td>true/false* - TBD: currently defunct in BS4 as is now applied via :after psuedo class</td>
         <td>true</td>
       </tr>
     </tbody>
@@ -90,20 +78,20 @@
     <thead>
       <tr>
         <th>Property</th>
-        <th>Attribute Types</th>
-        <th>Available Options</th>
+        <th>Type</th>
+        <th>Options</th>
         <th>Default</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>align</td>
+        <td><strong>align</strong></td>
         <td>[string]</td>
         <td>'left', 'right'</td>
         <td>null</td>
       </tr>
       <tr>
-        <td>aria-labelledby</td>
+        <td><strong>aria-labelledby</strong></td>
         <td>[string]</td>
         <td>user defined - should correspond to <code>id</code> of <code>&lbrace;&lbrace;rui-dropdown-trigger&rbrace;&rbrace;</code></td>
         <td>-</td>
@@ -116,18 +104,20 @@
 <h3>
   {{header-anchor name='dropdown-basic-example' data-title='Basic Example'}}
 </h3>
-<p>Basic dropdown configurations required are shown below.  The <code>id</code> and <code>aria-labelledby</code> should match for accessability compliance.  You must define a style attribute on the dropdown trigger as we omit all styles by default to allow for greatest felxibility.</p>
-<div class="panel panel-default panel-code-example">
+<p>Basic dropdown configurations required are shown below.  The <code>id</code> and <code>aria-labelledby</code> should match for accessability compliance.  You must define a style attribute on the dropdown trigger as we omit all styles by secondary to allow for greatest felxibility.</p>
+<div class="panel panel-secondary panel-code-example">
   <div class="panel-body">
-    {{#rui-dropdown type='btn-group'}}
-      {{#rui-dropdown-trigger id='myDropdown' style='default'}}
+    {{#rui-dropdown}}
+      {{#rui-dropdown-trigger id='myDropdown' style='secondary'}}
         Menu
       {{/rui-dropdown-trigger}}
 
       {{#rui-dropdown-menu aria-labelledby='myDropdown'}}
-        <li><a href='#'>Item 1</a></li>
-        <li><a href='#'>Item 2</a></li>
-        <li><a href='#'>Item 3</a></li>
+        <h6 class="dropdown-header">Header</h6>
+        <a href='#' class='dropdown-item'>Item 1</a>
+        <a href='#' class='dropdown-item'>Item 2</a>
+        <div class="dropdown-divider"></div>
+        <a href='#' class='dropdown-item'>Item 3</a>
       {{/rui-dropdown-menu}}
     {{/rui-dropdown}}
 
@@ -137,27 +127,29 @@
       {{/rui-dropdown-trigger}}
 
       {{#rui-dropdown-menu aria-labelledby='myDropdown2'}}
-        <li><a href='#'>Item 1</a></li>
-        <li><a href='#'>Item 2</a></li>
-        <li><a href='#'>Item 3</a></li>
+        <a href='#' class='dropdown-item'>Item 1</a>
+        <a href='#' class='dropdown-item'>Item 2</a>
+        <a href='#' class='dropdown-item'>Item 3</a>
       {{/rui-dropdown-menu}}
     {{/rui-dropdown}}
   </div>
   <div class="panel-footer">
     <pre><code class="handlebars">
 &lt;!-- Basic Dropdown --&gt;
-&lbrace;&lbrace;#rui-dropdown type='dropdown'&rbrace;&rbrace;
+&lbrace;&lbrace;#rui-dropdown&rbrace;&rbrace;
 
   &lt;!-- Include a trigger component --&gt;
-  &lbrace;&lbrace;#rui-dropdown-trigger id='myDropdown' style='default'&rbrace;&rbrace;
+  &lbrace;&lbrace;#rui-dropdown-trigger id='myDropdown' style='secondary'&rbrace;&rbrace;
     Menu
   &lbrace;&lbrace;/rui-dropdown-trigger&rbrace;&rbrace;
 
   &lt;!-- Include a menu component --&gt;
   &lbrace;&lbrace;#rui-dropdown-menu aria-labelledby='myDropdown'&rbrace;&rbrace;
-    &lt;li&gt;&lt;a href='#'&gt;Item 1&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href='#'&gt;Item 2&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href='#'&gt;Item 3&lt;/a&gt;&lt;/li&gt;
+    &lt;h6 class=&quot;dropdown-header&quot;&gt;Header&lt;/h6&gt;
+    &lt;a href='#' class='dropdown-item'&gt;Item 1&lt;/a&gt;
+    &lt;a href='#' class='dropdown-item'&gt;Item 2&lt;/a&gt;
+    &lt;div class=&quot;dropdown-divider&quot;&gt;&lt;/div&gt;
+    &lt;a href='#' class='dropdown-item'&gt;Item 3&lt;/a&gt;
   &lbrace;&lbrace;/rui-dropdown-menu&rbrace;&rbrace;
 
 &lbrace;&lbrace;/rui-dropdown&rbrace;&rbrace;
@@ -170,30 +162,29 @@
   {{header-anchor name='dropdown-split-button' data-title='Split Button'}}
 </h3>
 <p>Split button and dropdowns included must be wrapped within a <code>btn-group</code> and have the <code>type='btn-group'</code> on the dropdown component.  Don't forget to specify the <code>role='group'</code> to help out the screen readers.</p>
-<div class="panel panel-default panel-code-example">
+<div class="panel panel-secondary panel-code-example">
   <div class="panel-body">
-    <div class='btn-group'>
-      {{#rui-button}}Button{{/rui-button}}
-      {{#rui-dropdown type='btn-group' role='group'}}
-        {{rui-dropdown-trigger id='myDropdown3' style='default'}}
-        {{#rui-dropdown-menu aria-labelledby='myDropdown3' align='right'}}
-          <li><a href='#'>Item 1</a></li>
-          <li><a href='#'>Item 2</a></li>
-          <li><a href='#'>Item 3</a></li>
-        {{/rui-dropdown-menu}}
-      {{/rui-dropdown}}
-    </div>
+    {{#rui-dropdown}}
+      {{#rui-button style='secondary'}}Button{{/rui-button}}
+      {{rui-dropdown-trigger id='myDropdown3' style='secondary'}}
+      {{#rui-dropdown-menu aria-labelledby='myDropdown3'}}
+        <a href='#' class='dropdown-item'>Item 1</a>
+        <a href='#' class='dropdown-item'>Item 2</a>
+        <a href='#' class='dropdown-item'>Item 3</a>
+      {{/rui-dropdown-menu}}
+    {{/rui-dropdown}}
+
     <div class='btn-group'>
       {{#rui-button style='primary'}}Button{{/rui-button}}
       {{#rui-button style='primary'}}Button{{/rui-button}}
-      {{#rui-dropdown type='btn-group' role='group'}}
+      {{#rui-dropdown}}
         {{#rui-dropdown-trigger id='myDropdown4' style='primary'}}
           Dropdown
         {{/rui-dropdown-trigger}}
-        {{#rui-dropdown-menu aria-labelledby='myDropdown4' align='right'}}
-          <li><a href='#'>Item 1</a></li>
-          <li><a href='#'>Item 2</a></li>
-          <li><a href='#'>Item 3</a></li>
+        {{#rui-dropdown-menu aria-labelledby='myDropdown4'}}
+          <a href='#' class='dropdown-item'>Item 1</a>
+          <a href='#' class='dropdown-item'>Item 2</a>
+          <a href='#' class='dropdown-item'>Item 3</a>
         {{/rui-dropdown-menu}}
       {{/rui-dropdown}}
     </div>
@@ -201,17 +192,27 @@
   </div>
   <div class="panel-footer">
     <pre><code class="handlebars">
-&lt;!-- Basic Dropdown --&gt;
-&lt;div class='btn-group'&gt;
-  &lbrace;&lbrace;#rui-button&rbrace;&rbrace;Button&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+&lt;!-- Split Dropdown --&gt;
+&lbrace;&lbrace;#rui-dropdown&rbrace;&rbrace;
+  &lbrace;&lbrace;#rui-button style='secondary'&rbrace;&rbrace;Button&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+  &lbrace;&lbrace;rui-dropdown-trigger id='myDropdown3' style='secondary'&rbrace;&rbrace;
+  &lbrace;&lbrace;#rui-dropdown-menu aria-labelledby='myDropdown3'&rbrace;&rbrace;
+      &lt;a href='#' class='dropdown-item'&gt;Item 1&lt;/a&gt;
+      &lt;a href='#' class='dropdown-item'&gt;Item 2&lt;/a&gt;
+      &lt;a href='#' class='dropdown-item'&gt;Item 3&lt;/a&gt;
+  &lbrace;&lbrace;/rui-dropdown-menu&rbrace;&rbrace;
+&lbrace;&lbrace;/rui-dropdown&rbrace;&rbrace;
 
-  &lt;!-- Set type'btn-group' and role='group' --&gt;
-  &lbrace;&lbrace;#rui-dropdown type='btn-group' role='group'&rbrace;&rbrace;
-    &lbrace;&lbrace;rui-dropdown-trigger id='myDropdown2' style='default'&rbrace;&rbrace;
-    &lbrace;&lbrace;#rui-dropdown-menu aria-labelledby='myDropdown2' align='right'&rbrace;&rbrace;
-      &lt;li&gt;&lt;a href='#'&gt;Item 1&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href='#'&gt;Item 2&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href='#'&gt;Item 3&lt;/a&gt;&lt;/li&gt;
+&lt;!-- Button Group Dropdown --&gt;
+&lt;div class='btn-group'&gt;
+  &lbrace;&lbrace;#rui-button style='primary'&rbrace;&rbrace;Button&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+  &lbrace;&lbrace;#rui-button style='primary'&rbrace;&rbrace;Button&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+  &lbrace;&lbrace;#rui-dropdown&rbrace;&rbrace;
+    &lbrace;&lbrace;rui-dropdown-trigger id='myDropdown4' style='primary'&rbrace;&rbrace;
+    &lbrace;&lbrace;#rui-dropdown-menu aria-labelledby='myDropdown4'&rbrace;&rbrace;
+        &lt;a href='#' class='dropdown-item'&gt;Item 1&lt;/a&gt;
+        &lt;a href='#' class='dropdown-item'&gt;Item 2&lt;/a&gt;
+        &lt;a href='#' class='dropdown-item'&gt;Item 3&lt;/a&gt;
     &lbrace;&lbrace;/rui-dropdown-menu&rbrace;&rbrace;
   &lbrace;&lbrace;/rui-dropdown&rbrace;&rbrace;
 &lt;/div&gt;
@@ -223,35 +224,33 @@
 <h3>
   {{header-anchor name='dropdown-dropups' data-title='Dropups'}}
 </h3>
-<p>Add <code>type='dropup'</code> to the dropdown component to position the menu above the trigger element.</p>
-<div class="panel panel-default panel-code-example">
+<p>Add <code>dropup=true</code> to the dropdown component to position the menu above the trigger element.</p>
+<div class="panel panel-secondary panel-code-example">
   <div class="panel-body">
     <div class='btn-group'>
-      {{#rui-dropdown type='dropup' role='group'}}
-        {{#rui-dropdown-trigger id='myDropdown5' style='default'}}
+      {{#rui-dropdown dropup=true}}
+        {{#rui-dropdown-trigger id='myDropdown5' style='secondary'}}
           Dropup
         {{/rui-dropdown-trigger}}
         {{#rui-dropdown-menu aria-labelledby='myDropdown5'}}
-          <li><a href='#'>Item 1</a></li>
-          <li><a href='#'>Item 2</a></li>
-          <li><a href='#'>Item 3</a></li>
+          <a href='#' class='dropdown-item'>Item 1</a>
+          <a href='#' class='dropdown-item'>Item 2</a>
+          <a href='#' class='dropdown-item'>Item 3</a>
         {{/rui-dropdown-menu}}
       {{/rui-dropdown}}
     </div>
   </div>
   <div class="panel-footer">
     <pre><code class="handlebars">
-&lt;!-- Basic Dropup --&gt;
-
-&lt;!-- Add type='dropup' --&gt;
-&lbrace;&lbrace;#rui-dropdown type='dropup' &rbrace;&rbrace;
-  &lbrace;&lbrace;#rui-dropdown-trigger id='myDropup' style='default'&rbrace;&rbrace;
+&lt;!-- Add dropup=true --&gt;
+&lbrace;&lbrace;#rui-dropdown dropup=true&rbrace;&rbrace;
+  &lbrace;&lbrace;#rui-dropdown-trigger id='myDropup' style='secondary'&rbrace;&rbrace;
     Dropup
   &lbrace;&lbrace;/rui-dropdown-trigger&rbrace;&rbrace;
   &lbrace;&lbrace;#rui-dropdown-menu aria-labelledby='myDropup'&rbrace;&rbrace;
-    &lt;li&gt;&lt;a href='#'&gt;Item 1&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href='#'&gt;Item 2&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href='#'&gt;Item 3&lt;/a&gt;&lt;/li&gt;
+    &lt;a href='#' class='dropdown-item'&gt;Item 1&lt;/a&gt;
+    &lt;a href='#' class='dropdown-item'&gt;Item 2&lt;/a&gt;
+    &lt;a href='#' class='dropdown-item'&gt;Item 3&lt;/a&gt;
   &lbrace;&lbrace;/rui-dropdown-menu&rbrace;&rbrace;
 &lbrace;&lbrace;/rui-dropdown&rbrace;&rbrace;
     </code></pre>
@@ -262,44 +261,44 @@
 <h3>
   {{header-anchor name='dropdown-alignment' data-title='Alignment'}}
 </h3>
-<p>Add <code>align='right'</code> to the dropdown-menu component to align the menu to the right of the button. Alignment defaults to the left without declaring.  You can declare <code>align='left'</code> to override other behavoirs which might align it right.</p>
-<div class="panel panel-default panel-code-example">
+<p>Add <code>align='right'</code> to the dropdown-menu component to align the menu to the right of the button. Alignment secondarys to the left without declaring.  You can declare <code>align='left'</code> to override other behavoirs which might align it right.</p>
+<div class="panel panel-secondary panel-code-example">
   <div class="panel-body">
-    {{#rui-dropdown type='btn-group' role='group'}}
-      {{#rui-dropdown-trigger id='myDropdown6' style='default'}}
+    {{#rui-dropdown}}
+      {{#rui-dropdown-trigger id='myDropdown6' style='secondary'}}
         Left
       {{/rui-dropdown-trigger}}
       {{#rui-dropdown-menu aria-labelledby='myDropdown6'}}
-        <li><a href='#'>Item 1</a></li>
-        <li><a href='#'>Item 2</a></li>
-        <li><a href='#'>Item 3</a></li>
+        <a href='#' class='dropdown-item'>Item 1</a>
+        <a href='#' class='dropdown-item'>Item 2</a>
+        <a href='#' class='dropdown-item'>Item 3</a>
       {{/rui-dropdown-menu}}
     {{/rui-dropdown}}
 
-    {{#rui-dropdown type='btn-group' role='group'}}
-      {{#rui-dropdown-trigger id='myDropdown7' style='default'}}
+    {{#rui-dropdown}}
+      {{#rui-dropdown-trigger id='myDropdown7' style='secondary'}}
         Right
       {{/rui-dropdown-trigger}}
       {{#rui-dropdown-menu aria-labelledby='myDropdown7' align='right'}}
-        <li><a href='#'>Item 1</a></li>
-        <li><a href='#'>Item 2</a></li>
-        <li><a href='#'>Item 3</a></li>
+        <a href='#' class='dropdown-item'>Item 1</a>
+        <a href='#' class='dropdown-item'>Item 2</a>
+        <a href='#' class='dropdown-item'>Item 3</a>
       {{/rui-dropdown-menu}}
     {{/rui-dropdown}}
   </div>
   <div class="panel-footer">
     <pre><code class="handlebars">
 &lt;!-- Align right --&gt;
-&lbrace;&lbrace;#rui-dropdown type='btn-group' role='group'&rbrace;&rbrace;
-  &lbrace;&lbrace;#rui-dropdown-trigger id='myDropdown2' style='default'&rbrace;&rbrace;
+&lbrace;&lbrace;#rui-dropdown&rbrace;&rbrace;
+  &lbrace;&lbrace;#rui-dropdown-trigger id='myDropdown7' style='secondary'&rbrace;&rbrace;
     Right
   &lbrace;&lbrace;/rui-dropdown-trigger&rbrace;&rbrace;
 
-  &lt;!-- Add align='right' or align='left' to override however defaults to left --&gt;
-  &lbrace;&lbrace;#rui-dropdown-menu aria-labelledby='myDropdown2' align='right'&rbrace;&rbrace;
-    &lt;li&gt;&lt;a href='#'&gt;Item 1&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href='#'&gt;Item 2&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href='#'&gt;Item 3&lt;/a&gt;&lt;/li&gt;
+  &lt;!-- Add align='right' or align='left' to override however secondarys to left --&gt;
+  &lbrace;&lbrace;#rui-dropdown-menu aria-labelledby='myDropdown7' align='right'&rbrace;&rbrace;
+    &lt;a href='#' class='dropdown-item'&gt;Item 1&lt;/a&gt;
+    &lt;a href='#' class='dropdown-item'&gt;Item 2&lt;/a&gt;
+    &lt;a href='#' class='dropdown-item'&gt;Item 3&lt;/a&gt;
   &lbrace;&lbrace;/rui-dropdown-menu&rbrace;&rbrace;
 &lbrace;&lbrace;/rui-dropdown&rbrace;&rbrace;
     </code></pre>

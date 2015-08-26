@@ -3,7 +3,7 @@ import layout from './template';
 
 export default Ember.Component.extend({
   layout: layout,
-  tagName: 'ul',
+  tagName: 'div',
   classNames: 'dropdown-menu',
   classNameBindings: 'alignComputed',
   attributeBindings: ['aria-labelledby'],
