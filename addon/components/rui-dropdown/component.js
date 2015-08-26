@@ -10,5 +10,4 @@ export default Ember.Component.extend({
   // Defaults
   dropup: false,
   role: 'group'
-
 });

@@ -4,13 +4,13 @@ import layout from './template';
 export default Ember.Component.extend({
   layout: layout,
   tagName: 'button',
-  type: 'button',
   classNames: ['dropdown-toggle'],
   classNameBindings: ['computedStyle', 'computedSize'],
   attributeBindings: ['type', 'role', 'data-toggle', 'haspopup', 'aria-expanded'],
   id: '',
 
   //Defaults
+  type: 'button',
   role: 'button',
   style: null,
   size: null,
