@@ -18,8 +18,8 @@ export default Ember.Component.extend({
 
   //Constructors
   classPrefix: 'btn',
-  styles: ['default', 'primary', 'success', 'warning', 'danger', 'info', 'link'],
-  sizes: ['lg', 'sm', 'xs'],
+  styles: ['secondary', 'primary', 'success', 'warning', 'danger', 'info', 'link'],
+  sizes: ['lg', 'sm'],
 
   // Data Attrs, required by bootstrap
   'data-toggle': 'dropdown',
