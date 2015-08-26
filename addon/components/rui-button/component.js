@@ -11,13 +11,13 @@ export default Ember.Component.extend({
   isLoading: false,
 
   // Defaults
-  style: 'default', //default
+  style: 'secondary', //default
   size: null, //default
   block: false,  //default
 
   // Constructors
   classPrefix: 'btn',
-  styles: ['default', 'primary', 'success', 'warning', 'danger', 'info', 'link'],
+  styles: ['primary', 'secondary', 'success', 'warning', 'danger', 'info', 'link'],
   sizes: ['lg', 'sm', 'xs'],
 
   // Computed
@@ -28,8 +28,8 @@ export default Ember.Component.extend({
     var resolvedStyle = findStyle;
 
     if (styles.indexOf(findStyle) === -1) {
-      resolvedStyle = 'default';
-      Ember.Logger.warn('rui-button: You specified an unsupported \'style\' property so we\'ve defaulted to the default style: choose from \'default primary success warning danger info link.\'');
+      resolvedStyle = 'secondary';
+      Ember.Logger.warn('rui-button: You specified an unsupported \'style\' property, so we\'ve set it to the default \'secondary\' style. Please choose from one of the following: [\'primary\', \'secondary\', \'success\', \'info\', \'warning\', \'danger\', \'link\'].');
     }
 
     return this.get('classPrefix') + '-' + resolvedStyle;

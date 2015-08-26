@@ -18,8 +18,8 @@
       <tr>
         <td><a href='#button-styles'>style</a></td>
         <td>[string]</td>
-        <td>'default', 'primary', 'success', 'info', 'warning', 'danger', 'link'</td>
-        <td>'default'</td>
+        <td>'primary', 'secondary', 'success', 'info', 'warning', 'danger', 'link'</td>
+        <td>'secondary'</td>
       </tr>
       <tr>
         <td><a href='#button-sizes'>size</a></td>
@@ -69,8 +69,8 @@
   <p>Button styles provide context through visual cues.</p>
   <div class='panel panel-default panel-code-example'>
     <div class='panel-body'>
-      {{#rui-button}}Default{{/rui-button}}
       {{#rui-button style='primary'}}Primary{{/rui-button}}
+      {{#rui-button style='default'}}Secondary{{/rui-button}}
       {{#rui-button style='success'}}Success{{/rui-button}}
       {{#rui-button style='info'}}Info{{/rui-button}}
       {{#rui-button style='warning'}}Warning{{/rui-button}}
@@ -79,11 +79,11 @@
       {{#rui-button}}<i class='fa fa-download' />{{/rui-button}}
     </div>
     <div class='panel-footer'><pre><code class='handlebars'>
-&lt;!-- Standard Button --&gt;
-&lbrace;&lbrace;#rui-button&rbrace;&rbrace;Default&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
-
 &lt;!-- Provides visual weight and identifies the primary action in a set of buttons --&gt;
 &lbrace;&lbrace;#rui-button style='primary'&rbrace;&rbrace;Primary&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+
+&lt;!-- Secondary Button, used as the default --&gt;
+&lbrace;&lbrace;#rui-button&rbrace;&rbrace;Secondary&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
 
 &lt;!-- Indicates a successful or positive action --&gt;
 &lbrace;&lbrace;#rui-button style='success'&rbrace;&rbrace;Success&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
