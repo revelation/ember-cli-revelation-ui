@@ -67,8 +67,8 @@
     {{header-anchor name='button-styles' data-title='Styles'}}
   </h3>
   <p>Button styles provide context through visual cues.</p>
-  <div class='panel panel-default panel-code-example'>
-    <div class='panel-body'>
+  <div class='card card-code-example'>
+    <div class='card-block'>
       {{#rui-button style='primary'}}Primary{{/rui-button}}
       {{#rui-button}}Secondary (Default){{/rui-button}}
       {{#rui-button style='success'}}Success{{/rui-button}}
@@ -78,7 +78,7 @@
       {{#rui-button style='link'}}Link{{/rui-button}}
       {{#rui-button}}<i class='fa fa-download' />{{/rui-button}}
     </div>
-    <div class='panel-footer'><pre><code class='handlebars'>
+    <div class='card-footer'><pre><code class='handlebars'>
 &lt;!-- Provides visual weight and identifies the primary action in a set of buttons --&gt;
 &lbrace;&lbrace;#rui-button style='primary'&rbrace;&rbrace;Primary&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
 
@@ -110,22 +110,22 @@
     {{header-anchor name='button-sizes' data-title='Sizes'}}
   </h3>
   <p>Buttons are also available in large or small sizes by setting the <code>size</code> attribute to either <code>lg</code> or <code>sm</code>.</p>
-  <div class='panel panel-default panel-code-example'>
-    <div class='panel-body'>
+  <div class='card card-code-example'>
+    <div class='card-block'>
       {{#rui-button style='primary' size='lg'}}Large Button{{/rui-button}}
       {{#rui-button size='lg'}}Large Button{{/rui-button}}
     </div>
-    <div class='panel-footer'><pre><code class='handlebars'>
+    <div class='card-footer'><pre><code class='handlebars'>
 &lbrace;&lbrace;#rui-button style='primary' size='lg'&rbrace;&rbrace;Large Button&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
 &lbrace;&lbrace;#rui-button size='lg'&rbrace;&rbrace;Large Button&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
     </code></pre></div>
   </div>
-  <div class='panel panel-default panel-code-example'>
-    <div class='panel-body'>
+  <div class='card card-code-example'>
+    <div class='card-block'>
       {{#rui-button style='primary' size='sm'}}Small Button{{/rui-button}}
       {{#rui-button size='sm'}}Small Button{{/rui-button}}
     </div>
-    <div class='panel-footer'><pre><code class='handlebars'>
+    <div class='card-footer'><pre><code class='handlebars'>
 &lbrace;&lbrace;#rui-button style='primary' size='sm'&rbrace;&rbrace;Small Button&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
 &lbrace;&lbrace;#rui-button size='sm'&rbrace;&rbrace;Small Button&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
     </code></pre></div>
@@ -136,12 +136,12 @@
     {{header-anchor name='button-blocks' data-title='Block-Level'}}
   </h3>
   <p>Create block-level buttons&thinsp;&mdash;&thinsp;those that span the full width of a parent&thinsp;&mdash;&thinsp;by setting the <code>block</code> attribute to <code>'true'</code>.</p>
-  <div class='panel panel-default panel-code-example'>
-    <div class='panel-body'>
+  <div class='card card-code-example'>
+    <div class='card-block'>
       {{#rui-button style='primary' size='lg' block='true'}}Block-Level Button{{/rui-button}}
       {{#rui-button size='lg' block='true'}}Block-Level Button{{/rui-button}}
     </div>
-    <div class='panel-footer'><pre><code class='handlebars'>
+    <div class='card-footer'><pre><code class='handlebars'>
 &lbrace;&lbrace;#rui-button style='primary' size='lg' block='true'&rbrace;&rbrace;Block-Level Button&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
 &lbrace;&lbrace;#rui-button size='lg' block='true'&rbrace;&rbrace;Block-Level Button&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
     </code></pre></div>
@@ -152,12 +152,12 @@
     {{header-anchor name='button-loading' data-title='Loading State'}}
   </h3>
   <p>Indicate whether an action is currently being performed by passing the action name to the <code>isLoading</code> attribute. This will add a spinner to the button until the action is completed. The value of <code>isLoading</code> must <em>not</em> be wrapped in quotes.</p>
-  <div class='panel panel-default panel-code-example'>
-    <div class='panel-body'>
+  <div class='card card-code-example'>
+    <div class='card-block'>
       {{#rui-button style='primary' action='asyncAction2' isLoading=asyncAction2}}Loading Button{{/rui-button}}
       {{#rui-button action='asyncAction1' isLoading=asyncAction1}}Another Loading Button{{/rui-button}}
     </div>
-    <div class='panel-footer'><pre><code class='handlebars'>
+    <div class='card-footer'><pre><code class='handlebars'>
 &lbrace;&lbrace;#rui-button style='primary' action='asyncAction' isLoading=asyncAction&rbrace;&rbrace;Loading Button&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
 &lbrace;&lbrace;#rui-button action='anotherAsyncAction' isLoading=anotherAsyncAction&rbrace;&rbrace;Another Loading Button&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
     </code></pre></div>
@@ -168,8 +168,8 @@
     {{header-anchor name='button-disabled' data-title='Disabled'}}
   </h3>
   <p>Provide visual cues that a button is not clickable by setting the <code>disabled</code> attribute to <code>'true'</code>.</p>
-  <div class='panel panel-default panel-code-example'>
-    <div class='panel-body'>
+  <div class='card card-code-example'>
+    <div class='card-block'>
       {{#rui-button style='primary' disabled='true'}}Primary{{/rui-button}}
       {{#rui-button disabled='true'}}Secondary (Default){{/rui-button}}
       {{#rui-button style='success' disabled='true'}}Success{{/rui-button}}
@@ -178,7 +178,7 @@
       {{#rui-button style='link' disabled='true'}}Link{{/rui-button}}
       {{#rui-button disabled='true'}}<i class='fa fa-download' />{{/rui-button}}
     </div>
-    <div class='panel-footer'><pre><code class='handlebars'>
+    <div class='card-footer'><pre><code class='handlebars'>
 &lbrace;&lbrace;#rui-button style='primary' disabled='true'&rbrace;&rbrace;Primary&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
 &lbrace;&lbrace;#rui-button disabled='true'&rbrace;&rbrace;Secondary (Default)&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
 &lbrace;&lbrace;#rui-button style='success' disabled='true'&rbrace;&rbrace;Success&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
@@ -197,11 +197,11 @@
     {{header-anchor name='button-action' data-title='Action'}}
   </h3>
   <p>Supply the action name to be handled by the application with the <code>action</code> property.</p>
-  <div class='panel panel-default panel-code-example'>
-    <div class='panel-body'>
+  <div class='card card-code-example'>
+    <div class='card-block'>
       {{#rui-button style='primary' action='sendAction'}}Trigger Action{{/rui-button}}
     </div>
-    <div class='panel-footer'><pre><code class='handlebars'>
+    <div class='card-footer'><pre><code class='handlebars'>
 &lbrace;&lbrace;#rui-button style='primary' action='sendAction'&rbrace;&rbrace;Trigger Action&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
     </code></pre></div>
   </div>
@@ -209,12 +209,12 @@
   <h3>
     {{header-anchor name='button-params' data-title='Action Parameters'}}
   </h3>
-<p>An action can be sent up to two parameters by using the <code>params1</code> and <code>params2</code> attributes.</p>
-  <div class='panel panel-default panel-code-example'>
-    <div class='panel-body'>
+  <p>An action can be sent up to two parameters by using the <code>params1</code> and <code>params2</code> attributes.</p>
+  <div class='card card-code-example'>
+    <div class='card-block'>
       {{#rui-button style='primary' action='sendActionWithParams' param1='A simple parameter passed in' param2='Another parameter along for the ride'}}Trigger Action with Parameters{{/rui-button}}
     </div>
-    <div class='panel-footer'><pre><code class='handlebars'>
+    <div class='card-footer'><pre><code class='handlebars'>
 &lbrace;&lbrace;#rui-button style='primary' action='sendActionWithParams' param1='A simple parameter passed in' param2='Another parameter along for the ride'&rbrace;&rbrace;Trigger Action&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
     </code></pre></div>
   </div>

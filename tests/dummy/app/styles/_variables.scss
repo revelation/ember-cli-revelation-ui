@@ -620,3 +620,15 @@ $pre-bg:                      #f7f7f9 !default;
 $pre-color:                   $gray-dark !default;
 $pre-border-color:            #ccc !default;
 $pre-scrollable-max-height:   340px !default;
+
+// Cards
+
+
+$card-spacer-x:            1.25rem;
+$card-spacer-y:            .75rem;
+$card-border-width:        $border-width;
+$card-border-radius:       .25rem;
+$card-border-color:        #e5e5e5;
+$card-border-radius-inner: ($card-border-radius - $card-border-width);
+
+$card-cap-bg: #f5f5f5;

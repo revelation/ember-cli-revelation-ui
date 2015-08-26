@@ -104,9 +104,9 @@
 <h3>
   {{header-anchor name='dropdown-basic-example' data-title='Basic Example'}}
 </h3>
-<p>Basic dropdown configurations required are shown below.  The <code>id</code> and <code>aria-labelledby</code> should match for accessability compliance.  You must define a style attribute on the dropdown trigger as we omit all styles by secondary to allow for greatest felxibility.</p>
-<div class="panel panel-secondary panel-code-example">
-  <div class="panel-body">
+<p>Basic dropdown configurations required are shown below.  The <code>id</code> and <code>aria-labelledby</code> should match for accessability compliance.  You must define a style attribute on the dropdown trigger as we omit all styles by default to allow for greatest felxibility.</p>
+<div class="card card-code-example">
+  <div class="card-block">
     {{#rui-dropdown}}
       {{#rui-dropdown-trigger id='myDropdown' style='secondary'}}
         Menu
@@ -133,7 +133,7 @@
       {{/rui-dropdown-menu}}
     {{/rui-dropdown}}
   </div>
-  <div class="panel-footer">
+  <div class="card-footer">
     <pre><code class="handlebars">
 &lt;!-- Basic Dropdown --&gt;
 &lbrace;&lbrace;#rui-dropdown&rbrace;&rbrace;
@@ -162,8 +162,8 @@
   {{header-anchor name='dropdown-split-button' data-title='Split Button'}}
 </h3>
 <p>Split button and dropdowns included must be wrapped within a <code>btn-group</code> and have the <code>type='btn-group'</code> on the dropdown component.  Don't forget to specify the <code>role='group'</code> to help out the screen readers.</p>
-<div class="panel panel-secondary panel-code-example">
-  <div class="panel-body">
+<div class="card card-code-example">
+  <div class="card-block">
     {{#rui-dropdown}}
       {{#rui-button style='secondary'}}Button{{/rui-button}}
       {{rui-dropdown-trigger id='myDropdown3' style='secondary'}}
@@ -190,7 +190,7 @@
     </div>
 
   </div>
-  <div class="panel-footer">
+  <div class="card-footer">
     <pre><code class="handlebars">
 &lt;!-- Split Dropdown --&gt;
 &lbrace;&lbrace;#rui-dropdown&rbrace;&rbrace;
@@ -225,8 +225,8 @@
   {{header-anchor name='dropdown-dropups' data-title='Dropups'}}
 </h3>
 <p>Add <code>dropup=true</code> to the dropdown component to position the menu above the trigger element.</p>
-<div class="panel panel-secondary panel-code-example">
-  <div class="panel-body">
+<div class="card card-code-example">
+  <div class="card-block">
     <div class='btn-group'>
       {{#rui-dropdown dropup=true}}
         {{#rui-dropdown-trigger id='myDropdown5' style='secondary'}}
@@ -240,7 +240,7 @@
       {{/rui-dropdown}}
     </div>
   </div>
-  <div class="panel-footer">
+  <div class="card-footer">
     <pre><code class="handlebars">
 &lt;!-- Add dropup=true --&gt;
 &lbrace;&lbrace;#rui-dropdown dropup=true&rbrace;&rbrace;
@@ -262,8 +262,8 @@
   {{header-anchor name='dropdown-alignment' data-title='Alignment'}}
 </h3>
 <p>Add <code>align='right'</code> to the dropdown-menu component to align the menu to the right of the button. Alignment secondarys to the left without declaring.  You can declare <code>align='left'</code> to override other behavoirs which might align it right.</p>
-<div class="panel panel-secondary panel-code-example">
-  <div class="panel-body">
+<div class="card card-code-example">
+  <div class="card-block">
     {{#rui-dropdown}}
       {{#rui-dropdown-trigger id='myDropdown6' style='secondary'}}
         Left
@@ -286,7 +286,7 @@
       {{/rui-dropdown-menu}}
     {{/rui-dropdown}}
   </div>
-  <div class="panel-footer">
+  <div class="card-footer">
     <pre><code class="handlebars">
 &lt;!-- Align right --&gt;
 &lbrace;&lbrace;#rui-dropdown&rbrace;&rbrace;

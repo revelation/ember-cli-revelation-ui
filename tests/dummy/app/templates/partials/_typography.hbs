@@ -7,19 +7,16 @@
   {{header-anchor name='typography-headers' data-title='Headers'}}
   </h3>
   <p>Use headers symantically!</p>
-  <div class="panel panel-default panel-code-example">
-    <div class="panel-body">
+  <div class="card card-code-example">
+    <div class="card-block">
       <h1>h1 Heading</h1>
       <h2>h2 Heading</h2>
       <h3>h3 Heading</h3>
       <h4>h4 Heading</h4>
       <h5>h5 Heading</h5>
       <h6>h6 Heading</h6>
-
-
-
     </div>
-    <div class="panel-footer">
+    <div class="card-footer">
       <pre><code class="handlebars">
 &lt;!-- Headers --&gt;
 &lt;h1&gt;h1 Heading&lt;/h1&gt;
@@ -36,15 +33,15 @@
   {{header-anchor name='typography-body' data-title='Body'}}
   </h3>
   {{!-- <p>Description</p> --}}
-  <div class="panel panel-default panel-code-example">
-    <div class="panel-body">
+  <div class="card card-code-example">
+    <div class="card-block">
 
       <p class='lead'>Aenean eget nunc eget leo luctus posuere. Nullam sit amet facilisis mi, sed auctor elit. Praesent vel enim vehicula, placerat orci vel, volutpat sapien.</p>
 
       <p>This is the basic paragraph text.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt ac metus ac dignissim. Aenean eget nunc eget leo luctus posuere. Nullam sit amet facilisis mi, sed auctor elit.  Praesent vel enim vehicula, placerat orci vel, volutpat sapien. Cras dictum pretium est, in varius dui finibus non. Suspendisse imperdiet purus lacus, vel malesuada lorem semper nec. Praesent consectetur ornare lectus, vel suscipit massa vulputate eu.</p>
 
     </div>
-    <div class="panel-footer">
+    <div class="card-footer">
       <pre><code class="handlebars">
 &lt;!-- Lead copy --&gt;
 &lt;p class='lead'&gt;...&lt;/p&gt;
@@ -57,8 +54,8 @@
 
   <h3>{{header-anchor name='typography-inline' data-title='Inline'}}</h3>
   {{!-- <p>Description</p> --}}
-  <div class="panel panel-default panel-code-example">
-    <div class="panel-body">
+  <div class="card card-code-example">
+    <div class="card-block">
       <p>Here is a <a href='#'>link text</a>.</p>
       <p>Here is some <strong>bold</strong> text.</p>
       <p>Here is some <em>italic</em> text.</p>
@@ -66,7 +63,7 @@
       <p class='text-muted'>Here is some muted text.</p>
       <p><small>Here is some small text.</small></p>
     </div>
-    <div class="panel-footer">
+    <div class="card-footer">
       <pre><code class="handlebars">
 &lt;!-- Link --&gt;
 &lt;p&gt;Here is a &lt;a href='#'&gt;link text&lt;/a&gt;.&lt;/p&gt;
@@ -91,8 +88,8 @@
 
   <h3>{{header-anchor name='typography-lists' data-title='Lists'}}</h3>
   {{!-- <p>Description</p> --}}
-  <div class="panel panel-default panel-code-example">
-    <div class="panel-body">
+  <div class="card card-code-example">
+    <div class="card-block">
       <h6 class='text-muted'>Unordered</h6>
       <ul>
         <li>Item 1</li>
@@ -129,7 +126,7 @@
         <li>Item 5</li>
       </ul>
     </div>
-    <div class="panel-footer">
+    <div class="card-footer">
       <pre><code class="handlebars">
 &lt;!-- Unordered --&gt;
 &lt;ul&gt;
@@ -157,8 +154,8 @@
 
   <h3>{{header-anchor name='typography-definition-list' data-title='Definition List'}}</h3>
   {{!-- <p>Description</p> --}}
-  <div class="panel panel-default panel-code-example">
-    <div class="panel-body">
+  <div class="card card-code-example">
+    <div class="card-block">
 
       <h6 class='text-muted'>Default</h6>
       <dl>
@@ -172,16 +169,16 @@
 
       <br />
       <h6 class='text-muted'>Horizontal</h6>
-      <dl class='dl-horizontal'>
-        <dt>Term</dt>
-        <dd>Description list definition</dd>
-        <dt>Another Term</dt>
-        <dd>Description list definition</dd>
-        <dt>Some Other Term</dt>
-        <dd>Description list definition</dd>
+      <dl class='dl-horizontal row'>
+        <dt class='col-sm-3'>Term</dt>
+        <dd class='col-sm-9'>Description list definition</dd>
+        <dt class='col-sm-3'>Another Term</dt>
+        <dd class='col-sm-9'>Description list definition</dd>
+        <dt class='col-sm-3'>Some Other Term</dt>
+        <dd class='col-sm-9'>Description list definition</dd>
       </dl>
     </div>
-    <div class="panel-footer">
+    <div class="card-footer">
       <pre><code class="handlebars">
 &lt;!-- Default --&gt;
 &lt;dl&gt;
@@ -193,9 +190,9 @@
 &lt;br /&gt;
 
 &lt;!-- Horizontal alignment --&gt;
-&lt;dl class='dl-horizontal'&gt;
-  &lt;dt&gt;Term&lt;/dt&gt;
-  &lt;dd&gt;Description&lt;/dd&gt;
+&lt;dl class='dl-horizontal row'&gt;
+  &lt;dt class='col-sm-3'&gt;Term&lt;/dt&gt;
+  &lt;dd class='col-sm-9'&gt;Description&lt;/dd&gt;
   ...
 &lt;/dl&gt;
       </code></pre>
