@@ -1,49 +1,49 @@
 // Core variables and mixins
 // @import "variables";
-@import "../libs/bootstrap-4.0.0-alpha/scss/mixins";
+@import "../../../bower_components/bootstrap/scss/mixins";
 
 // // Reset and dependencies
-@import "../libs/bootstrap-4.0.0-alpha/scss/normalize";
-@import "../libs/bootstrap-4.0.0-alpha/scss/print";
+@import "../../../bower_components/bootstrap/scss/normalize";
+@import "../../../bower_components/bootstrap/scss/print";
 
 // Core CSS
-@import "../libs/bootstrap-4.0.0-alpha/scss/reboot";
-@import "../libs/bootstrap-4.0.0-alpha/scss/type";
-@import "../libs/bootstrap-4.0.0-alpha/scss/images";
-@import "../libs/bootstrap-4.0.0-alpha/scss/code";
-@import "../libs/bootstrap-4.0.0-alpha/scss/grid";
-@import "../libs/bootstrap-4.0.0-alpha/scss/tables";
-@import "../libs/bootstrap-4.0.0-alpha/scss/forms";
-@import "../libs/bootstrap-4.0.0-alpha/scss/buttons";
+@import "../../../bower_components/bootstrap/scss/reboot";
+@import "../../../bower_components/bootstrap/scss/type";
+@import "../../../bower_components/bootstrap/scss/images";
+@import "../../../bower_components/bootstrap/scss/code";
+@import "../../../bower_components/bootstrap/scss/grid";
+@import "../../../bower_components/bootstrap/scss/tables";
+@import "../../../bower_components/bootstrap/scss/forms";
+@import "../../../bower_components/bootstrap/scss/buttons";
 
 // // Components
-@import "../libs/bootstrap-4.0.0-alpha/scss/animation";
-@import "../libs/bootstrap-4.0.0-alpha/scss/dropdown";
-@import "../libs/bootstrap-4.0.0-alpha/scss/button-group";
-@import "../libs/bootstrap-4.0.0-alpha/scss/input-group";
-@import "../libs/bootstrap-4.0.0-alpha/scss/custom-forms";
-// @import "../libs/bootstrap-4.0.0-alpha/scss/nav";
-// @import "../libs/bootstrap-4.0.0-alpha/scss/navbar";
-@import "../libs/bootstrap-4.0.0-alpha/scss/card";
+@import "../../../bower_components/bootstrap/scss/animation";
+@import "../../../bower_components/bootstrap/scss/dropdown";
+@import "../../../bower_components/bootstrap/scss/button-group";
+@import "../../../bower_components/bootstrap/scss/input-group";
+@import "../../../bower_components/bootstrap/scss/custom-forms";
+// @import "../../../bower_components/bootstrap/scss/nav";
+// @import "../../../bower_components/bootstrap/scss/navbar";
+@import "../../../bower_components/bootstrap/scss/card";
 // @import "breadcrumb";
-@import "../libs/bootstrap-4.0.0-alpha/scss/pagination";
-@import "../libs/bootstrap-4.0.0-alpha/scss/pager";
-@import "../libs/bootstrap-4.0.0-alpha/scss/labels";
+@import "../../../bower_components/bootstrap/scss/pagination";
+@import "../../../bower_components/bootstrap/scss/pager";
+@import "../../../bower_components/bootstrap/scss/labels";
 // @import "jumbotron";
-@import "../libs/bootstrap-4.0.0-alpha/scss/alert";
-@import "../libs/bootstrap-4.0.0-alpha/scss/progress";
-@import "../libs/bootstrap-4.0.0-alpha/scss/media";
-@import "../libs/bootstrap-4.0.0-alpha/scss/list-group";
-@import "../libs/bootstrap-4.0.0-alpha/scss/responsive-embed";
-@import "../libs/bootstrap-4.0.0-alpha/scss/close";
+@import "../../../bower_components/bootstrap/scss/alert";
+@import "../../../bower_components/bootstrap/scss/progress";
+@import "../../../bower_components/bootstrap/scss/media";
+@import "../../../bower_components/bootstrap/scss/list-group";
+@import "../../../bower_components/bootstrap/scss/responsive-embed";
+@import "../../../bower_components/bootstrap/scss/close";
 
 // Components w/ JavaScript
-@import "../libs/bootstrap-4.0.0-alpha/scss/modal";
-@import "../libs/bootstrap-4.0.0-alpha/scss/tooltip";
-@import "../libs/bootstrap-4.0.0-alpha/scss/popover";
+@import "../../../bower_components/bootstrap/scss/modal";
+@import "../../../bower_components/bootstrap/scss/tooltip";
+@import "../../../bower_components/bootstrap/scss/popover";
 // @import "carousel";
 
 // Utility classes
-@import "../libs/bootstrap-4.0.0-alpha/scss/utilities";
-@import "../libs/bootstrap-4.0.0-alpha/scss/utilities-spacing";
-@import "../libs/bootstrap-4.0.0-alpha/scss/utilities-responsive";
+@import "../../../bower_components/bootstrap/scss/utilities";
+@import "../../../bower_components/bootstrap/scss/utilities-spacing";
+@import "../../../bower_components/bootstrap/scss/utilities-responsive";

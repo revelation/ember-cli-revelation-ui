@@ -15,22 +15,23 @@ module.exports = function(defaults) {
   });
 
   var iconFontPath = app.bowerDirectory + '/font-awesome/fonts/';
-  var bootstrapPath = app.bowerDirectory + '/bootstrap-sass/assets/javascripts/bootstrap/'
+  var bootstrapPath = app.bowerDirectory + '/bootstrap/js/dist/'
 
+  //Font-Awesome
   app.import(iconFontPath + 'fontawesome-webfont.eot', { destDir: 'assets/fonts' });
   app.import(iconFontPath + 'fontawesome-webfont.svg', { destDir: 'assets/fonts' });
   app.import(iconFontPath + 'fontawesome-webfont.ttf', { destDir: 'assets/fonts' });
   app.import(iconFontPath + 'fontawesome-webfont.woff', { destDir: 'assets/fonts' });
   app.import(iconFontPath + 'fontawesome-webfont.woff2', { destDir: 'assets/fonts' });
 
-  // Temporarily disabling until bower version of bootsrap is available
-
-  // app.import(bootstrapPath + 'button.js', { type: 'vendor' });
-  // app.import(bootstrapPath + 'collapse.js', { type: 'vendor' });
-  // app.import(bootstrapPath + 'dropdown.js', { type: 'vendor' });
-  // app.import(bootstrapPath + 'modal.js', { type: 'vendor' });
-  // app.import(bootstrapPath + 'tooltip.js', { type: 'vendor' });
-  // app.import(bootstrapPath + 'popover.js', { type: 'vendor' });
+  // Bootstrap
+  app.import(bootstrapPath + 'util.js', { type: 'vendor' });
+  app.import(bootstrapPath + 'button.js', { type: 'vendor' });
+  app.import(bootstrapPath + 'collapse.js', { type: 'vendor' });
+  app.import(bootstrapPath + 'dropdown.js', { type: 'vendor' });
+  app.import(bootstrapPath + 'modal.js', { type: 'vendor' });
+  app.import(bootstrapPath + 'tooltip.js', { type: 'vendor' });
+  app.import(bootstrapPath + 'popover.js', { type: 'vendor' });
 
   return app.toTree();
 };
