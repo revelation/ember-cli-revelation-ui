@@ -13,7 +13,7 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{rui-dropdown-trigger}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$().text().trim(), 'Toggle Dropdown');
 
   // Template block usage:
   this.render(hbs`

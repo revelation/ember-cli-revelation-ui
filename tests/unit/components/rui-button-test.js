@@ -23,12 +23,12 @@ test('it adds style class when style property is set', function(assert) {
   var component = this.subject();
   this.render();
 
-  assert.ok(this.$().hasClass('btn-default'), 'it should default to \'btn-default\' class when no style is set to \'primary\'');
+  assert.ok(this.$().hasClass('btn-secondary'), 'it should default to \'btn-secondary\' class when no style is set');
 
   Ember.run(function(){
     component.set('style', 'wrongstyle');
   });
-  assert.ok(this.$().hasClass('btn-default'), 'it should default to \'btn-default\' class when (unsupported) style is set to \'wrongstyle\'');
+  assert.ok(this.$().hasClass('btn-secondary'), 'it should default to \'btn-default\' class when (unsupported) style is set to \'wrongstyle\'');
 
   Ember.run(function(){
     component.set('style', 'primary');
@@ -62,7 +62,7 @@ test('it adds style class when style property is set', function(assert) {
 });
 
 test('it adds size class when size property is set', function(assert) {
-  assert.expect(3);
+  assert.expect(2);
   var component = this.subject();
   this.render();
 
@@ -75,11 +75,6 @@ test('it adds size class when size property is set', function(assert) {
     component.set('size', 'sm');
   });
   assert.ok(this.$().hasClass('btn-sm'), 'it should have \'btn-sm\' class when size is set to \'sm\'');
-
-  Ember.run(function(){
-    component.set('size', 'xs');
-  });
-  assert.ok(this.$().hasClass('btn-xs'), 'it should have \'btn-xs\' class when size is set to \'xs\'');
 });
 
 test('it displays block class when block property is set', function(assert) {
