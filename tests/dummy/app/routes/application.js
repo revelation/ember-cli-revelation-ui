@@ -4,11 +4,11 @@ export default Ember.Route.extend({
 
   actions: {
 
-    sendAction() {
+    sendMyAction() {
       window.alert('You triggered an action!');
     },
 
-    sendActionWithParams(param1, param2) {
+    sendMyActionWithParams(param1, param2) {
       window.alert(param1 + ', ' + param2 );
     },
 
