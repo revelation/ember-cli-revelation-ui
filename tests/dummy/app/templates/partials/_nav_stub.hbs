@@ -1,38 +1,69 @@
 <nav>
-  <section class='nav-group'>
-    <ul class='nav-menu'>
-      <li class='nav-item active'><i class='fa fa-tachometer' /> <a nohref>Overview</a>
-        <ul class='nav-menu'>
-          <li class='nav-item active'><a nohref>Activities</a>
-            <!-- Sub-Sub Menu styles need work.
-            <ul class='nav-menu'>
-              <li class='nav-item'><a nohref>sub-sub menu test</a></li>
-              <li class='nav-item active'><a nohref>sub-sub menu test</a></li>
-              <li class='nav-item'><a nohref>sub-sub menu test</a></li>
+  <section class='rui-nav-vertical-group'>
+    <ul class='rui-nav-vertical-menu'>
+      <li class='rui-nav-vertical-item hasChildren active'>
+        <i class='fa fa-tachometer' />
+        <a>Overview</a>
+        <ul class='rui-nav-vertical-menu'>
+          <li class='rui-nav-vertical-item hasChildren active'>
+            <a>Activities</a>
+            <!-- TODO: Sub-Sub menus need work.
+            <ul class='rui-nav-vertical-menu'>
+              <li class='rui-nav-vertical-item active'>
+                <a>Sub-Sub</a>
+              </li>
             </ul>
             -->
           </li>
-          <li class='nav-item'><a nohref>Participants</a></li>
-          <li class='nav-item'><a nohref>Groups</a></li>
+          <li class='rui-nav-vertical-item'>
+            <a>Participants</a>
+          </li>
+          <li class='rui-nav-vertical-item'>
+            <a>Groups</a>
+          </li>
         </ul>
       </li>
-      <li class='nav-item inactive'><i class='fa fa-envelope-o' /> <a nohref>Messages</a>
-        <ul class='nav-menu'>
-          <li class='nav-item'><a nohref>Incoming</a></li>
-          <li class='nav-item'><a nohref>Outgoing</a></li>
+      <li class='rui-nav-vertical-item hasChildren'>
+        <i class='fa fa-envelope-o' />
+        <a>Messages</a>
+        <ul class='rui-nav-vertical-menu'>
+          <li class='rui-nav-vertical-item'>
+            <a>Incoming</a>
+          </li>
+          <li class='rui-nav-vertical-item'>
+            <a>Outgoing</a>
+          </li>
         </ul>
       </li>
-      <li class='nav-item inactive'><i class='fa fa-clone' /> <a nohref>Explore</a></li>
-      <li class='nav-item inactive'><i class='fa fa-bar-chart' /> <a nohref>Findings</a></li>
+      <li class='rui-nav-vertical-item hasChildren'>
+        <i class='fa fa-clone' />
+        <a>Explore</a>
+      </li>
+      <li class='rui-nav-vertical-item hasChildren'>
+        <i class='fa fa-bar-chart' />
+        <a>Findings</a>
+      </li>
     </ul>
   </section>
-  <section class='nav-group'>
-    <h6 class='nav-title'>Project Setup</h6>
-    <ul class='nav-menu'>
-      <li class='nav-item inactive'><i class='fa fa-cog' /> <a nohref>Settings</a></li>
-      <li class='nav-item'><i class='fa fa-users' /> <a nohref>Team</a></li>
-      <li class='nav-item'><i class='fa fa-user' /> <a nohref>Participants</a></li>
-      <li class='nav-item'><i class='fa fa-clone' /> <a nohref>Activities &amp; Scheduling</a></li>
+  <section class='rui-nav-vertical-group'>
+    <h6 class='rui-nav-vertical-title'>Project Setup</h6>
+    <ul class='rui-nav-vertical-menu'>
+      <li class='rui-nav-vertical-item hasChildren'>
+        <i class='fa fa-cog' />
+        <a>Settings</a>
+      </li>
+      <li class='rui-nav-vertical-item'>
+        <i class='fa fa-users' />
+        <a>Team</a>
+      </li>
+      <li class='rui-nav-vertical-item'>
+        <i class='fa fa-user' />
+        <a>Participants</a>
+      </li>
+      <li class='rui-nav-vertical-item'>
+        <i class='fa fa-clone' />
+        <a>Activities &amp; Scheduling</a>
+      </li>
     </ul>
   </section>
 </nav>

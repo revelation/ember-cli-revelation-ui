@@ -1,58 +1,61 @@
 nav
   width: 18rem
 
-.nav-group
+.rui-nav-vertical-group
   margin-left: 2rem
 
-.nav-menu
+.rui-nav-vertical-menu
   list-style-type: none
   padding: 0
   font-weight: bold
 
-.nav-group + .nav-group
+.rui-nav-vertical-group + .rui-nav-vertical-group
   margin-top: 3rem
 
-.nav-item i, .nav-item a
+.rui-nav-vertical-item
+  margin: .5rem 0
+
+.rui-nav-vertical-item i, .rui-nav-vertical-item a
   line-height: 2
 
-.nav-item i
+.rui-nav-vertical-item i
   position: absolute
   left: 1.25rem
 
-.nav-item a
+.rui-nav-vertical-item a
   display: block
 
 // Nested Menus
-.nav-item .nav-item
+.rui-nav-vertical-item.hasChildren .rui-nav-vertical-item
   margin-left: -2rem
   padding-left: 2rem
 
-.nav-item > .nav-menu
+.rui-nav-vertical-item > .rui-nav-vertical-menu
   display: none
   font-weight: normal
 
-.nav-item.active > .nav-menu
+.rui-nav-vertical-item.active > .rui-nav-vertical-menu
   display: block
 
 // Main-level Menu Status Indicators
-.nav-item > a::after
+.rui-nav-vertical-item > a::after
   display: block
   float: right
-  padding: 0 1rem
   border-left: (1 / $root) * 1rem solid $gray-lighter
-  font-family: "FontAwesome"
 
-.nav-item.inactive > a::after
-  content: "\f105"
+.rui-nav-vertical-item.hasChildren > a::after
+  padding: 0 1.25rem //FontAwesome is not monospaced.
+  @extend .angle-right
 
-.nav-item.active > a::after
-  content: "\f107"
+.rui-nav-vertical-item.hasChildren.active > a::after
+  padding: 0 1rem
+  @extend .angle-down
 
 // Sub-level Menu Status Indicators
-.nav-item.active .nav-item.active
+.rui-nav-vertical-item.hasChildren.active .rui-nav-vertical-item.active
   border-left: .25rem solid $brand-primary
   padding-left: 1.75rem
   background: $gray-lightest
 
-.nav-item.active .nav-item.active a::after
+.rui-nav-vertical-item.hasChildren.active .rui-nav-vertical-item.active a::after
   content: ""
