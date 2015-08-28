@@ -1,0 +1,33 @@
+<header class='d-header'>
+  <div class="container">
+    <div class='row'>
+      <div class='col-md-3'>
+        <h1>{{#link-to 'index'}}
+          Revelation UI
+        {{/link-to}}</h1>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class='d-main'>
+  <div class="container">
+    <div class='row'>
+      <div class='col-md-3'>
+        {{partial 'partials/navigation'}}
+      </div>
+
+      <article class='col-md-9'>
+
+        {{!-- Component Guides --}}
+        {{partial "partials/buttons"}}
+        {{partial "partials/dropdowns"}}
+
+        {{!-- Just in case ... --}}
+        {{outlet}}
+      </article>
+    </div>
+  </div>
+</main>
+
+<footer></footer>
