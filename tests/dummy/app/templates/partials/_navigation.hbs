@@ -1,7 +1,27 @@
-<div class="col-md-3">
-<nav>
+<nav class='d-nav'>
   <dl>
     <dt>
+      {{#link-to 'index'}}
+        Home
+      {{/link-to}}
+    </dt>
+    <dt>
+      {{#link-to 'styles'}}
+        Styles
+      {{/link-to}}
+    </dt>
+    <dt>
+      {{#link-to 'components'}}
+        Components
+      {{/link-to}}
+    </dt>
+    <dt>
+      {{#link-to 'layout'}}
+        Layout
+      {{/link-to}}
+    </dt>
+   {{!-- TBD: Need to figure out how to get these in as query params --}}
+   {{!--  <dt>
       <a href="#buttons">Buttons</a>
     </dt>
       <dd>
@@ -24,9 +44,6 @@
       </dd>
       <dd>
         <a href="#button-params">Action Parameters</a>
-      </dd>
+      </dd> --}}
   </dl>
 </nav>
-<hr />
-{{partial 'partials/nav_stub'}}
-</div>
