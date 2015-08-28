@@ -32,9 +32,6 @@
   code
     padding: 0
 
-nav
-  margin-top: 40px
-
 .hljs
   background: transparent
 
@@ -99,3 +96,25 @@ nav
 .swatch-state-warning-bg
   background: $state-warning-bg
   color: $body-color
+
+// Dummy Structure
+
+.d-header
+  border-bottom: $border-width solid #ccc
+  h1
+    padding: 20px 0
+  a
+    color: #333
+    &:hover
+      text-decoration: none
+.d-main
+  padding-top: 20px
+
+.d-nav
+  a
+    display: inline-block
+    padding-top: .75rem
+    padding-bottom: .75rem
+    font-weight: normal
+    &.active
+      font-weight: bold
