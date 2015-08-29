@@ -21,6 +21,8 @@
 //
 // Variable format should follow the `$component-modifier-state-property` order.
 
+$rui-nav-bg: #fff !default;
+$rui-border-color-light: #f3f1ee !default;
 
 // Colors
 //
@@ -31,7 +33,7 @@ $gray-dark:                 #373a3c !default;
 $gray:                      #55595c !default;
 $gray-light:                #818a91 !default;
 $gray-lighter:              #eceeef !default;
-$gray-lightest:             #f7f7f9 !default;
+$gray-lightest:             #fbfaf8 !default; //Customized
 
 $brand-primary:             #0275d8 !default;
 $brand-success:             #5cb85c !default;
@@ -68,7 +70,7 @@ $border-width:               1 / $root * 1rem !default; //.0675rem !default;
 //
 // Settings for the `<body>` element.
 
-$body-bg:                    #fff !default;
+$body-bg:                    $gray-lightest !default;
 $body-color:                 $gray-dark !default;
 
 

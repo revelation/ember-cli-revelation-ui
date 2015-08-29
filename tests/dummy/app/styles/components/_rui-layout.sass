@@ -1,0 +1,78 @@
+$rui-header-height: 4.28572rem //~60px @ 14
+$rui-footer-height: 3rem //~42px @ 14
+$rui-sidebar-left-width: 240px
+
+$z-header: 500
+$z-footer: 480
+$z-sidebar: 460
+
+.rui-header
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  height: $rui-header-height
+  z-index: $z-header
+  background: $rui-nav-bg
+  border-bottom: $border-width solid $rui-border-color-light
+
+@include media-breakpoint-down(xl)
+@include media-breakpoint-down(lg)
+@include media-breakpoint-down(md)
+  .rui-header
+    left: $rui-sidebar-left-width
+@include media-breakpoint-down(sm)
+  .rui-header
+    left: $rui-sidebar-left-width
+
+.rui-main
+  margin-top: $rui-header-height
+  margin-left: $rui-sidebar-left-width
+  height: 2000px
+
+.rui-sidebar-left
+  position: fixed
+  top: $rui-header-height
+  bottom: 0
+  left: 0
+  z-index: $z-sidebar
+  width: $rui-sidebar-left-width
+  background: $rui-nav-bg
+  border-right: $border-width solid $rui-border-color-light
+
+@include media-breakpoint-down(xl)
+@include media-breakpoint-down(lg)
+@include media-breakpoint-down(md)
+  .rui-sidebar-left
+    top: 0
+@include media-breakpoint-down(sm)
+  .rui-sidebar-left
+    top: 0
+
+.rui-footer
+  position: fixed
+  bottom: 0
+  right: 0
+  left: $rui-sidebar-left-width
+  height: $rui-footer-height
+  z-index: $z-footer
+  background: $rui-nav-bg
+  border-top: $border-width solid $rui-border-color-light
+
+@include media-breakpoint-down(xl)
+@include media-breakpoint-down(lg)
+@include media-breakpoint-down(md)
+  .rui-footer
+    left: 0
+    right: auto
+    width: $rui-sidebar-left-width - 1px
+@include media-breakpoint-down(sm)
+  .rui-footer
+    left: 0
+    right: auto
+    width: $rui-sidebar-left-width - 1px
+
+// @include media-breakpoint-down(xl)
+// @include media-breakpoint-down(lg)
+// @include media-breakpoint-down(md)
+// @include media-breakpoint-down(sm)
