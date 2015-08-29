@@ -6,6 +6,12 @@ $z-header: 500
 $z-footer: 480
 $z-sidebar: 460
 
+.rui-header,
+.rui-main,
+.rui-sidebar-left,
+.rui-footer
+  transition: .2s cubic-bezier(.16, .68, .43, .99)
+
 .rui-header
   position: fixed
   top: 0
@@ -16,19 +22,19 @@ $z-sidebar: 460
   background: $rui-nav-bg
   border-bottom: $border-width solid $rui-border-color-light
 
-@include media-breakpoint-down(xl)
-@include media-breakpoint-down(lg)
-@include media-breakpoint-down(md)
-  .rui-header
-    left: $rui-sidebar-left-width
-@include media-breakpoint-down(sm)
-  .rui-header
-    left: $rui-sidebar-left-width
-
 .rui-main
   margin-top: $rui-header-height
   margin-left: $rui-sidebar-left-width
   height: 2000px
+
+@include media-breakpoint-down(xl)
+@include media-breakpoint-down(lg)
+@include media-breakpoint-down(md)
+  .rui-main
+    margin-left: 0
+@include media-breakpoint-down(sm)
+  .rui-main
+    margin-left: 0
 
 .rui-sidebar-left
   position: fixed
@@ -45,9 +51,11 @@ $z-sidebar: 460
 @include media-breakpoint-down(md)
   .rui-sidebar-left
     top: 0
+    left: -$rui-sidebar-left-width
 @include media-breakpoint-down(sm)
   .rui-sidebar-left
     top: 0
+    left: -$rui-sidebar-left-width
 
 .rui-footer
   position: fixed
@@ -58,19 +66,39 @@ $z-sidebar: 460
   z-index: $z-footer
   background: $rui-nav-bg
   border-top: $border-width solid $rui-border-color-light
-
 @include media-breakpoint-down(xl)
 @include media-breakpoint-down(lg)
 @include media-breakpoint-down(md)
   .rui-footer
-    left: 0
+    left: -$rui-sidebar-left-width
     right: auto
     width: $rui-sidebar-left-width - 1px
 @include media-breakpoint-down(sm)
   .rui-footer
-    left: 0
+    left: -$rui-sidebar-left-width
     right: auto
     width: $rui-sidebar-left-width - 1px
+
+.test
+  width: 200px
+  height: 200px
+  background: deepPink
+
+
+@include media-breakpoint-down(md)
+  .open
+    .rui-header,
+    .rui-main,
+    .rui-sidebar-left,
+    .rui-footer
+      transform: translate3d($rui-sidebar-left-width, 0, 0)
+@include media-breakpoint-down(sm)
+  .open
+    .rui-header,
+    .rui-main,
+    .rui-sidebar-left,
+    .rui-footer
+      transform: translate3d($rui-sidebar-left-width, 0, 0)
 
 // @include media-breakpoint-down(xl)
 // @include media-breakpoint-down(lg)
