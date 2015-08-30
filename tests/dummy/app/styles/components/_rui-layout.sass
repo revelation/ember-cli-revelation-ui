@@ -1,5 +1,5 @@
 $rui-header-height: 4.28572rem //~60px @ 14
-$rui-footer-height: 3rem //~42px @ 14
+$rui-footer-height: 3.57143rem //~50px @ 14
 $rui-sidebar-left-width: 240px
 
 $z-header: 500
@@ -87,6 +87,7 @@ $z-sidebar: 460
 
 @include media-breakpoint-down(md)
   .open
+    overflow-x: hidden
     .rui-header,
     .rui-main,
     .rui-sidebar-left,
@@ -94,6 +95,7 @@ $z-sidebar: 460
       transform: translate3d($rui-sidebar-left-width, 0, 0)
 @include media-breakpoint-down(sm)
   .open
+    overflow-x: hidden
     .rui-header,
     .rui-main,
     .rui-sidebar-left,
