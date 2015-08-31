@@ -1,8 +1,15 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  // Inject menu service into global application controll
+  // Also injected in application router for method access
+  menu: Ember.inject.service('menu'),
 
   actions: {
+
+    toggleMenu() {
+      this.get('menu').toggleMenu();
+    },
 
     sendMyAction() {
       window.alert('You triggered an action!');
