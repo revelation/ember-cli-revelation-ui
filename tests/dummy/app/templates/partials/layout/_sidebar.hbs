@@ -1,3 +1,41 @@
 <div class='rui-sidebar-left'>
+  {{#rui-dropdown class='rui-nav-project-dropdown'}}
+    {{!-- Current Project & Status --}}
+    {{#rui-dropdown-trigger id='projectSelector' class='rui-nav-project-dropdown-trigger'}}
+      <span class='current-project-title'>
+        My Project Wraps If Too Long
+      </span>
+
+      {{!-- TBD: Need to wire states --}}
+      <span class="current-project-status">
+        <i class='fa fa-circle text-success' /> Active
+        {{!-- If Unstarted/Complete --}}
+        {{!-- <i class='fa fa-circle-o text-muted' /> Unstarted --}}
+        {{!-- <i class='fa fa-circle text-muted' /> Complete --}}
+      </span>
+    {{/rui-dropdown-trigger}}
+
+    {{#rui-dropdown-menu aria-labelledby='projectSelector' class='rui-nav-project-dropdown-menu'}}
+      <div class='dropdown-header-block dropdown-header-block-input'>
+        {{input type='text' class='form-control' placeholder='Find Project'}}
+      </div>
+      <div class='dropdown-scroll-y'>
+        <a class="dropdown-item" href="#"><i class='fa fa-circle-o text-muted' /> Project 1</a>
+        <a class="dropdown-item" href="#"><i class='fa fa-circle-o text-muted' /> Project 2</a>
+        <a class="dropdown-item" href="#"><i class='fa fa-circle text-muted' /> Project 3</a>
+        <a class="dropdown-item" href="#"><i class='fa fa-circle text-success' /> Project 4</a>
+        <a class="dropdown-item" href="#"><i class='fa fa-circle text-muted' /> Project 5</a>
+        <a class="dropdown-item" href="#"><i class='fa fa-circle text-success' /> Project 6</a>
+        <a class="dropdown-item" href="#"><i class='fa fa-circle-o text-muted' /> Project 7</a>
+        <a class="dropdown-item" href="#"><i class='fa fa-circle text-muted' /> Project 8</a>
+        <a class="dropdown-item" href="#"><i class='fa fa-circle text-success' /> Project 9</a>
+      </div>
+      <div class='dropdown-footer-block'>
+        <a href="#" class='btn btn-secondary btn-block'>All Projects</a>
+      </div>
+    {{/rui-dropdown-menu}}
+  {{/rui-dropdown}}
+
   {{rui-nav-vertical}}
+
 </div>
