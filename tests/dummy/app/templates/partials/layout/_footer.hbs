@@ -1,0 +1,11 @@
+<div class='rui-footer'>
+  <div class='rui-fix-menu-toggle'>
+    {{#rui-button action='toggleFixedMenu' style='link' class=(if menu.fixMenu 'active') }}
+        {{#if menu.unfixMenu}}
+          <i class='fa fa-chevron-right' />
+        {{else}}
+          <i class='fa fa-chevron-left' />
+        {{/if}}
+    {{/rui-button}}
+  </div>
+</div>
