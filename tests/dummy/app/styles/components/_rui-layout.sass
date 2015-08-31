@@ -2,15 +2,26 @@ $rui-header-height: 4.28572rem //~60px @ 14
 $rui-footer-height: 3.57143rem //~50px @ 14
 $rui-sidebar-left-width: 240px
 
-$z-header: 500
-$z-footer: 480
-$z-sidebar: 460
+$z-footer: 510
+$z-sidebar: 500
+$z-clickblock: 490
+$z-header: 480
 
 .rui-header,
 .rui-main,
 .rui-sidebar-left,
 .rui-footer
-  transition: .2s cubic-bezier(.16, .68, .43, .99)
+  transition: all .2s cubic-bezier(.16, .68, .43, .99)
+
+.rui-clickblock
+  display: none
+  position: fixed
+  left: 0
+  top: 0
+  z-index: $z-clickblock
+  height: 100%
+  width: 100%
+  background: rgba(0,0,0,.5)
 
 .rui-header
   position: fixed
@@ -98,6 +109,10 @@ $z-sidebar: 460
     .rui-sidebar-left,
     .rui-footer
       transform: translate3d($rui-sidebar-left-width, 0, 0)
+    .rui-clickblock
+      &.show
+        display: block
+        animation: fadeIn .2s
 
 @include media-breakpoint-down(sm)
   .open
@@ -107,6 +122,14 @@ $z-sidebar: 460
     .rui-sidebar-left,
     .rui-footer
       transform: translate3d($rui-sidebar-left-width, 0, 0)
+    .rui-clickblock
+      &.show
+        display: block
+        animation: fadeIn .2s
+
+@keyframes fadeIn
+  from {opacity: 0}
+  to {opacity: 1}
 
 // @include media-breakpoint-down(xl)
 // @include media-breakpoint-down(lg)
