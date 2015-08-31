@@ -11,7 +11,12 @@ module.exports = function(defaults) {
     // https://github.com/aexmachina/ember-cli-sass#using-in-addons
     sassOptions: {
       extension: "sass"
+    },
+
+    autoprefixer: {
+      browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
     }
+
   });
 
   var iconFontPath = app.bowerDirectory + '/font-awesome/fonts/';
