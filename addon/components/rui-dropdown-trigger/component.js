@@ -13,11 +13,10 @@ export default Ember.Component.extend({
   type: 'button',
   style: null,
   size: null,
-  caret: true,
 
   //Constructors
   classPrefix: 'btn',
-  styles: ['secondary', 'primary', 'success', 'warning', 'danger', 'info', 'link'],
+  styles: ['primary', 'secondary', 'success', 'warning', 'danger', 'info', 'link'],
   sizes: ['lg', 'sm'],
 
   // Data Attrs, required by bootstrap
