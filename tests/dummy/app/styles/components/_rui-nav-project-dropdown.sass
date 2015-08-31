@@ -1,0 +1,46 @@
+.rui-nav-project-dropdown
+  display: block
+
+.rui-nav-project-dropdown-trigger
+  @extend .btn-unstyled
+  position: relative
+  display: block
+  width: 100%
+  padding-top: $spacer
+  padding-bottom: $spacer
+  text-align: left
+  .current-project-title
+    display: block
+    padding-right: $spacer * 3
+    padding-left: $spacer
+    padding-bottom: $spacer / 4
+    overflow: hidden
+    font-size: $font-size-h5
+    text-overflow: ellipsis
+  .current-project-status
+    display: block
+    padding-right: $spacer * 2
+    padding-left: $spacer
+    overflow: hidden
+    font-size: $font-size-sm
+    text-transform: uppercase
+    text-overflow: ellipsis
+  .open &,
+  &:hover
+    background: $gray-lightest
+  &:after
+    @extend .angle-down
+    position: absolute
+    right: $spacer
+    top: $spacer
+    border: 0 none
+    height: auto
+    width: auto
+    font-size: 24px
+    line-height: 1
+    color: $gray-lighter
+.rui-nav-project-dropdown-menu
+  margin-top: -$spacer * 2
+  margin-left: $spacer * 6
+  margin-right: $spacer
+  width: 212px

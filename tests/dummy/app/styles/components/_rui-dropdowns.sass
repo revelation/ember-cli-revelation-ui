@@ -1,0 +1,43 @@
+// Overrides defaults
+.dropdown-item
+  padding: $spacer/4 $spacer
+
+.dropdown-menu
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175)
+
+// Extends dropdown for header
+// with full bleed background fill
+.dropdown-header-block
+  margin-top: -5px
+  background: $gray-lightest
+  padding: $spacer/2 $spacer
+  border-top-left-radius: $border-radius
+  border-top-right-radius: $border-radius
+  border-bottom: $border-width solid $rui-border-color-light
+
+// Reduce padding for dropdown-header-block that contain input as in the project selector
+.dropdown-header-block-input
+  padding: $spacer/2
+
+// Extends dropdown with footer
+// with full bleed background fill
+.dropdown-footer-block
+  border-top: $border-width solid $rui-border-color-light
+  border-top-left-radius: $border-radius
+  border-top-right-radius: $border-radius
+  margin-bottom: -5px
+  //Include a full bleed btn-block
+  > .btn-block
+    border: 0 none
+    border-top-left-radius: 0
+    border-top-right-radius: 0
+    &:active,
+    &:hover,
+    &:focus
+      background: $rui-border-color-light
+
+// A generic vertically scrolling container
+.dropdown-scroll-y
+  overflow-y: scroll
+  max-height: 200px
+
