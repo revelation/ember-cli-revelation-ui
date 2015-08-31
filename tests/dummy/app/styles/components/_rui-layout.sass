@@ -22,6 +22,12 @@ $z-sidebar: 460
   background: $rui-nav-bg
   border-bottom: $border-width solid $rui-border-color-light
 
+.rui-header-menu-toggle
+  height: $rui-header-height
+  display: table-cell
+  vertical-align: middle
+  padding-left: 1rem
+
 .rui-main
   margin-top: $rui-header-height
   margin-left: $rui-sidebar-left-width
@@ -84,7 +90,6 @@ $z-sidebar: 460
   height: 200px
   background: deepPink
 
-
 @include media-breakpoint-down(md)
   .open
     overflow-x: hidden
@@ -93,6 +98,7 @@ $z-sidebar: 460
     .rui-sidebar-left,
     .rui-footer
       transform: translate3d($rui-sidebar-left-width, 0, 0)
+
 @include media-breakpoint-down(sm)
   .open
     overflow-x: hidden

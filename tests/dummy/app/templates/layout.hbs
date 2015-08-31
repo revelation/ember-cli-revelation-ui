@@ -1,6 +1,12 @@
 <div class=''>{{!-- rui-layout-full rui-layout-expando rui-layout-mini --}}
-  <div class='rui-header'>Header</div>
-  <div class='rui-sidebar-left'>Sidebar</div>
+  <div class='rui-header'>
+    <div class='rui-header-menu-toggle'>
+      {{#rui-button}}
+        <i class='fa fa-bars' />
+      {{/rui-button}}
+    </div>
+  </div>
+  <div class='rui-sidebar-left'></div>
   <div class='rui-main'>
     <p>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at varius leo, nec ultrices odio. Suspendisse sit amet ligula ac lacus eleifend faucibus. Aliquam efficitur vestibulum nisi vitae pretium. Aliquam ac malesuada risus. Quisque viverra eget justo lobortis consectetur. Donec nisl ipsum, feugiat vestibulum lacus vitae, imperdiet pellentesque leo. Nullam sit amet metus eget libero auctor consequat. Vivamus eleifend rhoncus hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam cursus sapien in metus vulputate, eget dapibus enim efficitur. Curabitur nec mauris placerat, dictum metus eget, dictum nisi. Nulla id viverra dolor. Nunc ac maximus lectus.
@@ -14,6 +20,6 @@ Fusce ullamcorper neque eget sapien commodo, non dapibus eros rutrum. In bibendu
 Phasellus aliquam tortor nibh, eu viverra sapien pretium tincidunt. Fusce condimentum enim nibh, gravida rhoncus sem venenatis quis. Donec scelerisque neque a turpis vestibulum pharetra. Donec eu leo pharetra, venenatis tortor sed, semper neque. Etiam vitae faucibus orci, ultrices facilisis mauris. Sed convallis enim pellentesque augue efficitur lacinia. Donec quis nunc quam. Phasellus efficitur nisi sit amet mauris suscipit, ac pulvinar lorem congue. Vivamus finibus ut lorem in egestas.
     </p>
   </div>
-  <div class='rui-footer'>Footer</div>
+  <div class='rui-footer'></div>
 </div>
 {{outlet}}
