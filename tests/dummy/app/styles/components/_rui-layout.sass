@@ -38,6 +38,11 @@ $z-header: 480
   display: table-cell
   vertical-align: middle
   padding-left: 1rem
+  > .btn
+    &.active,
+    &:active,
+    &:focus
+      outline: 0
 
 .rui-main
   margin-top: $rui-header-height
@@ -95,11 +100,6 @@ $z-header: 480
     left: -$rui-sidebar-left-width
     right: auto
     width: $rui-sidebar-left-width - 1px
-
-.test
-  width: 200px
-  height: 200px
-  background: deepPink
 
 @include media-breakpoint-down(md)
   .open
