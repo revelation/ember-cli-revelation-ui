@@ -6,6 +6,7 @@ export default Ember.Service.extend({
   showMenu: false,
 
   toggleFixedMenu() {
+    this.set('showMenu', false);
     this.toggleProperty('unfixMenu');
   },
 
