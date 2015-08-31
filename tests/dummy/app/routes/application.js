@@ -1,12 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  // Inject menu service into global application controll
-  // Also injected in application router for method access
+  // Service::Menu Injected into global application controller for property access
+  // Service::Menu Injected into global application router for method access
+  // TBD: May rename as layout-preferences
   menu: Ember.inject.service('menu'),
 
   actions: {
 
+    // Actions sent to Service::Menu from template
     toggleMenu() {
       this.get('menu').toggleMenu();
     },
@@ -14,6 +16,10 @@ export default Ember.Route.extend({
     toggleFixedMenu() {
       this.get('menu').toggleFixedMenu();
     },
+
+    // +++
+    // Dummy Only
+    // +++
 
     sendMyAction() {
       window.alert('You triggered an action!');

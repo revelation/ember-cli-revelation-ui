@@ -1,8 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  // Service::Menu Injected into global application controller for property access
+  // Service::Menu Injected into global application router for method access
+  // TBD: May rename as layout-preferences
   menu: Ember.inject.service('menu'),
-  // for displaying loading state on async button option
+
+  // +++
+  // Dummy Only
+  // +++
+
+  // For displaying loading state on async button option
   asyncAction1: false,
   asyncAction2: false
 });

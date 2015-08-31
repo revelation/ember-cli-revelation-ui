@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Service.extend({
+  // TBD: May rename as layout-preferences
   unfixMenu: false,
   showMenu: false,
 
