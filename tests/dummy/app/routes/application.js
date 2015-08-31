@@ -11,6 +11,10 @@ export default Ember.Route.extend({
       this.get('menu').toggleMenu();
     },
 
+    toggleFixedMenu() {
+      this.get('menu').toggleFixedMenu();
+    },
+
     sendMyAction() {
       window.alert('You triggered an action!');
     },

@@ -1,8 +1,8 @@
-<div class="{{if menu.showMenu 'open'}}">
+<div class="{{if menu.showMenu 'show-menu'}} {{if menu.unfixMenu 'unfix-menu'}}">
   <div class="rui-clickblock {{if menu.showMenu 'show'}}" {{action 'toggleMenu'}}></div>
 
   <div class='rui-header'>
-    <div class='rui-header-menu-toggle'>
+    <div class='rui-show-menu-toggle {{unless menu.unfixMenu 'hide'}}'>
       {{#rui-button action='toggleMenu' style='link' class=(if menu.showMenu 'active') }}
         <i class='fa fa-bars' />
       {{/rui-button}}
@@ -16,6 +16,11 @@
     <div class='container-fluid'>
       <div class="row">
         <div class='col-md-12' style="margin-top: 20px;">
+          <p>
+            show-menu: {{menu.showMenu}}
+            <br />
+            unfix-menu: {{menu.unfixMenu}}
+          </p>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at varius leo, nec ultrices odio. Suspendisse sit amet ligula ac lacus eleifend faucibus. Aliquam efficitur vestibulum nisi vitae pretium. Aliquam ac malesuada risus. Quisque viverra eget justo lobortis consectetur. Donec nisl ipsum, feugiat vestibulum lacus vitae, imperdiet pellentesque leo. Nullam sit amet metus eget libero auctor consequat. Vivamus eleifend rhoncus hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam cursus sapien in metus vulputate, eget dapibus enim efficitur. Curabitur nec mauris placerat, dictum metus eget, dictum nisi. Nulla id viverra dolor. Nunc ac maximus lectus.
           <p>
@@ -36,6 +41,16 @@
     </div>
 
   </div>
-  <div class='rui-footer'></div>
+  <div class='rui-footer'>
+    <div class='rui-fix-menu-toggle'>
+      {{#rui-button action='toggleFixedMenu' style='link' class=(if menu.fixMenu 'active') }}
+          {{#if menu.unfixMenu}}
+            <i class='fa fa-chevron-right' />
+          {{else}}
+            <i class='fa fa-chevron-left' />
+          {{/if}}
+      {{/rui-button}}
+    </div>
+  </div>
 </div>
 {{outlet}}

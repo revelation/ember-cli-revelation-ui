@@ -11,7 +11,7 @@ $z-header: 480
 .rui-main,
 .rui-sidebar-left,
 .rui-footer
-  transition: all .2s cubic-bezier(.16, .68, .43, .99)
+  transition: transform .2s cubic-bezier(.16, .68, .43, .99)
 
 .rui-clickblock
   display: none
@@ -32,28 +32,33 @@ $z-header: 480
   z-index: $z-header
   background: $rui-nav-bg
   border-bottom: $border-width solid $rui-border-color-light
+  .unfix-menu &
+    &.show-menu
+      overflow-x: hidden
 
-.rui-header-menu-toggle
+.rui-show-menu-toggle
   height: $rui-header-height
   display: table-cell
   vertical-align: middle
-  padding-left: 1rem
+  padding-left: .5rem
   > .btn
     &.active,
     &:active,
     &:focus
       outline: 0
+  &.hide
+    display: none
 
 .rui-main
   margin-top: $rui-header-height
   margin-left: $rui-sidebar-left-width
   height: 2000px
+  .unfix-menu &
+    margin-left: 0
 
 @include media-breakpoint-down(xl)
 @include media-breakpoint-down(lg)
 @include media-breakpoint-down(md)
-  .rui-main
-    margin-left: 0
 @include media-breakpoint-down(sm)
   .rui-main
     margin-left: 0
@@ -67,13 +72,13 @@ $z-header: 480
   width: $rui-sidebar-left-width
   background: $rui-nav-bg
   border-right: $border-width solid $rui-border-color-light
+  .unfix-menu &
+    top: 0
+    left: -$rui-sidebar-left-width
 
 @include media-breakpoint-down(xl)
 @include media-breakpoint-down(lg)
 @include media-breakpoint-down(md)
-  .rui-sidebar-left
-    top: 0
-    left: -$rui-sidebar-left-width
 @include media-breakpoint-down(sm)
   .rui-sidebar-left
     top: 0
@@ -88,21 +93,55 @@ $z-header: 480
   z-index: $z-footer
   background: $rui-nav-bg
   border-top: $border-width solid $rui-border-color-light
+  .unfix-menu &
+    left: 0
+
+.rui-fix-menu-toggle
+  height: $rui-footer-height
+  display: table-cell
+  vertical-align: middle
+  padding-left: .5rem
+  padding-right: .5rem
+  border-right: $border-width solid $rui-border-color-light
+
 @include media-breakpoint-down(xl)
 @include media-breakpoint-down(lg)
 @include media-breakpoint-down(md)
-  .rui-footer
-    left: -$rui-sidebar-left-width
-    right: auto
-    width: $rui-sidebar-left-width - 1px
 @include media-breakpoint-down(sm)
   .rui-footer
     left: -$rui-sidebar-left-width
     right: auto
     width: $rui-sidebar-left-width - 1px
 
+.unfix-menu
+  &.show-menu
+    overflow-x: hidden
+    .rui-header,
+    .rui-main,
+    .rui-sidebar-left,
+    .rui-footer
+      transform: translate3d($rui-sidebar-left-width, 0, 0)
+    .rui-footer
+      z-index: $z-clickblock - 5
+    .rui-clickblock
+      &.show
+        display: block
+        animation: fadeIn .2s
+
+@include media-breakpoint-down(xl)
+@include media-breakpoint-down(lg)
 @include media-breakpoint-down(md)
-  .open
+@include media-breakpoint-down(sm)
+  .rui-footer
+    z-index: $z-footer
+    left: -$rui-sidebar-left-width
+    .unfix-menu &,
+    .show-menu &,
+    .unfix-menu.show-menu &
+      z-index: $z-footer
+      left: -$rui-sidebar-left-width
+
+  .show-menu
     overflow-x: hidden
     .rui-header,
     .rui-main,
@@ -114,18 +153,11 @@ $z-header: 480
         display: block
         animation: fadeIn .2s
 
-@include media-breakpoint-down(sm)
-  .open
-    overflow-x: hidden
-    .rui-header,
-    .rui-main,
-    .rui-sidebar-left,
-    .rui-footer
-      transform: translate3d($rui-sidebar-left-width, 0, 0)
-    .rui-clickblock
-      &.show
-        display: block
-        animation: fadeIn .2s
+  .rui-show-menu-toggle
+    display: table-cell !important
+
+  .rui-fix-menu-toggle
+    display: none
 
 @keyframes fadeIn
   from {opacity: 0}
