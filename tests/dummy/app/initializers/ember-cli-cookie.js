@@ -8,4 +8,4 @@ export default {
   name: 'ember-cli-cookie',
   after: ['cookie'],
   initialize: initialize
-}
+};
