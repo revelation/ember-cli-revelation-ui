@@ -1,8 +1,8 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('rui-button', 'Integration | Component | rui button', {
-  integration: true,
+moduleForComponent('rui-text-input', 'Integration | Component | rui text input', {
+  integration: true
 });
 
 test('it renders', function(assert) {
@@ -11,15 +11,15 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{rui-button}}`);
+  this.render(hbs`{{rui-text-input}}`);
 
   assert.equal(this.$().text().trim(), '');
 
   // Template block usage:
   this.render(hbs`
-    {{#rui-button}}
+    {{#rui-text-input}}
       template block text
-    {{/rui-button}}
+    {{/rui-text-input}}
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');
