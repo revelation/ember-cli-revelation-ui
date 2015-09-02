@@ -7,7 +7,7 @@
 
     {{!-- TBD: Need to wire states --}}
     <span class="current-project-status">
-      <i class='fa fa-circle text-success' /> Active
+      {{rui-icon name='circle' class='text-success'}} Active
       {{!-- If Unstarted/Complete --}}
       {{!-- <i class='fa fa-circle-o text-muted' /> Unstarted --}}
       {{!-- <i class='fa fa-circle text-muted' /> Complete --}}
@@ -19,18 +19,18 @@
       {{rui-input-text placeholder='Find Project'}}
     </div>
     <div class='dropdown-scroll-y'>
-      <a class="dropdown-item" href="#"><i class='fa fa-circle-o text-muted' /> Project 1</a>
-      <a class="dropdown-item" href="#"><i class='fa fa-circle-o text-muted' /> Project 2</a>
-      <a class="dropdown-item" href="#"><i class='fa fa-circle text-muted' /> Project 3</a>
-      <a class="dropdown-item" href="#"><i class='fa fa-circle text-success' /> Project 4</a>
-      <a class="dropdown-item" href="#"><i class='fa fa-circle text-muted' /> Project 5</a>
-      <a class="dropdown-item" href="#"><i class='fa fa-circle text-success' /> Project 6</a>
-      <a class="dropdown-item" href="#"><i class='fa fa-circle-o text-muted' /> Project 7</a>
-      <a class="dropdown-item" href="#"><i class='fa fa-circle text-muted' /> Project 8</a>
-      <a class="dropdown-item" href="#"><i class='fa fa-circle text-success' /> Project 9</a>
+      <a class="dropdown-item">{{rui-icon name='circle-o' class='text-muted'}} Project 1</a>
+      <a class="dropdown-item">{{rui-icon name='circle-o' class='text-muted'}} Project 2</a>
+      <a class="dropdown-item">{{rui-icon name='circle' class='text-muted'}} Project 3</a>
+      <a class="dropdown-item">{{rui-icon name='circle' class='text-success'}} Project 4</a>
+      <a class="dropdown-item">{{rui-icon name='circle' class='text-muted'}} Project 5</a>
+      <a class="dropdown-item">{{rui-icon name='circle' class='text-success'}} Project 6</a>
+      <a class="dropdown-item">{{rui-icon name='circle-o' class='text-muted'}} Project 7</a>
+      <a class="dropdown-item">{{rui-icon name='circle' class='text-muted'}} Project 8</a>
+      <a class="dropdown-item">{{rui-icon name='circle' class='text-success'}} Project 9</a>
     </div>
     <div class='dropdown-footer-block'>
-      <a href="#" class='btn btn-secondary btn-block'>All Projects</a>
+      <a class='btn btn-secondary btn-block'>All Projects</a>
     </div>
   {{/rui-dropdown-menu}}
 {{/rui-dropdown}}
