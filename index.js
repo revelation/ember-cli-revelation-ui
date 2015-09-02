@@ -3,7 +3,7 @@
 
 module.exports = {
   name: 'ember-cli-revelation-ui',
-  // https://github.com/aexmachina/ember-cli-sass#addon-usage
+
   included: function(app) {
     this._super.included(app);
 

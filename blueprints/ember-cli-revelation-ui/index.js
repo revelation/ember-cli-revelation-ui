@@ -2,12 +2,7 @@ module.exports = {
   normalizeEntityName: function() {},
 
   afterInstall: function() {
-    // this.addBowerPackageToProject('bootstrap', '4.0.0-alpha')
-    //   .then(function(){
-    //     return this.addBowerPackageToProject('font-awesome', '~4.4.0')
-    //   });
     var self = this;
-
     return self.addBowerPackagesToProject([
       { name: 'bootstrap',        target: '4.0.0-alpha' },
       { name: 'font-awesome',     target: '~4.4.0' }
