@@ -28,7 +28,7 @@ module.exports = function(environment) {
     ENV.contentSecurityPolicy = {
       'default-src': "'self'",
       'font-src': "'self' http://fonts.gstatic.com",
-      'img-src': "'self'",
+      'img-src': "'self' http://placehold.it https://placeholdit.imgix.net",
       'script-src': "'self' 'unsafe-inline'",
       'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
       'media-src': "'self'"
@@ -49,7 +49,7 @@ module.exports = function(environment) {
     ENV.contentSecurityPolicy = {
       'default-src': "'self'",
       'font-src': "'self' http://fonts.gstatic.com",
-      'img-src': "'self'",
+      'img-src': "'self' http://placehold.it https://placeholdit.imgix.net",
       'script-src': "'self' 'unsafe-inline'",
       'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
       'media-src': "'self'"
@@ -60,7 +60,7 @@ module.exports = function(environment) {
     ENV.contentSecurityPolicy = {
       'default-src': "'self'",
       'font-src': "'self' http://fonts.gstatic.com",
-      'img-src': "'self'",
+      'img-src': "'self' http://placehold.it https://placeholdit.imgix.net",
       'script-src': "'self' 'unsafe-inline'",
       'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
       'media-src': "'self'"
