@@ -21,9 +21,6 @@
 //
 // Variable format should follow the `$component-modifier-state-property` order.
 
-$rui-nav-bg: #fff !default;
-$rui-border-color-light: #f3f1ee !default;
-
 // Colors
 //
 // Grayscale and brand colors for use across Bootstrap.
@@ -59,7 +56,7 @@ $enable-hover-media-query:  false !default;
 // Control the default styling of most Bootstrap elements by modifying these
 // variables. Mostly focused on spacing.
 
-$root:                       14;
+
 $spacer:                     1rem !default;
 $spacer-x:                   $spacer !default;
 $spacer-y:                   $spacer !default;
