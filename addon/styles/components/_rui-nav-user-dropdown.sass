@@ -1,0 +1,37 @@
+.rui-nav-user-dropdown
+  position: absolute
+  right: 0
+  &:hover
+    background: $gray-lightest
+    border: (1 / $root) * 1rem solid $rui-border-color-light
+    border-top: 0
+    border-right: 0
+
+.rui-nav-user-dropdown-trigger
+  @extend .btn-unstyled
+  padding: $spacer
+  &::after
+    color: $gray-lighter
+
+.rui-nav-user-dropdown-menu
+  margin-top: -$spacer/2
+  margin-right: $spacer
+  padding-bottom: $spacer
+  width: 15rem
+
+  .user-header
+    @extend .dropdown-header-block
+    padding: $spacer * 1.25 $spacer
+    text-transform: none
+    line-height: 1.5
+    color: $gray-light
+    span
+      color: $body-color
+      font-size: $font-size-root
+      &.user-name
+        font-weight: bold
+
+  .role-items-header
+    @extend .dropdown-header
+    margin-top: $spacer
+    padding: $spacer $spacer 0 $spacer
