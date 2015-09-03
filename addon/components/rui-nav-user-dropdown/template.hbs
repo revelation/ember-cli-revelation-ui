@@ -1,25 +1,21 @@
-{{#rui-dropdown class='rui-nav-user-dropdown'}}
+{{#rui-dropdown-trigger id='userMenu' class='rui-nav-user-dropdown-trigger'}}
+  <!--
+    NOTE: This should probably be an img placeholder helper/component.
+      Also, the image is set to 31 pixels to account for the header height
+      not lining up at exactly 31 pixels. This might be better served by
+      vertically aligning with flexbox instead of `$spacers`.
+  -->
+  <img src='http://placehold.it/31/f7941e/ffffff?text=%20' />
+{{/rui-dropdown-trigger}}
 
-  {{#rui-dropdown-trigger id='userMenu' class='rui-nav-user-dropdown-trigger'}}
-    <!--
-      NOTE: This should probably be an img placeholder helper/component.
-        Also, the image is set to 31 pixels to account for the header height
-        not lining up at exactly 31 pixels. This might be better served by
-        vertically aligning with flexbox instead of `$spacers`.
-    -->
-    <img src='http://placehold.it/31/f7941e/ffffff?text=%20' />
-  {{/rui-dropdown-trigger}}
-
-  {{#rui-dropdown-menu aria-labelledby='userMenu' align='right' class='rui-nav-user-dropdown-menu'}}
-    <h6 class='user-header'>Signed in as<br /><span class='user-name'>User N</span> <span class='user-role'>(user-role)</span></h6>
-    <a class='dropdown-item'>Profile &amp; Settings</a>
-    <a class='dropdown-item'>Sign Out</a>
-    <!-- TODO: Needs user role conditionals -->
-    <h6 class='role-items-header'>Superuser</h6>
-    <a class='dropdown-item'>Operations</a>
-    <a class='dropdown-item'>Accounts</a>
-    <a class='dropdown-item'>Rollout</a>
-    <a class='dropdown-item'>Announcements</a>
-  {{/rui-dropdown-menu}}
-
-{{/rui-dropdown}}
+{{#rui-dropdown-menu aria-labelledby='userMenu' align='right' class='rui-nav-user-dropdown-menu'}}
+  <h6 class='user-header'>Signed in as<br /><span class='user-name'>User N</span> <span class='user-role'>(user-role)</span></h6>
+  <a class='dropdown-item'>Profile &amp; Settings</a>
+  <a class='dropdown-item'>Sign Out</a>
+  <!-- TODO: Needs user role conditionals -->
+  <h6 class='role-items-header'>Superuser</h6>
+  <a class='dropdown-item'>Operations</a>
+  <a class='dropdown-item'>Accounts</a>
+  <a class='dropdown-item'>Rollout</a>
+  <a class='dropdown-item'>Announcements</a>
+{{/rui-dropdown-menu}}
