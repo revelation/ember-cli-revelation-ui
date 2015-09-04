@@ -12,5 +12,7 @@ export default Ember.Controller.extend({
 
   // For displaying loading state on async button option
   asyncAction1: false,
-  asyncAction2: false
+  asyncAction2: false,
+  animals: ['Antelope', 'Giraffes', 'Penguins', 'Bears', 'Ostrich'],
+  SelectedValue: null
 });
