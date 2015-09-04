@@ -30,20 +30,31 @@ $z-header: 510
   border-bottom: $border-width solid $rui-border-color-light
 
 // Toggles
+.rui-header-menu-block
+  transition: transform .2s cubic-bezier(.16, .68, .43, .99)
+  transform: translate3d(-54px, 0, 0)
+  .unfix-menu &
+    transform: translate3d(0, 0, 0)
+
 // Expand/Collapses sidebar only when unfixed
 // Hide when fixed
 .rui-show-menu-toggle
+  display: flex
   height: $rui-header-height
-  display: table-cell
-  vertical-align: middle
-  padding-left: .5rem
-  > .btn
+  align-items: center
+  .rui-show-menu-toggle-btn
+    font-size: 28px
+    line-height: 1
+    padding-right: $spacer
+    padding-left: $spacer
     &.active,
     &:active,
     &:focus
       outline: 0
-  &.hide
-    display: none
+
+@include media-breakpoint-down(sm)
+  .rui-header-menu-block
+    transform: translate3d(0, 0, 0)
 
 // Fixes/unfixes sidebar
 // Hide when @media(sm)
@@ -65,7 +76,7 @@ $z-header: 510
 @include media-breakpoint-down(sm)
   // Show menu toggle regardless of state
   .rui-show-menu-toggle
-    display: table-cell !important
+    display: flex !important
 
   // Hide fix menu toggle regardless of state
   .rui-fix-menu-toggle
@@ -159,6 +170,8 @@ $z-header: 510
   .rui-clickblock
     display: block
     animation: fadeIn .2s  // Fade in clickblock, animation required to toggle display and fade in
+
+
 
 // Unfix Menu @media(sm)
 // Should expand menu as if unfixed

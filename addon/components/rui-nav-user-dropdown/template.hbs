@@ -9,11 +9,17 @@
 {{/rui-dropdown-trigger}}
 
 {{#rui-dropdown-menu aria-labelledby='userMenu' align='right' class='rui-nav-user-dropdown-menu'}}
-  <h6 class='user-header'>Signed in as<br /><span class='user-name'>User N</span> <span class='user-role'>(user-role)</span></h6>
+  <div class='dropdown-header-block'>
+    <div class='dropdown-header'>Signed in as</div>
+    <div class="user-name">
+      <strong>User N</strong> (user-role)
+    </div>
+  </div>
   <a class='dropdown-item'>Profile &amp; Settings</a>
   <a class='dropdown-item'>Sign Out</a>
   <!-- TODO: Needs user role conditionals -->
-  <h6 class='role-items-header'>Superuser</h6>
+  <br />
+  <div class='dropdown-header'>Superuser</div>
   <a class='dropdown-item'>Operations</a>
   <a class='dropdown-item'>Accounts</a>
   <a class='dropdown-item'>Rollout</a>

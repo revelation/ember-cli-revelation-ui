@@ -68,7 +68,7 @@ $border-width:               1 / $root * 1rem !default; //.0675rem !default;
 // Settings for the `<body>` element.
 
 $body-bg:                    $gray-lightest !default;
-$body-color:                 $gray-dark !default;
+$body-color:                 $rui-text-color !default;
 
 
 // Links
@@ -164,7 +164,7 @@ $headings-color:             inherit !default;
 $lead-font-size:             1.25rem !default;
 $lead-font-weight:           300 !default;
 
-$text-muted:                  $gray-light !default;
+$text-muted:                  $rui-text-color-muted !default;
 
 $abbr-border-color:           $gray-light !default;
 
