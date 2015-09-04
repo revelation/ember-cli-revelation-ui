@@ -4,5 +4,5 @@ import RuiDropdownComponent from 'ember-cli-revelation-ui/components/rui-dropdow
 
 export default RuiDropdownComponent.extend({
   layout: layout,
-  classNames: ['rui-nav-user-dropdown']
+  classNames: ['rui-nav-brand-dropdown']
 });

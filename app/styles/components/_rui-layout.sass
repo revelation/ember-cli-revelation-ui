@@ -5,7 +5,7 @@ $rui-sidebar-left-width: 240px
 $z-footer: 510
 $z-sidebar: 500
 $z-clickblock: 490
-$z-header: 480
+$z-header: 510
 
 // Overlay that captures clicks to collapse menu when open
 .rui-clickblock
@@ -30,20 +30,31 @@ $z-header: 480
   border-bottom: $border-width solid $rui-border-color-light
 
 // Toggles
+.rui-header-menu-block
+  transition: transform .2s cubic-bezier(.16, .68, .43, .99)
+  transform: translate3d(-54px, 0, 0)
+  .unfix-menu &
+    transform: translate3d(0, 0, 0)
+
 // Expand/Collapses sidebar only when unfixed
 // Hide when fixed
 .rui-show-menu-toggle
+  display: flex
   height: $rui-header-height
-  display: table-cell
-  vertical-align: middle
-  padding-left: .5rem
-  > .btn
+  align-items: center
+  .rui-show-menu-toggle-btn
+    font-size: 28px
+    line-height: 1
+    padding-right: $spacer
+    padding-left: $spacer
     &.active,
     &:active,
     &:focus
       outline: 0
-  &.hide
-    display: none
+
+@include media-breakpoint-down(sm)
+  .rui-header-menu-block
+    transform: translate3d(0, 0, 0)
 
 // Fixes/unfixes sidebar
 // Hide when @media(sm)
@@ -65,7 +76,7 @@ $z-header: 480
 @include media-breakpoint-down(sm)
   // Show menu toggle regardless of state
   .rui-show-menu-toggle
-    display: table-cell !important
+    display: flex !important
 
   // Hide fix menu toggle regardless of state
   .rui-fix-menu-toggle
@@ -153,11 +164,14 @@ $z-header: 480
   .rui-sidebar-left,
   .rui-footer
     transform: translate3d($rui-sidebar-left-width, 0, 0) // Move all elements right
+  .rui-header,
   .rui-footer
     z-index: $z-clickblock - 5 // Put the footer behind the clickblock when not @media(sm)
   .rui-clickblock
     display: block
     animation: fadeIn .2s  // Fade in clickblock, animation required to toggle display and fade in
+
+
 
 // Unfix Menu @media(sm)
 // Should expand menu as if unfixed
@@ -169,6 +183,8 @@ $z-header: 480
     .rui-sidebar-left,
     .rui-footer
       transform: translate3d($rui-sidebar-left-width, 0, 0)
+    .rui-header
+      z-index: $z-clickblock - 5 // Put the footer behind the clickblock when not @media(sm)
     .rui-clickblock
       display: block
       animation: fadeIn .2s
