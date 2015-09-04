@@ -1,11 +1,5 @@
 {{#rui-dropdown-trigger id='userMenu' class='rui-nav-user-dropdown-trigger'}}
-  <!--
-    NOTE: This should probably be an img placeholder helper/component.
-      Also, the image is set to 31 pixels to account for the header height
-      not lining up at exactly 31 pixels. This might be better served by
-      vertically aligning with flexbox instead of `$spacers`.
-  -->
-  <img src='http://placehold.it/31/f7941e/ffffff?text=%20' />
+  {{rui-avatar src='http://placehold.it/32/f7941e/ffffff?text=%20'}}
 {{/rui-dropdown-trigger}}
 
 {{#rui-dropdown-menu aria-labelledby='userMenu' align='right' class='rui-nav-user-dropdown-menu'}}
