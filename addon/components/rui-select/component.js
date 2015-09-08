@@ -6,6 +6,7 @@ export default Ember.Component.extend({
   // http://emberjs.com/deprecations/v1.x/#toc_ember-select
   // http://emberjs.jsbin.com/fotuqa
   layout: layout,
+  tagName: 'span',
   // possible passed-in values with their defaults:
   content: null,
   prompt: null,
@@ -17,7 +18,7 @@ export default Ember.Component.extend({
   // leaking changes to it via a 2-way binding
   _selection: Ember.computed.reads('selection'),
   
-  didInitAttrs(attrs) {
+  didInitAttrs() {
     this._super(...arguments);
     if (!this.get('content')) {
       this.set('content', []);
