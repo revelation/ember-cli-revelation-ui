@@ -14,5 +14,9 @@ export default Ember.Controller.extend({
   asyncAction1: false,
   asyncAction2: false,
   animals: ['Antelope', 'Giraffes', 'Penguins', 'Bears', 'Ostrich'],
-  SelectedValue: null
+  fakeModel: [
+    {title: 'Bears', id: 1},
+    {title: 'Tigers', id: 2},
+    {title: 'Lions', id: 3}
+  ]
 });

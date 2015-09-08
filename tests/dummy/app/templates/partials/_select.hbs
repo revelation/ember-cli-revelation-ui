@@ -1,7 +1,14 @@
-{{rui-select content=animals action=(action (mut mySelectedItem))}}
-<br/>
-Output: {{mySelectedItem}}
-
-
-{{!-- http://emberjs.com/deprecations/v1.x/#toc_ember-select --}}
-{{!-- http://emberjs.com/blog/2015/05/10/run-up-to-two-oh.html#toc_the-code-mut-code-helper --}}
+{{rui-select
+  content=fakeModel
+  optionLabelPath='title'
+  optionValuePath='id'
+  selection=ruiSelectedValueExample
+  prompt="Select something"
+  action=(action (mut ruiSelectedValueExample))
+}}
+<br />
+{{#if ruiSelectedValueExample}}
+	You've selected: {{ruiSelectedValueExample.title}}
+{{else}}
+	Nothing selected
+{{/if}}

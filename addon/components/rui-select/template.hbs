@@ -1,7 +1,13 @@
 <select {{action 'change' on='change'}}>
-  {{#each content key="@index" as |item|}}
-    <option value="{{item}}" selected={{is-equal item selectedValue}}>
-      {{item}}
+  {{#if prompt}}
+    <option disabled selected={{is-not selection}}>
+      {{prompt}}
     </option>
+  {{/if}}
+  
+  {{#each content key="@identity" as |item|}}
+    <option value="{{read-path item optionValuePath}}" selected={{is-equal item selection}}>
+      {{read-path item optionLabelPath}}
+     </option>
   {{/each}}
 </select>
