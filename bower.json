@@ -17,7 +17,7 @@
     "ember": "^2.0.0"
   },
   "devDependencies": {
-    "bootstrap": "4.0.0-alpha",
+    "bootstrap": "v4-dev",
     "font-awesome": "~4.4.0"
   }
 }

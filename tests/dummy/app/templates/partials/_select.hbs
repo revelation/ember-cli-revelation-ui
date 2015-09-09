@@ -1,0 +1,98 @@
+<section>
+  <h1 class='page-header'>
+    {{header-anchor name='select' data-title='Select'}}
+    <small><code>&lbrace;&lbrace;rui-select&rbrace;&rbrace;</code></small>
+  </h1>
+  <p></p>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Type</th>
+        <th>Options</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>content</strong></td>
+        <td>[object]</td>
+        <td>User defined</td>
+        <td>[]</td>
+        <td>Options passed in as an array of objects, i.e. <code>[{title: 'option 1', id: '1'}, {title: 'option 2', id: '2'},]</code></td>
+      </tr>
+      <tr>
+        <td><strong>optionLabelPath</strong></td>
+        <td>[string]</td>
+        <td>User defined</td>
+        <td>'title'</td>
+        <td>Customize the key to use as value for each option</td>
+      </tr>
+      <tr>
+        <td><strong>optionValuePath</strong></td>
+        <td>[string]</td>
+        <td>User defined</td>
+        <td>'id'</td>
+        <td>Customize the key to use as identifier for each option</td>
+      </tr>
+      <tr>
+        <td><strong>selection</strong></td>
+        <td>[property]</td>
+        <td>User defined</td>
+        <td>-</td>
+        <td>Use to bind currently selected to model.  Leave out to prohibit selection from being manipulated external.  Property is set via action so this is useful primarirly for initially setting a value.</td>
+      </tr>
+      <tr>
+        <td><strong>prompt</strong></td>
+        <td>[string]</td>
+        <td>User defined</td>
+        <td>-</td>
+        <td>The default text shown when there is no current selection.</td>
+      </tr>
+      <tr>
+        <td><strong>action</strong></td>
+        <td>[function]</td>
+        <td>User defined</td>
+        <td>-</td>
+        <td>Should use the form <code>(action (mut myProperty))</code>.  The action is passed as a callback of the 'onchange' event with the current 'selection' passed as its param and explicitly bound to the defined property using the <code>mut</code> helper.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+{{!-- Basic Example --}}
+<h3>
+  {{header-anchor name='select-basic-example' data-title='Select Example'}}
+</h3>
+<p>Basic dropdown configurations required are shown below.  The <code>id</code> and <code>aria-labelledby</code> should match for accessability compliance.  You must define a style attribute on the dropdown trigger as we omit all styles by default to allow for greatest felxibility.</p>
+<div class="card card-code-example">
+  <div class="card-block">
+    {{rui-select
+      content=mySelectOptions
+      optionLabelPath='title'
+      optionValuePath='id'
+      selection=mySelectedProp
+      prompt="Select Something"
+      action=(action (mut mySelectedProp))
+    }}
+    <br />
+    {{#if mySelectedProp}}
+      You've selected: {{mySelectedProp.title}}, the id is: {{mySelectedProp.id}}
+    {{else}}
+      Nothing selected
+    {{/if}}
+  </div>
+  <div class="card-footer">
+    <pre><code class="handlebars">
+&lbrace;&lbrace;rui-select
+  content=mySelectOptions
+  optionLabelPath='title'
+  optionValuePath='id'
+  selection=mySelectedProp
+  prompt="Select Something"
+  action=(action (mut mySelectedProp))
+&rbrace;&rbrace;
+    </code></pre>
+  </div>
+</div>
