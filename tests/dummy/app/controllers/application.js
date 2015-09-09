@@ -22,12 +22,10 @@ export default Ember.Controller.extend({
   actions: {
     sendMyAction() {
       window.alert('You triggered an action!');
-      console.log('yo');
     },
 
     sendMyActionWithParams(param1, param2, param3) {
       window.alert(param1 + ', ' + param2 + ', ' + param3);
-      console.log('yo');
     },
 
     asyncAction1() {
