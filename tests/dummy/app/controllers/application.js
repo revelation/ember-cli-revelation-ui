@@ -18,6 +18,12 @@ export default Ember.Controller.extend({
     {title: 'Tigers', id: 2},
     {title: 'Lions', id: 3}
   ],
+  checkBoxExamples: {
+    meatCheckbox: true,
+    cheeseCheckbox: false,
+    picklesCheckbox: false
+  },
+  radioValue: 'red',
 
   actions: {
     sendMyAction() {

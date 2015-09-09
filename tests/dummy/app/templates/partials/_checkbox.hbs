@@ -1,9 +1,35 @@
-{{#rui-checkbox checked=(mut mycheckbox1)}}
-  Here is a checkbox
-{{/rui-checkbox}}
-{{#rui-checkbox checked=(mut mycheckbox2)}}
-  Pretty straight forward
-{{/rui-checkbox}}
-{{#rui-checkbox checked=(mut mycheckbox3)}}
-  I can even use <strong>HTML</strong>
-{{/rui-checkbox}}
+{{!-- checkboxes --}}
+<fieldset class='form-group'>
+  {{#rui-checkbox name='mycheckbox1' checked=(mut checkBoxExamples.meatCheckbox)}}
+    Meat
+  {{/rui-checkbox}}
+  {{#rui-checkbox name='mycheckbox2' checked=(mut checkBoxExamples.cheeseCheckbox)}}
+    Cheese
+  {{/rui-checkbox}}
+  {{#rui-checkbox name='mycheckbox3' checked=(mut checkBoxExamples.picklesCheckbox)}}
+    Pickles <strong>(spicy)</strong>
+    <br /><small class='text-muted'>Extra html goodness!</small>
+  {{/rui-checkbox}}
+</fieldset>
+
+<fieldset class='form-group'>
+  Meat: {{checkBoxExamples.meatCheckbox}}, Cheese: {{checkBoxExamples.cheeseCheckbox}}, Pickles: {{checkBoxExamples.picklesCheckbox}}
+</fieldset>
+
+
+{{!-- Radio Buttons --}}
+<fieldset class='form-group'>
+  {{#rui-radio checked=radioValue value='red' name='radioOptionGroup'}}
+    Red
+  {{/rui-radio}}
+  {{#rui-radio checked=radioValue value='blue' name='radioOptionGroup'}}
+    Blue
+  {{/rui-radio}}
+  {{#rui-radio checked=radioValue value='green' name='radioOptionGroup'}}
+    Green <br /><small class='text-muted'>You guessed it.  Go ahead and use html</small>
+  {{/rui-radio}}
+</fieldset>
+
+<fieldset class='form-group'>
+  Radio value is now: {{radioValue}}
+</fieldset>
