@@ -9,6 +9,7 @@ export default Ember.Component.extend({
   attributeBindings: ['disabled'],
   disabled: false,
   isLoading: false,
+  action: Ember.K,
 
   // Defaults
   style: 'secondary', //default
@@ -64,33 +65,9 @@ export default Ember.Component.extend({
 
   //Actions
   click() {
-    // Set action name via action property to be handled by application
-    // Pass action params using properties with syntax param1=parameter1 param2=parameter2
-    // TBD: A bit fragile
-    // Only works with 0, 1, or 2 params
-    // Only verifies property is prefixed with param
-    // Ensure touch support
-
-    var properties = this.attrs;
-    var params = [];
-    for (var property in properties) {
-      if (property.indexOf('param') === 0) {
-        params.push(property);
-      }
-    }
-    var l = params.length;
-
-    if (l > 2) {
-      Ember.Logger.warn('rui-button: You specified an unsupported \'size\' property so we\'ve defaulted to the standard size: choose from \'lg sm xs or omit for standard size.\'');
-      this.sendAction('action', this.get('param1'), this.get('param2'));
-    } else if (l > 1) {
-      this.sendAction('action', this.get('param1'), this.get('param2'));
-    } else if (l > 0) {
-      this.sendAction('action', this.get('param1'));
-    } else {
-      // According to docs, this does nothing if no action specified
-      this.sendAction('action');
-    }
+    // Retreive the specified action and execute the contents
+    // should be wrapped in action helper i.e. action=(action 'namedAction' param1, param2, ect)
+    this.get('action').call();
   }
 
 });
