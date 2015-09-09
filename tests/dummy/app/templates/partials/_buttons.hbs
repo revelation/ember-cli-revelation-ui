@@ -42,19 +42,7 @@
       <tr>
         <td><a href='#button-action'>action</a></td>
         <td>[string]</td>
-        <td>Action name to send.</td>
-        <td>&mdash;</td>
-      </tr>
-      <tr>
-        <td><a href='#button-params'>param1</a></td>
-        <td>[string, object]</td>
-        <td>First parameter to send with action.</td>
-        <td>&mdash;</td>
-      </tr>
-      <tr>
-        <td><a href='#button-params'>param2</a></td>
-        <td>[string, object]</td>
-        <td>Second parameter to send with action.</td>
+        <td>Action helper including action name and parameters</td>
         <td>&mdash;</td>
       </tr>
     </tbody>
@@ -154,12 +142,12 @@
   <p>Indicate whether an action is currently being performed by passing the action name to the <code>isLoading</code> attribute. This will add a spinner to the button until the action is completed. The value of <code>isLoading</code> must <em>not</em> be wrapped in quotes.</p>
   <div class='card card-code-example'>
     <div class='card-block'>
-      {{#rui-button style='primary' action='asyncAction2' isLoading=asyncAction2}}Loading Button{{/rui-button}}
-      {{#rui-button action='asyncAction1' isLoading=asyncAction1}}Another Loading Button{{/rui-button}}
+      {{#rui-button style='primary' action=(action 'asyncAction2') isLoading=asyncAction2}}Loading Button{{/rui-button}}
+      {{#rui-button action=(action 'asyncAction1') isLoading=asyncAction1}}Another Loading Button{{/rui-button}}
     </div>
     <div class='card-footer'><pre><code class='handlebars'>
-&lbrace;&lbrace;#rui-button style='primary' action='asyncAction' isLoading=asyncAction&rbrace;&rbrace;Loading Button&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
-&lbrace;&lbrace;#rui-button action='anotherAsyncAction' isLoading=anotherAsyncAction&rbrace;&rbrace;Another Loading Button&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+&lbrace;&lbrace;#rui-button style='primary' action=(action 'asyncAction') isLoading=asyncActionProp&rbrace;&rbrace;Loading Button&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+&lbrace;&lbrace;#rui-button action=(action 'anotherAsyncAction') isLoading=anotherAsyncActionProp&rbrace;&rbrace;Another Loading Button&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
     </code></pre></div>
   </div>
 
@@ -196,26 +184,26 @@
   <h3>
     {{header-anchor name='button-action' data-title='Action'}}
   </h3>
-  <p>Supply the action name to be handled by the application with the <code>action</code> property.</p>
+  <p>Supply an action helper including your action name to be sent on click.</p>
   <div class='card card-code-example'>
     <div class='card-block'>
-      {{#rui-button style='primary' action='sendMyAction'}}Trigger Action{{/rui-button}}
+      {{#rui-button style='primary' action=(action 'sendMyAction')}}Trigger Action{{/rui-button}}
     </div>
     <div class='card-footer'><pre><code class='handlebars'>
-&lbrace;&lbrace;#rui-button style='primary' action='sendAction'&rbrace;&rbrace;Trigger Action&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+&lbrace;&lbrace;#rui-button style='primary' action=(action 'myActionName')&rbrace;&rbrace;Trigger Action&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
     </code></pre></div>
   </div>
 
   <h3>
     {{header-anchor name='button-params' data-title='Action Parameters'}}
   </h3>
-  <p>An action can be sent up to two parameters by using the <code>params1</code> and <code>params2</code> attributes.</p>
+  <p>Send some parameters along for the ride. Supply an action helper including your action name and space delimited list of arguments to be sent on click.</p>
   <div class='card card-code-example'>
     <div class='card-block'>
-      {{#rui-button style='primary' action='sendMyActionWithParams' param1='A simple parameter passed in' param2='Another parameter along for the ride'}}Trigger Action with Parameters{{/rui-button}}
+      {{#rui-button style='primary' action=(action 'sendMyActionWithParams' 'something' 'somthingelse' 'what!')}}Trigger Action with Parameters{{/rui-button}}
     </div>
     <div class='card-footer'><pre><code class='handlebars'>
-&lbrace;&lbrace;#rui-button style='primary' action='sendActionWithParams' param1='A simple parameter passed in' param2='Another parameter along for the ride'&rbrace;&rbrace;Trigger Action&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
+&lbrace;&lbrace;#rui-button style='primary' action=(action 'myActionNameWithParams' param1 param2 param3)&rbrace;&rbrace;Trigger Action&lbrace;&lbrace;/rui-button&rbrace;&rbrace;
     </code></pre></div>
   </div>
 </section>
