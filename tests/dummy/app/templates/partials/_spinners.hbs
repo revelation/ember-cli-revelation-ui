@@ -3,7 +3,7 @@
     {{header-anchor name='spinners' data-title='Spinners'}}
     <small><code>&lbrace;&lbrace;rui-spinner&rbrace;&rbrace;</code></small>
   </h1>
-  <p>Add a graphical spinner from the <a href='http://fontawesome.io/icons/' target='_blank'>FontAwesome library</a>. Note that <code>gear</code> is an alias for <code>cog</code>.</p>
+  <p>Add a graphical spinner from the <a href='http://fontawesome.io/icons/' target='_blank'>FontAwesome library</a>. Use the optional <code>size</code> attribute for a larger spinner.</p>
   <table class='table'>
     <thead>
       <tr>
@@ -15,19 +15,21 @@
     </thead>
     <tbody>
       <tr>
-        <td><a href='#spinner-types'>type</a></td>
+        <td><a href='#spinner-types'>size</a></td>
         <td>[string]</td>
-        <td>'circle-o-notch', 'cog', 'gear', 'refresh', 'spinner'</td>
-        <td>'spinner'</td>
+        <td>default, 'lg'</td>
+        <td>null</td>
       </tr>
     </tbody>
   </table>
   <div class='card card-code-example'>
     <div class='card-block'>
-      {{rui-spinner}}
+      <p>{{rui-spinner}}</p>
+      <p>{{rui-spinner size='lg'}}</p>
     </div>
     <div class='card-footer'><pre><code class='handlebars'>
-&lbrace;&lbrace;rui-spinner&rbrace;&rbrace;
+&lt;p&gt;&lbrace;&lbrace;rui-spinner&rbrace;&rbrace;&lt;/p&gt;
+&lt;p&gt;&lbrace;&lbrace;rui-spinner size='lg'&rbrace;&rbrace;&lt;/p&gt;
     </code></pre></div>
   </div>
 </section>
