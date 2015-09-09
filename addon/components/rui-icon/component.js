@@ -5,7 +5,7 @@ export default Ember.Component.extend({
   layout: layout,
   tagName: 'i',
   classNames: ['fa'],
-  classNameBindings: ['nameComputed', 'spinComputed'],
+  classNameBindings: ['nameComputed'],
 
   // Constructors
   classPrefix: 'fa',
@@ -18,14 +18,5 @@ export default Ember.Component.extend({
     //   be nice to give an Ember warning if the icon name doesn't exist.
     var iconName = this.get('name');
     return this.get('classPrefix') + '-' + iconName;
-  }),
-
-  spinComputed: Ember.computed('style', function() {
-    // Adds the spin class if the icon should be spinning.
-    if (this.get('spin')) {
-      return this.get('classPrefix') + '-spin';
-    } else {
-      return null;
-    }
   })
 });
