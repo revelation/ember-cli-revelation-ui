@@ -1,7 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('rui-avatar', 'Integration | Component | rui avatar', {
+moduleForComponent('rui-spinner', 'Integration | Component | rui spinner', {
   integration: true
 });
 
@@ -11,7 +11,7 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{rui-avatar}}`);
+  this.render(hbs`{{rui-spinner}}`);
 
   assert.equal(this.$().text().trim(), '');
 });

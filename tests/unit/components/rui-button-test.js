@@ -28,7 +28,7 @@ test('it adds style class when style property is set', function(assert) {
   Ember.run(function(){
     component.set('style', 'wrongstyle');
   });
-  assert.ok(this.$().hasClass('btn-secondary'), 'it should default to \'btn-default\' class when (unsupported) style is set to \'wrongstyle\'');
+  assert.ok(this.$().hasClass('btn-secondary'), 'it should default to \'btn-secondary\' class when (unsupported) style is set to \'wrongstyle\'');
 
   Ember.run(function(){
     component.set('style', 'primary');
