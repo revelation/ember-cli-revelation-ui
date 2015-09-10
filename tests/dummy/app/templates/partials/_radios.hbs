@@ -1,0 +1,79 @@
+<section>
+  <h1 class='page-header'>
+    {{header-anchor name='radio' data-title='Radio'}}
+    <small><code>&lbrace;&lbrace;rui-input-radio&rbrace;&rbrace;</code></small>
+  </h1>
+  <p></p>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Type</th>
+        <th>Options</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>checked</strong></td>
+        <td>bound property</td>
+        <td>User defined</td>
+        <td>-</td>
+        <td>The bound property to set on click.  For radio lists all radios should be bound to the same property and will set to the selected items <code>value</code> on click.</td>
+      </tr>
+      <tr>
+        <td><strong>value</strong></td>
+        <td>string</td>
+        <td>User defined</td>
+        <td>-</td>
+        <td>The string that will become the passed properties (<code>checked</code>) value when the radio is selected.</td>
+      </tr>
+      <tr>
+        <td><strong>name</strong></td>
+        <td>string</td>
+        <td>User defined</td>
+        <td>-</td>
+        <td>The radio group the checkbox belongs to.  This should be the same for all radios operating on the same bound property.  <small>*TBD: would be nice to infer this from bound property</small></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+{{!-- Basic Example --}}
+<h3>
+  {{header-anchor name='basic-radio-example' data-title='Basic Radio'}}
+</h3>
+<p></p>
+<div class="card card-code-example">
+  <div class="card-block">
+    
+    {{!-- Radio Buttons --}}
+    <fieldset class='form-group'>
+      {{#rui-radio checked=radioValue value='red' name='radioOptionGroup'}}
+        Red
+      {{/rui-radio}}
+      {{#rui-radio checked=radioValue value='blue' name='radioOptionGroup'}}
+        Blue
+      {{/rui-radio}}
+      {{#rui-radio checked=radioValue value='green' name='radioOptionGroup'}}
+        Green <br /><small class='text-muted'>You guessed it.  Go ahead and use html</small>
+      {{/rui-radio}}
+    </fieldset>
+
+    <fieldset class='form-group'>
+      Radio value is now: {{radioValue}}
+    </fieldset>
+
+  </div>
+  <div class="card-footer">
+    <pre><code class="handlebars">
+&lbrace;&lbrace;#rui-radio checked=radioValue value='red' name='radioOptionGroup'&rbrace;&rbrace;
+  Red
+&lbrace;&lbrace;/rui-radio&rbrace;&rbrace;
+&lbrace;&lbrace;#rui-radio checked=radioValue value='blue' name='radioOptionGroup'&rbrace;&rbrace;
+  Blue
+&lbrace;&lbrace;/rui-radio&rbrace;&rbrace;
+    </code></pre>
+  </div>
+</div>

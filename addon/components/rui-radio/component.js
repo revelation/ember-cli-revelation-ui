@@ -2,6 +2,8 @@ import Ember from 'ember';
 import layout from './template';
 
 export default Ember.Component.extend({
+  //TBD: Extrapolate 'name' property for radio groups from bound 'cehcked' prop
+  // These two values should always be the same
   layout: layout,
   tagName: 'div',
   classNames: ['radio'],
