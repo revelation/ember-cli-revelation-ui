@@ -1,7 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('rui-radio', 'Integration | Component | rui radio', {
+moduleForComponent('rui-input-checkbox', 'Integration | Component | rui input checkbox', {
   integration: true
 });
 
@@ -11,15 +11,15 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{rui-radio}}`);
+  this.render(hbs`{{rui-input-checkbox}}`);
 
   assert.equal(this.$().text().trim(), '');
 
   // Template block usage:
   this.render(hbs`
-    {{#rui-radio}}
+    {{#rui-input-checkbox}}
       template block text
-    {{/rui-radio}}
+    {{/rui-input-checkbox}}
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');

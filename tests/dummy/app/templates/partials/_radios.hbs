@@ -50,15 +50,15 @@
     
     {{!-- Radio Buttons --}}
     <fieldset class='form-group'>
-      {{#rui-radio checked=radioValue value='red' name='radioOptionGroup'}}
+      {{#rui-input-radio checked=radioValue value='red' name='radioOptionGroup'}}
         Red
-      {{/rui-radio}}
-      {{#rui-radio checked=radioValue value='blue' name='radioOptionGroup'}}
+      {{/rui-input-radio}}
+      {{#rui-input-radio checked=radioValue value='blue' name='radioOptionGroup'}}
         Blue
-      {{/rui-radio}}
-      {{#rui-radio checked=radioValue value='green' name='radioOptionGroup'}}
+      {{/rui-input-radio}}
+      {{#rui-input-radio checked=radioValue value='green' name='radioOptionGroup'}}
         Green <br /><small class='text-muted'>You guessed it.  Go ahead and use html</small>
-      {{/rui-radio}}
+      {{/rui-input-radio}}
     </fieldset>
 
     <fieldset class='form-group'>
@@ -68,12 +68,12 @@
   </div>
   <div class="card-footer">
     <pre><code class="handlebars">
-&lbrace;&lbrace;#rui-radio checked=radioValue value='red' name='radioOptionGroup'&rbrace;&rbrace;
+&lbrace;&lbrace;#rui-input-radio checked=radioValue value='red' name='radioOptionGroup'&rbrace;&rbrace;
   Red
-&lbrace;&lbrace;/rui-radio&rbrace;&rbrace;
-&lbrace;&lbrace;#rui-radio checked=radioValue value='blue' name='radioOptionGroup'&rbrace;&rbrace;
+&lbrace;&lbrace;/rui-input-radio&rbrace;&rbrace;
+&lbrace;&lbrace;#rui-input-radio checked=radioValue value='blue' name='radioOptionGroup'&rbrace;&rbrace;
   Blue
-&lbrace;&lbrace;/rui-radio&rbrace;&rbrace;
+&lbrace;&lbrace;/rui-input-radio&rbrace;&rbrace;
     </code></pre>
   </div>
 </div>

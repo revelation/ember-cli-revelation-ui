@@ -43,16 +43,16 @@
     
     {{!-- checkboxes --}}
     <fieldset class='form-group'>
-      {{#rui-checkbox name='mycheckbox1' checked=(mut checkBoxExamples.meatCheckbox)}}
+      {{#rui-input-checkbox name='mycheckbox1' checked=(mut checkBoxExamples.meatCheckbox)}}
         Meat
-      {{/rui-checkbox}}
-      {{#rui-checkbox name='mycheckbox2' checked=(mut checkBoxExamples.cheeseCheckbox)}}
+      {{/rui-input-checkbox}}
+      {{#rui-input-checkbox name='mycheckbox2' checked=(mut checkBoxExamples.cheeseCheckbox)}}
         Cheese
-      {{/rui-checkbox}}
-      {{#rui-checkbox name='mycheckbox3' checked=(mut checkBoxExamples.picklesCheckbox)}}
+      {{/rui-input-checkbox}}
+      {{#rui-input-checkbox name='mycheckbox3' checked=(mut checkBoxExamples.picklesCheckbox)}}
         Pickles <strong>(spicy)</strong>
         <br /><small class='text-muted'>Extra html goodness!</small>
-      {{/rui-checkbox}}
+      {{/rui-input-checkbox}}
     </fieldset>
 
     <fieldset class='form-group'>
@@ -62,9 +62,9 @@
   </div>
   <div class="card-footer">
     <pre><code class="handlebars">
-&lbrace;&lbrace;#rui-checkbox name='mycheckbox1' checked=(mut myPickleProp)&rbrace;&rbrace;
+&lbrace;&lbrace;#rui-input-checkbox name='mycheckbox1' checked=(mut myPickleProp)&rbrace;&rbrace;
   Pickles &lt;strong&gt;(spicy)&lt;/strong&gt;
-&lbrace;&lbrace;/rui-checkbox&rbrace;&rbrace;
+&lbrace;&lbrace;/rui-input-checkbox&rbrace;&rbrace;
     </code></pre>
   </div>
 </div>
