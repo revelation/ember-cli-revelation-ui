@@ -18,16 +18,30 @@ export default Ember.Controller.extend({
     {title: 'Tigers', id: 2},
     {title: 'Lions', id: 3}
   ],
+  checkBoxExamples: {
+    meatCheckbox: true,
+    cheeseCheckbox: false,
+    picklesCheckbox: false
+  },
+  radioValue: 'red',
 
   actions: {
+
+    // Actions sent to Service::Menu from template
+    toggleMenu() {
+      this.get('menu').toggleMenu();
+    },
+
+    toggleFixedMenu() {
+      this.get('menu').toggleFixedMenu();
+    },
+    
     sendMyAction() {
       window.alert('You triggered an action!');
-      console.log('yo');
     },
 
     sendMyActionWithParams(param1, param2, param3) {
       window.alert(param1 + ', ' + param2 + ', ' + param3);
-      console.log('yo');
     },
 
     asyncAction1() {

@@ -1,0 +1,70 @@
+<section>
+  <h1 class='page-header'>
+    {{header-anchor name='checkbox' data-title='Checkbox'}}
+    <small><code>&lbrace;&lbrace;rui-input-checkbox&rbrace;&rbrace;</code></small>
+  </h1>
+  <p></p>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Type</th>
+        <th>Options</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>checked</strong></td>
+        <td>bound property</td>
+        <td>User defined</td>
+        <td>-</td>
+        <td>The bound property set to <code>true</code> or <code>false</code> on click.  Use the 'mut' helper to explicitly infer two way binding, i.e. <code>(mut myProp)</code></td>
+      </tr>
+      <tr>
+        <td><strong>name</strong></td>
+        <td>string</td>
+        <td>User defined</td>
+        <td>-</td>
+        <td>Unique identifier. Necessity is not super important at this point but in the future we may extend for additional aria support.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+{{!-- Basic Example --}}
+<h3>
+  {{header-anchor name='basic-checkbox-example' data-title='Basic Checkbox'}}
+</h3>
+<p></p>
+<div class="card card-code-example">
+  <div class="card-block">
+    
+    {{!-- checkboxes --}}
+    <fieldset class='form-group'>
+      {{#rui-input-checkbox name='mycheckbox1' checked=(mut checkBoxExamples.meatCheckbox)}}
+        Meat
+      {{/rui-input-checkbox}}
+      {{#rui-input-checkbox name='mycheckbox2' checked=(mut checkBoxExamples.cheeseCheckbox)}}
+        Cheese
+      {{/rui-input-checkbox}}
+      {{#rui-input-checkbox name='mycheckbox3' checked=(mut checkBoxExamples.picklesCheckbox)}}
+        Pickles <strong>(spicy)</strong>
+        <br /><small class='text-muted'>Extra html goodness!</small>
+      {{/rui-input-checkbox}}
+    </fieldset>
+
+    <fieldset class='form-group'>
+      Meat: {{checkBoxExamples.meatCheckbox}}, Cheese: {{checkBoxExamples.cheeseCheckbox}}, Pickles: {{checkBoxExamples.picklesCheckbox}}
+    </fieldset>
+  
+  </div>
+  <div class="card-footer">
+    <pre><code class="handlebars">
+&lbrace;&lbrace;#rui-input-checkbox name='mycheckbox1' checked=(mut myPickleProp)&rbrace;&rbrace;
+  Pickles &lt;strong&gt;(spicy)&lt;/strong&gt;
+&lbrace;&lbrace;/rui-input-checkbox&rbrace;&rbrace;
+    </code></pre>
+  </div>
+</div>
