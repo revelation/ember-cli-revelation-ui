@@ -5,11 +5,11 @@ export default Ember.Component.extend({
   layout: layout,
   tagName: 'img',
   attributeBindings: ['src'],
-  classNames: ['rui-avt'],
+  classNames: ['rui-avatar'],
   classNameBindings: ['sizeComputed'],
 
   // Constructors
-  classPrefix: 'rui-avt',
+  classPrefix: 'rui-avatar',
   sizes: ['lg', 'sm'],
 
   // Computed
