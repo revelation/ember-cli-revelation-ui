@@ -4,7 +4,7 @@
   <div class="rui-header-menu-block btn-group">
 
     <div class='rui-show-menu-toggle btn-group'>
-      {{#rui-button action='toggleMenu' style='link' class='rui-show-menu-toggle-btn (if menu.showMenu "active")' }}
+      {{#rui-button action=(action 'toggleMenu') style='link' class='rui-show-menu-toggle-btn (if menu.showMenu "active")' }}
         {{rui-icon name='bars'}}
       {{/rui-button}}
     </div>

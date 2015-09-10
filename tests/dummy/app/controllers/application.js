@@ -26,6 +26,16 @@ export default Ember.Controller.extend({
   radioValue: 'red',
 
   actions: {
+
+    // Actions sent to Service::Menu from template
+    toggleMenu() {
+      this.get('menu').toggleMenu();
+    },
+
+    toggleFixedMenu() {
+      this.get('menu').toggleFixedMenu();
+    },
+    
     sendMyAction() {
       window.alert('You triggered an action!');
     },
