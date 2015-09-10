@@ -5,6 +5,8 @@ module('Unit | Helper | read path');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  var result = readPath(42);
+  var object = 'object';
+  var path = '1';
+  var result = readPath([object, path]);
   assert.ok(result);
 });
