@@ -8,7 +8,6 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('styles');
   this.route('components');
-  this.route('layout');
 });
 
 export default Router;
