@@ -12,8 +12,10 @@ test('it renders', function(assert) {
   this.render();
 
   // NOTE: `tagName` comparison is case-sensitive
-  assert.equal(this.$().get(0).tagName.toLowerCase(), 'img',
-    'it renders the component with an `img` tag');
+  assert.equal(
+    this.$().get(0).tagName.toLowerCase(), 'img',
+    'it renders the component with an `img` tag'
+  );
   assert.ok(
     this.$().hasClass('rui-avatar'),
     'it renders with the base class `rui-avatar`'
