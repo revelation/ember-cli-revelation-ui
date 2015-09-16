@@ -8,6 +8,9 @@ export default Ember.Component.extend({
   classNames: ['rui-avatar'],
   classNameBindings: ['sizeComputed'],
 
+  // Defaults
+  src: 'http://placehold.it/32x32?text=%20',
+
   // Constructors
   classPrefix: 'rui-avatar',
   sizes: ['lg', 'sm'],
