@@ -11,7 +11,6 @@ test('it renders', function(assert) {
   var component = this.subject();
   this.render();
 
-console.log();
   // NOTE: `tagName` comparison is case-sensitive
   assert.equal(this.$().get(0).tagName.toLowerCase(), 'img',
     'it renders the component with an `img` tag');
