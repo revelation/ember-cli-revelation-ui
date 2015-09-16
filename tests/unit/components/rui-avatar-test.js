@@ -22,14 +22,30 @@ console.log();
 });
 
 test('it displays the correct image', function(assert) {
-  assert.expect(1);
+  assert.expect(3);
   var component = this.subject();
   this.render();
 
   assert.equal(
-    this.$().attr('src'), 'http://placehold.it/32x32?text=%20',
-    'it falls back to a placeholder when a `src` is not supplied'
+    this.$().attr('src'), 'http://placehold.it/32?text=%20',
+    'it should fallback to a placeholder when a `src` is not supplied'
   );
+
+  Ember.run(function() {
+    component.set('src', '');
+  });
+  assert.equal(
+    this.$().attr('src'), 'http://placehold.it/32?text=%20',
+    'it should fallback to a placeholder when `src` is empty'
+  )
+
+  Ember.run(function() {
+    component.set('src', 'http://placehold.it/32x32');
+  });
+  assert.equal(
+    this.$().attr('src'), 'http://placehold.it/32x32',
+    'it should display the provided `src` image'
+  )
 });
 
 test('it adds the size class when specified', function(assert) {
