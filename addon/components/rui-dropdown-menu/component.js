@@ -28,7 +28,7 @@ export default Ember.Component.extend({
     }
 
     if (alignments.indexOf(align) === -1) {
-      Ember.Logger.warn('rui-dropdown-trigger: You specified and unsupported \'align\' property so we\'ve defaulted to the standard left alignment: choose from \'left right.\'');
+      Ember.Logger.warn('rui-dropdown-menu: You specified and unsupported `align` property so we`ve defaulted to the standard left alignment. Choose from `left` or `right.`');
       return null;
     }
 
