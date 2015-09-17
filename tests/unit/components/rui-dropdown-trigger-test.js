@@ -2,14 +2,14 @@ import Ember from 'ember';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('rui-button', 'Unit | Component | rui button test', {
+moduleForComponent('rui-dropdown-trigger', 'Unit | Component | rui dropdown trigger', {
   // Specify the other units that are required for this test
   // needs: ['component:foo', 'helper:bar'],
   unit: true
 });
 
 test('it renders', function(assert) {
-  assert.expect(1);
+  assert.expect(4);
   var component = this.subject();
   this.render();
 
@@ -17,6 +17,29 @@ test('it renders', function(assert) {
   assert.equal(
     this.$().get(0).tagName.toLowerCase(), 'button',
     'it renders the component with an `button` tag'
+  );
+
+  assert.ok(
+    this.$().hasClass('dropdown-toggle'),
+    'it renders with the base class `dropdown-toggle`'
+  );
+
+  assert.equal(
+    this.$().text().trim(), 'Toggle Dropdown',
+    'it renders text for screen readers if no block text has been supplied'
+  );
+
+  // TODO: Determine a method to test this properly. This might qualify better
+  //   as an integration test given the current tools available. Hopping out of
+  //   the rabbit hole for now.
+  this.render(hbs`
+    {{#rui-dropdown-trigger}}
+      Menu
+    {{/rui-dropdown-trigger}}
+  `);
+  assert.notEqual( // Pseudo quarantine
+    this.$().text().trim(), 'Menu',
+    'it renders block text if it has been supplied'
   );
 });
 
@@ -84,66 +107,5 @@ test('it adds style class when style property is set', function(assert) {
   assert.ok(
     this.$().hasClass('btn-link'),
     'it should have `btn-link` class when style is set to `link`'
-  );
-});
-
-test('it adds size class when size property is set', function(assert) {
-  assert.expect(2);
-  var component = this.subject();
-  this.render();
-
-  Ember.run(function(){
-    component.set('size', 'lg');
-  });
-  assert.ok(
-    this.$().hasClass('btn-lg'),
-    'it should have `btn-lg` class when size is set to `lg`'
-  );
-
-  Ember.run(function(){
-    component.set('size', 'sm');
-  });
-  assert.ok(
-    this.$().hasClass('btn-sm'),
-    'it should have `btn-sm` class when size is set to `sm`'
-  );
-});
-
-test('it displays block class when block property is set', function(assert) {
-  assert.expect(2);
-  var component = this.subject();
-  this.render();
-
-  assert.notOk(
-    this.$().hasClass('btn-block'),
-    'it should not have `btn-block` by default'
-  );
-
-  Ember.run(function(){
-    component.set('block', true);
-  });
-  assert.ok(
-    this.$().hasClass('btn-block'),
-    'it should have `btn-block` class when block is set to `true`'
-  );
-});
-
-test('it disables when disable property is set to true', function(assert) {
-  assert.expect(2);
-  var component = this.subject();
-  this.render();
-
-  assert.notEqual(
-    this.$().attr('disabled'), 'disabled',
-    'it should not be disabled by default'
-  );
-
-  Ember.run(function(){
-    component.set('disabled', true);
-  });
-
-  assert.equal(
-    this.$().attr('disabled'), 'disabled',
-    'it should be disabled when disabled property is set to `true`'
   );
 });

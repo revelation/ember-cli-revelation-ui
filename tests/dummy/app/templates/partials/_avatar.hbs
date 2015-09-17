@@ -1,0 +1,79 @@
+<section>
+  <h1 class='page-header'>
+    {{header-anchor name='avatar' data-title='Avatar'}}
+    <small><code>&lbrace;&lbrace;rui-avatar&rbrace;&rbrace;</code></small>
+  </h1>
+  <p>An image to be used specifically as a user's avatar.</p>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Type</th>
+        <th>Options</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href='#avatar-src'>src</a></td>
+        <td>[string]</td>
+        <td>Any valid URL to an image.</td>
+        <td>Defaults to an empty placeholder when no src is provided.</td>
+      </tr>
+      <tr>
+        <td><a href='#avatar-sizes'>size</a></td>
+        <td>[string]</td>
+        <td>'lg', 'sm'</td>
+        <td>null</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Properties</h2>
+
+  {{!-- Sources --}}
+  <h3>
+    {{header-anchor name='avatar-src' data-title='src'}}
+  </h3>
+  <p>The URL for the image to be displayed. If one is not supplied, a default placeholder will render.</p>
+  <div class='card card-code-example'>
+    <div class='card-block'>
+
+      <p>{{rui-avatar}}</p>
+      <p>{{rui-avatar src='http://placehold.it/32/f7941e/ffffff?text=%20'}}</p>
+    </div>
+    <div class='card-footer'><pre><code class='handlebars'>
+&lt;!-- No src set, defaults to placeholder --&gt;
+&lt;p&gt;&lbrace;&lbrace;#rui-avatar&rbrace;&rbrace;&lt;/p&gt;
+
+&lt;!-- Src set to a valid URL --&gt;
+&lt;p&gt;&lbrace;&lbrace;#rui-avatar src='http://placehold.it/32/f7941e/ffffff?text=%20'&rbrace;&rbrace;&lt;/p&gt;
+    </code></pre></div>
+  </div>
+
+  {{!-- Sizes --}}
+  <h3>
+    {{header-anchor name='button-sizes' data-title='Sizes'}}
+  </h3>
+  <p>Avatars are also available in large or small sizes by setting the <code>size</code> attribute to either <code>lg</code> or <code>sm</code>.</p>
+  <div class='card card-code-example'>
+    <div class='card-block'>
+      {{rui-avatar size='lg'}}
+      {{rui-avatar src='http://placehold.it/32/f7941e/ffffff?text=%20' size='lg'}}
+    </div>
+    <div class='card-footer'><pre><code class='handlebars'>
+&lbrace;&lbrace;rui-avatar size='lg'&rbrace;&rbrace;
+&lbrace;&lbrace;rui-avatar src='http://placehold.it/32/f7941e/ffffff?text=%20' size='lg'&rbrace;&rbrace;
+    </code></pre></div>
+  </div>
+  <div class='card card-code-example'>
+    <div class='card-block'>
+      {{rui-avatar size='sm'}}
+      {{rui-avatar src='http://placehold.it/32/f7941e/ffffff?text=%20' size='sm'}}
+    </div>
+    <div class='card-footer'><pre><code class='handlebars'>
+&lbrace;&lbrace;rui-avatar size='sm'&rbrace;&rbrace;
+&lbrace;&lbrace;rui-avatar src='http://placehold.it/32/f7941e/ffffff?text=%20' size='sm'&rbrace;&rbrace;
+    </code></pre></div>
+  </div>
+</section>
