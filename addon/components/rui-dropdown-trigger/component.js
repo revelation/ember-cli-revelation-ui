@@ -5,19 +5,18 @@ export default Ember.Component.extend({
   layout: layout,
   tagName: 'button',
   classNames: ['dropdown-toggle'],
-  classNameBindings: ['computedStyle', 'computedSize'],
+  classNameBindings: ['computedStyle'],
   attributeBindings: ['type', 'data-toggle', 'haspopup', 'aria-expanded'],
   id: '',
 
   //Defaults
   type: 'button',
-  style: null,
+  style: 'secondary',
   size: null,
 
   //Constructors
   classPrefix: 'btn',
   styles: ['primary', 'secondary', 'success', 'warning', 'danger', 'info', 'link'],
-  sizes: ['lg', 'sm'],
 
   // Data Attrs, required by bootstrap
   'data-toggle': 'dropdown',
@@ -35,34 +34,11 @@ export default Ember.Component.extend({
     var findStyle = this.get('style');
     var resolvedStyle = findStyle;
 
-    if (!findStyle) {
-      return null;
-    }
-
     if (styles.indexOf(findStyle) === -1) {
-      Ember.Logger.warn('rui-button: You specified and unsupported \'style\' property so we\'ve defaulted to the default style: choose from \'default primary success warning danger info link.\'');
-      return null;
+      resolvedStyle = 'secondary';
+      Ember.Logger.warn('rui-dropdown-trigger: You specified and unsupported \'style\' property so we\'ve defaulted to the secondary style: choose from \'primary secondary success warning danger info link.\'');
     }
 
     return 'btn ' + this.get('classPrefix') + '-' + resolvedStyle;
   }),
-
-  sizeComputed: Ember.computed('size', function() {
-    // Builds size button class
-    var sizes = this.get('sizes');
-    var findSize = this.get('size');
-    var resolvedSize = findSize;
-
-    if (!findSize) {
-      return null;
-    }
-
-    if (sizes.indexOf(findSize) === -1) {
-      Ember.Logger.warn('rui-button: You specified and unsupported \'size\' property so we\'ve defaulted to the standard size: choose from \'lg sm xs or omit for standard size.\'');
-      return null;
-    }
-
-    return this.get('classPrefix') + '-' + resolvedSize;
-  })
-
 });
