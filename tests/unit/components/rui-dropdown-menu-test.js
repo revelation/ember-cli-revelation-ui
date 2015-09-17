@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import { moduleForComponent, test } from 'ember-qunit';
 
 moduleForComponent('rui-dropdown-menu', 'Unit | Component | rui dropdown menu', {

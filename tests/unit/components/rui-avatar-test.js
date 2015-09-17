@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import { moduleForComponent, test } from 'ember-qunit';
 
 moduleForComponent('rui-avatar', 'Unit | Component | rui avatar', {
@@ -38,7 +39,7 @@ test('it displays the correct image', function(assert) {
   assert.equal(
     this.$().attr('src'), 'http://placehold.it/32?text=%20',
     'it should fallback to a placeholder when `src` is empty'
-  )
+  );
 
   Ember.run(function() {
     component.set('src', 'http://placehold.it/32x32');
@@ -46,7 +47,7 @@ test('it displays the correct image', function(assert) {
   assert.equal(
     this.$().attr('src'), 'http://placehold.it/32x32',
     'it should display the provided `src` image'
-  )
+  );
 });
 
 test('it adds the size class when specified', function(assert) {
