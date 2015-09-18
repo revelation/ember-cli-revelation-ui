@@ -11,7 +11,7 @@ export default Ember.Component.extend({
 
   //Defaults
   type: 'button',
-  style: 'secondary',
+  style: null,
   size: null,
 
   //Constructors
@@ -29,6 +29,10 @@ export default Ember.Component.extend({
   computedStyle: Ember.computed('style', function(){
     // Builds size button class
     // Should not have any btn class by default to allow for custom classing
+
+    if (!this.get('style')) {
+      return false;
+    }
 
     var styles = this.get('styles');
     var findStyle = this.get('style');
