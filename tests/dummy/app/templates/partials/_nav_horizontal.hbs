@@ -9,7 +9,7 @@
     {{header-anchor name='nav-horizontal-item' data-title='Navigation Item (Horizontal)'}}
     <small><code>&lbrace;&lbrace;rui-nav-horizontal-item&rbrace;&rbrace;</code></small>
   </h1>
-  <p>The <code>&lbrace;&lbrace;rui-nav-horizontal-item&rbrace;&rbrace;</code> component is a wrapper that renders an <code>li</code> tag. It must contain <a href='http://guides.emberjs.com/v2.0.0/templates/links/' target='_blank'>an Ember <code>&lbrace;&lbrace;link-to&rbrace;&rbrace;</code> helper</a> as a block.</p>
+  <p>The <code>&lbrace;&lbrace;rui-nav-horizontal-item&rbrace;&rbrace;</code> component renders an Ember <code>link-to</code> helper wrapped in an <code>li</code> tag. The link's route is supplied with the <code>route</code> attribute. The link text is passed from inside the block.</p>
 
   <h3>
     {{header-anchor name='nav-horizontal-basic-example' data-title='Basic Example'}}
@@ -17,15 +17,11 @@
   <div class='card card-code-example'>
     <div class='card-block'>
       {{#rui-nav-horizontal}}
-        {{#rui-nav-horizontal-item}}
-          {{#link-to 'components'}}
-            Foo
-          {{/link-to}}
+        {{#rui-nav-horizontal-item route='components'}}
+          Foo
         {{/rui-nav-horizontal-item}}
-        {{#rui-nav-horizontal-item}}
-          {{#link-to 'index'}}
-            Bar
-          {{/link-to}}
+        {{#rui-nav-horizontal-item route='index'}}
+          Bar
         {{/rui-nav-horizontal-item}}
       {{/rui-nav-horizontal}}
     </div>
@@ -35,19 +31,12 @@
 &lbrace;&lbrace;#rui-nav-horizontal&rbrace;&rbrace;
 
   &lt;!-- Include an rui-nav-horizontal-item component --&gt;
-  &lbrace;&lbrace;#rui-nav-horizontal-item&rbrace;&rbrace;
-    &lt;!-- Include a link-to helper --&gt;
-    &lbrace;&lbrace;#link-to 'route.foo'&rbrace;&rbrace;
-      Foo
-    &lbrace;&lbrace;/link-to&rbrace;&rbrace;
+  &lbrace;&lbrace;#rui-nav-horizontal-item route='route.foo'&rbrace;&rbrace;
+    Foo
   &lbrace;&lbrace;/rui-nav-horizontal-item&rbrace;&rbrace;
 
-  &lt;!-- Include an rui-nav-horizontal-item component --&gt;
-  &lbrace;&lbrace;#rui-nav-horizontal-item&rbrace;&rbrace;
-    &lt;!-- Include a link-to helper --&gt;
-    &lbrace;&lbrace;#link-to 'route.bar'&rbrace;&rbrace;
-      Bar
-    &lbrace;&lbrace;/link-to&rbrace;&rbrace;
+  &lbrace;&lbrace;#rui-nav-horizontal-item route='route.bar'&rbrace;&rbrace;
+    Bar
   &lbrace;&lbrace;/rui-nav-horizontal-item&rbrace;&rbrace;
 
 &lbrace;&lbrace;/rui-nav-horizontal&rbrace;&rbrace;
