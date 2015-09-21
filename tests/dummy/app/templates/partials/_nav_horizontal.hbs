@@ -1,0 +1,46 @@
+<section>
+  <h1 class='page-header'>
+    {{header-anchor name='nav-horizontal' data-title='Navigation (Horizontal)'}}
+    <small><code>&lbrace;&lbrace;rui-nav-horizontal&rbrace;&rbrace;</code></small>
+  </h1>
+  <p>The <code>&lbrace;&lbrace;rui-nav-horizontal&rbrace;&rbrace;</code> component is a wrapper that renders a <code>ul</code> tag. It must contain a <code>&lbrace;&lbrace;rui-nav-horizontal-item&rbrace;&rbrace;</code> component as a block.</p>
+
+  <h1 class='page-header'>
+    {{header-anchor name='nav-horizontal-item' data-title='Navigation Item (Horizontal)'}}
+    <small><code>&lbrace;&lbrace;rui-nav-horizontal-item&rbrace;&rbrace;</code></small>
+  </h1>
+  <p>The <code>&lbrace;&lbrace;rui-nav-horizontal-item&rbrace;&rbrace;</code> component renders an Ember <code>link-to</code> helper wrapped in an <code>li</code> tag. The link's route is supplied with the <code>route</code> attribute. The link text is passed from inside the block.</p>
+
+  <h3>
+    {{header-anchor name='nav-horizontal-basic-example' data-title='Basic Example'}}
+  </h3>
+  <div class='card card-code-example'>
+    <div class='card-block'>
+      {{#rui-nav-horizontal}}
+        {{#rui-nav-horizontal-item route='components'}}
+          Foo
+        {{/rui-nav-horizontal-item}}
+        {{#rui-nav-horizontal-item route='index'}}
+          Bar
+        {{/rui-nav-horizontal-item}}
+      {{/rui-nav-horizontal}}
+    </div>
+    <div class="card-footer">
+      <pre><code class="handlebars">
+&lt;!-- Basic Horizontal Navigation --&gt;
+&lbrace;&lbrace;#rui-nav-horizontal&rbrace;&rbrace;
+
+  &lt;!-- Include an rui-nav-horizontal-item component --&gt;
+  &lbrace;&lbrace;#rui-nav-horizontal-item route='route.foo'&rbrace;&rbrace;
+    Foo
+  &lbrace;&lbrace;/rui-nav-horizontal-item&rbrace;&rbrace;
+
+  &lbrace;&lbrace;#rui-nav-horizontal-item route='route.bar'&rbrace;&rbrace;
+    Bar
+  &lbrace;&lbrace;/rui-nav-horizontal-item&rbrace;&rbrace;
+
+&lbrace;&lbrace;/rui-nav-horizontal&rbrace;&rbrace;
+      </code></pre>
+    </div>
+  </div>
+</section>
