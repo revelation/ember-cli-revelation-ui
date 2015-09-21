@@ -49,8 +49,8 @@ test('it adds style class when style property is set', function(assert) {
   this.render();
 
   assert.ok(
-    this.$().hasClass('btn-secondary'),
-    'it should default to `btn-secondary` class when no style is set'
+    this.$().not('.btn'),
+    'it should NOT add a default `btn` class when no style is set'
   );
 
   Ember.run(function(){
