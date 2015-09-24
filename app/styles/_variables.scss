@@ -1,11 +1,35 @@
 // Rui custom variables
-$root:                          14;
+$rui-nav-bg:                    #fff;
 
-$rui-nav-bg:                    #fff !default;
+$rui-border-color-dark:         #ccc ;
+$rui-border-color-light:        #f3f1ee;
 
-$rui-border-color-dark:         #ccc !default;
-$rui-border-color-light:        #f3f1ee !default;
+$rui-text-color:           #58585b;
+$rui-text-color-muted:     #A7B4B5;
+$rui-text-color-light:     #d4d4d4 ;
 
-$rui-text-color:           #58585b !default;
-$rui-text-color-muted:     #A7B4B5 !default;
-$rui-text-color-light:     #d4d4d4  !default;
+// Bootstrap Variable Overrides
+// TBD: Will want to clean this up when we get a sec
+$gray-dark:                 #373a3c;
+$gray:                      #55595c;
+$gray-light:                #818a91;
+$gray-lighter:              #d4d4d4;
+$gray-lightest:             #fbfaf8;
+
+$brand-primary:             #f7931d;
+$brand-success:             #5cb85c;
+$brand-info:                #5bc0de;
+$brand-warning:             #f0ad4e;
+$brand-danger:              #d9534f;
+
+$font-family-sans-serif:     "Open Sans", Helvetica, Arial, sans-serif;
+$body-bg:                    $gray-lightest;
+$body-color:                 $rui-text-color;
+$link-color:                 $brand-primary;
+$font-size-root:             14px;
+$font-size-sm:               .9rem;
+$text-muted:                 $rui-text-color-muted !default;
+
+// This may get fixed at some point when bs4 stablizes
+$card-border-width:          1px;
+$card-border-radius-inner:   .25rem;
