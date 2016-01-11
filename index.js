@@ -8,7 +8,8 @@ module.exports = {
     this._super.included(app);
 
     var iconFontPath = app.bowerDirectory + '/font-awesome/fonts/';
-    var bootstrapPath = app.bowerDirectory + '/bootstrap/js/dist/'
+    var bootstrapPath = app.bowerDirectory + '/bootstrap/js/dist/';
+    var tetherPath = app.bowerDirectory + '/tether/dist/js/';
 
     //Import Font-Awesome font files into asset directory
     app.import(iconFontPath + 'fontawesome-webfont.eot', { destDir: 'assets/fonts' });
@@ -16,6 +17,9 @@ module.exports = {
     app.import(iconFontPath + 'fontawesome-webfont.ttf', { destDir: 'assets/fonts' });
     app.import(iconFontPath + 'fontawesome-webfont.woff', { destDir: 'assets/fonts' });
     app.import(iconFontPath + 'fontawesome-webfont.woff2', { destDir: 'assets/fonts' });
+
+    // Import Tether, Bootrap popover dependency
+    app.import(tetherPath + 'tether.js', { type: 'vendor' });
 
     // Import Bootstrap JS Modules in vendor tree
     app.import(bootstrapPath + 'util.js', { type: 'vendor' });

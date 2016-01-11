@@ -4,6 +4,7 @@ module.exports = {
   afterInstall: function() {
     var self = this;
     return self.addBowerPackagesToProject([
+      { name: 'tether',           target: '~1.1.1'},
       { name: 'bootstrap',        target: 'v4-dev' },
       { name: 'font-awesome',     target: '~4.4.0' }
     ]).then(function(){
