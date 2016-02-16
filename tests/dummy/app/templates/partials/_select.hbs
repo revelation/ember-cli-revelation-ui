@@ -70,15 +70,13 @@
   <div class="card-block">
     {{rui-select
       content=mySelectOptions
-      optionLabelPath='title'
-      optionValuePath='id'
       selection=mySelectedProp
       prompt="Select Something"
       action=(action (mut mySelectedProp))
     }}
     <br />
     {{#if mySelectedProp}}
-      You've selected: {{mySelectedProp.title}}, the id is: {{mySelectedProp.id}}
+      {{mySelectedProp}}
     {{else}}
       Nothing selected
     {{/if}}
