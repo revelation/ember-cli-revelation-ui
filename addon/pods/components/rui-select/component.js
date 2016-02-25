@@ -7,16 +7,22 @@ export default Ember.Component.extend({
   // http://emberjs.jsbin.com/fotuqa
   layout: layout,
   tagName: 'span',
+
   // possible passed-in values with their defaults:
   content: null,
   prompt: null,
   optionValuePath: 'id',
   optionLabelPath: 'title',
+  selection: null,
   action: Ember.K, // action to fire on change
 
-  // shadow the passed-in `selection` to avoid
-  // leaking changes to it via a 2-way binding
-  _selection: Ember.computed.reads('selection'),
+  // create id'ed object from model value
+  // to easily compare and simultaniously update
+  // model property directly
+  // only necessary on initialization
+  selectedOption: Ember.computed('selection', function(){
+    return { id: this.get('selection') }
+  }),
 
   didInitAttrs() {
     this._super(...arguments);
@@ -35,17 +41,12 @@ export default Ember.Component.extend({
       const hasPrompt = !!this.get('prompt');
       const contentIndex = hasPrompt ? selectedIndex - 1 : selectedIndex;
 
+      // Return just a single string or integer value via the mut helper
       const selection = content[contentIndex];
-
-      // set the local, shadowed selection to avoid leaking
-      // changes to `selection` out via 2-way binding
-      this.set('_selection', selection);
-      const changeCallback = this.get('action');
-
-      // Return just a single string or integer value even if an object is used
       const optionValuePath = this.get('optionValuePath');
       const selectionValue = selection[optionValuePath];
 
+      const changeCallback = this.get('action');
       changeCallback(selectionValue);
     }
   }
