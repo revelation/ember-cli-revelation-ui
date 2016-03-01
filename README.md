@@ -5,13 +5,13 @@ This README outlines the details of collaborating on this Ember addon.
 ## Installation
 
 * `git clone` this repository
-* `npm install`
-* `bower install`
+* `cd ember-cli-revelation-ui`
+* `npm install && bower install`
 
 ## Running
 
 * `ember server`
-* Visit your app at http://localhost:4200.
+* Visit your app at http://localhost:4210.
 
 ## Running Tests
 
