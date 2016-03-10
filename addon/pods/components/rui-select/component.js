@@ -21,7 +21,7 @@ export default Ember.Component.extend({
   // model property directly
   // only necessary on initialization
   selectedOption: Ember.computed('selection', function(){
-    return { id: this.get('selection') }
+    return { id: this.get('selection') };
   }),
 
   didInitAttrs() {
