@@ -34,5 +34,19 @@ module.exports = {
   // Automatically rebuilds on change
   isDevelopingAddon: function() {
     return true;
+  },
+
+  /**
+    This code is taken from ember-cli-cors, but the way the addon loads, it
+    cannot be loaded itself without being overwritten.  If this needs to be
+    updated, reference:
+
+    https://github.com/diploidgenomics/ember-cli-cors/blob/master/index.js
+  **/
+  serverMiddleware: function(config) {
+    config.app.use(function(req, res, next) {
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      next();
+    });
   }
 };
