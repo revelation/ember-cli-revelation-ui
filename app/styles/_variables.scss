@@ -1,29 +1,36 @@
-// Rui custom variables
-$rui-nav-bg:                    #fff;
+$rui-nav-bg:                #fff;
 
-$rui-border-color-dark:         #ccc ;
-$rui-border-color-light:        #f3f1ee;
+$gray-dark:                 #58585b;
+$gray:                      #909091;
+$gray-light:                #cccccc;
+$gray-lighter:              #e8e5e3;
+$gray-lightest:             #efeeed;
+$gray-base:                 #f6f5f3;
 
-$rui-text-color:           #58585b;
-$rui-text-color-muted:     #A7B4B5;
-$rui-text-color-light:     #d4d4d4 ;
+$rui-border-color-dark:     $gray-light;
+$rui-border-color-light:    $gray-lighter;
+$rui-divider-color:         $gray-lightest;
 
-// Bootstrap Variable Overrides
-// TBD: Will want to clean this up when we get a sec
-$gray-dark:                 #373a3c;
-$gray:                      #55595c;
-$gray-light:                #818a91;
-$gray-lighter:              #d4d4d4;
-$gray-lightest:             #fbfaf8;
+$rui-text-color:            $gray-dark;
+$rui-text-color-muted:      $gray;
+$rui-text-color-disabled:   $gray-light;
+$rui-text-color-light:      #d4d4d4;
 
 $brand-primary:             #f7931d;
-$brand-success:             #5cb85c;
-$brand-info:                #5bc0de;
-$brand-warning:             #f0ad4e;
-$brand-danger:              #d9534f;
+$brand-success:             #a3cf62;
+$brand-info:                #5b91cc;
+$brand-warning:             #ffc619;
+$brand-danger:              #f26d63;
+
+// Existing variables, see how imports from project work out then merge or delete
+// $brand-primary:             #f7931d;
+// $brand-success:             #5cb85c;
+// $brand-info:                #5bc0de;
+// $brand-warning:             #f0ad4e;
+// $brand-danger:              #d9534f;
 
 $font-family-sans-serif:     "Open Sans", Helvetica, Arial, sans-serif;
-$body-bg:                    $gray-lightest;
+$body-bg:                    $gray-base;
 $body-color:                 $rui-text-color;
 $link-color:                 $brand-primary;
 $font-size-root:             14px;
