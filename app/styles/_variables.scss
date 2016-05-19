@@ -16,18 +16,11 @@ $rui-text-color-muted:      $gray;
 $rui-text-color-disabled:   $gray-light;
 $rui-text-color-light:      #d4d4d4;
 
-$brand-primary:             #f7931d;
-$brand-success:             #a3cf62;
-$brand-info:                #5b91cc;
-$brand-warning:             #ffc619;
-$brand-danger:              #f26d63;
-
-// Existing variables, see how imports from project work out then merge or delete
-// $brand-primary:             #f7931d;
-// $brand-success:             #5cb85c;
-// $brand-info:                #5bc0de;
-// $brand-warning:             #f0ad4e;
-// $brand-danger:              #d9534f;
+$brand-primary:             #f7931d !default;
+$brand-success:             #a3cf62 !default;
+$brand-info:                #5b91cc !default;
+$brand-warning:             #ffc619 !default;
+$brand-danger:              #f26d63 !default;
 
 $font-family-sans-serif:     "Open Sans", Helvetica, Arial, sans-serif;
 $body-bg:                    $gray-base;
@@ -35,7 +28,7 @@ $body-color:                 $rui-text-color;
 $link-color:                 $brand-primary;
 $font-size-root:             14px;
 $font-size-sm:               .9rem;
-$text-muted:                 $rui-text-color-muted !default;
+$text-muted:                 $rui-text-color-muted;
 
 // This may get fixed at some point when bs4 stablizes
 $card-border-width:          1px;
