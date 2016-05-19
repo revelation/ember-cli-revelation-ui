@@ -1,0 +1,96 @@
+.nav-vertical-scroll
+  overflow-y: auto
+  position: fixed
+  top: $rui-header-height * 2
+  bottom: $rui-footer-height
+  width: inherit
+  padding-bottom: 30px
+
+.unfix-menu,
+.show-menu
+  .nav-vertical-scroll
+    top: $rui-header-height
+
+.nav-vertical-group + .nav-vertical-group
+  margin-top: 3rem
+
+.nav-vertical-title
+  font-size: $font-size-sm
+  padding: $spacer/2 $spacer
+  text-transform: uppercase
+
+.nav-vertical-menu
+  @extend .list-unstyled
+  font-weight: bold
+
+.nav-vertical-item
+  i
+    position: absolute
+    left: $spacer
+    top: .75rem
+    width: 1rem
+    text-align: center
+  a
+    display: block
+    position: relative
+    border-left: .25rem solid transparent
+    padding: $spacer/2 $spacer $spacer/2 (2.75 * $spacer)
+    color: $rui-text-color
+    &:hover,
+    &:active,
+    &:focus
+      text-decoration: none
+    &.active
+      border-left: .25rem solid $brand-primary
+      background: $gray-lightest
+  .nav-vertical-menu
+    a
+      font-weight: normal
+      font-size: $font-size-sm
+      &.active
+        border-left-color: transparent
+        color: $brand-primary
+        background: transparent
+
+.nav-vertical-item-expandable
+  > a + button
+    @extend .btn-unstyled
+    position: absolute
+    right: 0
+    margin-top: -2.0625 * $spacer
+    &::after
+      display: block
+      width: 3rem
+      padding-top: $spacer/2-.4
+      padding-bottom: $spacer/2-.4
+      border-left: 1px solid $rui-border-color-light
+      text-align: center
+      color: $rui-text-color-light
+      @extend .angle-down
+      &.active
+        @extend .angle-up
+
+.nav-vertical-tertiary-item
+  a, button
+    display: block
+    position: relative
+    border-left: .25rem solid transparent
+    padding: $spacer/3 $spacer
+    color: $rui-text-color-muted
+    font-size: $font-size-sm
+    &:hover,
+    &:active,
+    &:focus
+      text-decoration: none
+      color: $rui-text-color
+  // NOTE: Extending btn-unstyled breaks Zendesk interoperability
+  button
+    border: 0 none
+    border-left: .25rem solid transparent
+    background: transparent
+    outline: 0
+    display: block
+
+// NOTE: Hide the default Zendesk web widget button
+.zEWidget-launcher
+  display: none

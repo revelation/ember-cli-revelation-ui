@@ -1,0 +1,38 @@
+$z-index-flash: 1000
+
+@mixin close-icon
+  content: '×'
+  text-align: center
+  color: rgba(0,0,0,.15)
+  font-size: 2rem
+  line-height: 1
+
+.ember-cli-flash
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  z-index: $z-index-flash
+  pointer-events: none
+  .alert
+    position: relative
+    max-width: 600px
+    pointer-events: auto // Reset so alerts are clickable
+    margin: $spacer auto 0
+    border-bottom-width: 3px
+    padding-right: 43px
+    &::after
+      @include close-icon()
+      position: absolute
+      right: $spacer
+      top: .8rem
+    &:hover
+      cursor: pointer
+      &::after
+        color: rgba(0,0,0,.3)
+
+@include media-breakpoint-down(sm)
+  .ember-cli-flash
+    .alert
+      max-width: 100%
+      margin: $spacer $spacer 0
