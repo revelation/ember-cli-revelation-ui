@@ -18,5 +18,5 @@ const {
 export default Component.extend({
   layout,
   flashMessages: inject.service(),
-  classNames: ['ember-cli-flash']
+  classNames: ['rui-flash']
 })
