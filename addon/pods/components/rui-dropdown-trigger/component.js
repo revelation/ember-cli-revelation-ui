@@ -27,7 +27,15 @@ export default Component.extend({
 
   //Constructors
   classPrefix: 'btn',
-  styles: ['primary', 'secondary', 'success', 'warning', 'danger', 'info', 'link'],
+  styles: [
+    'danger',
+    'info',
+    'link',
+    'primary',
+    'secondary',
+    'success',
+    'warning'
+  ],
 
   // Data Attrs, required by bootstrap
   'data-toggle': 'dropdown',
