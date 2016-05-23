@@ -9,7 +9,7 @@ export default Ember.Component.extend({
   attributeBindings: [
     'type',
     'data-toggle',
-    'haspopup',
+    'aria-haspopup',
     'aria-expanded',
     'data-test-id'
   ],
@@ -27,7 +27,7 @@ export default Ember.Component.extend({
   'data-toggle': 'dropdown',
 
   // Accessibility
-  haspopup: 'true',
+  'aria-haspopup': 'true',
   'aria-expanded': 'false',
 
   // Computed
