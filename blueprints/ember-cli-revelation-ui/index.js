@@ -11,7 +11,8 @@ module.exports = {
       return self.addPackagesToProject([
         { name: 'ember-cli-sass',           target: '4.1.0' },
         { name: 'ember-cli-autoprefixer',   target: '0.4.1' },
-        { name: 'ember-cli-flash',          target: '1.3.15' }
+        { name: 'ember-cli-flash',          target: '1.3.15' },
+        { name: 'ember-cp-validations',     target: '2.7.1' }
       ]);
     });
   }
