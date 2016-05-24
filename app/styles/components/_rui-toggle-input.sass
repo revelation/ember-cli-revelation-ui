@@ -1,0 +1,88 @@
+// Toggle on/off labels
+$show-toggle-input-labels: true
+
+$toggle-btn-height: 26px
+$toggle-btn-width: $toggle-btn-height
+$toggle-btn-border-color: $rui-border-color-dark // remove
+$toggle-btn-bg: $gray-lightest
+$toggle-btn-radius: 50px
+
+$toggle-track-padding: 2px
+$toggle-track-height: $toggle-btn-height + ($toggle-track-padding*2)
+$toggle-track-width: $toggle-btn-width*1.7
+$toggle-track-bg-on: $brand-primary
+$toggle-track-bg-off: $rui-border-color-light
+
+$toggle-transition-speed: .3s
+
+.toggle-input
+  position: relative
+  @if $show-toggle-input-labels == true
+    padding: 0px 22px 0 24px
+  display: inline-block
+
+  @if $show-toggle-input-labels == true
+    // On/Off Labels
+    &::after,
+    &::before
+      color: $rui-text-color-muted
+      position: absolute
+      top: 3px
+      font-size: $font-size-sm
+      opacity: .3
+    &::after
+      right: 0
+      content: 'on'
+    &::before
+      left: 0
+      content: 'off'
+    &.toggle-input-on::after,
+    &.toggle-input-off::before
+      opacity: 1
+
+  // Hidden checkbox
+  input
+    position: absolute
+    left: -9999px
+    visibility: hidden
+
+  // Track
+  label
+    background-color: $toggle-track-bg-off
+    border-radius: $toggle-btn-radius
+    cursor: pointer
+    display: inline-block
+    height: $toggle-track-height
+    margin-bottom: 0
+    outline: none
+    position: relative
+    transition: background $toggle-transition-speed
+    user-select: none
+    width: $toggle-track-width
+    box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.2)
+    // Button
+    &::after
+      background-color: $toggle-btn-bg
+      border-radius: $toggle-btn-radius
+      content: ' '
+      display: block
+      position: absolute
+      left: 0px
+      top: $toggle-track-padding
+      margin-left: $toggle-track-padding
+      width: $toggle-btn-width
+      height: $toggle-btn-height
+      transition: margin 0.3s, border-color 0.3s
+      box-shadow: 0 1px 1px 0 rgba(0,0,0,.2), inset 0 1px 0 0 #fff
+
+  // On State
+  input:checked
+    + label
+      background-color: $toggle-track-bg-on
+      &:after
+        margin-left: $toggle-track-width - $toggle-btn-width - $toggle-track-padding
+
+  // Hover State
+  label:hover
+    &:after
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), inset 0 1px 0 0 #fff
