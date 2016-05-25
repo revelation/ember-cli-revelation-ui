@@ -1,48 +1,65 @@
-import Ember from 'ember';
-import layout from './template';
+import Ember from 'ember'
+import layout from './template'
 
-export default Ember.Component.extend({
+const {
+  Component,
+  computed,
+  Logger
+} = Ember
+
+export default Component.extend({
   layout: layout,
   tagName: 'button',
   classNames: ['dropdown-toggle'],
   classNameBindings: ['computedStyle'],
-  attributeBindings: ['type', 'data-toggle', 'haspopup', 'aria-expanded'],
-  id: '',
+  attributeBindings: [
+    'aria-expanded',
+    'aria-haspopup',
+    'data-test-id',
+    'data-toggle',
+    'type'
+  ],
 
   //Defaults
-  type: 'button',
-  style: null,
   size: null,
+  style: null,
+  type: 'button',
 
   //Constructors
   classPrefix: 'btn',
-  styles: ['primary', 'secondary', 'success', 'warning', 'danger', 'info', 'link'],
+  styles: [
+    'danger',
+    'info',
+    'link',
+    'primary',
+    'secondary',
+    'success',
+    'warning'
+  ],
 
   // Data Attrs, required by bootstrap
   'data-toggle': 'dropdown',
 
   // Accessibility
-  haspopup: 'true',
+  'aria-haspopup': 'true',
   'aria-expanded': 'false',
 
   // Computed
-  computedStyle: Ember.computed('style', function(){
+  computedStyle: computed('style', function(){
     // Builds size button class
     // Should not have any btn class by default to allow for custom classing
+    const styles = this.get('styles')
+    let style = this.get('style')
 
-    if (!this.get('style')) {
-      return false;
+    if (!style) {
+      return false
     }
 
-    var styles = this.get('styles');
-    var findStyle = this.get('style');
-    var resolvedStyle = findStyle;
-
-    if (styles.indexOf(findStyle) === -1) {
-      resolvedStyle = 'secondary';
-      Ember.Logger.warn('rui-dropdown-trigger: You specified and unsupported \'style\' property so we\'ve defaulted to the secondary style: choose from \'primary secondary success warning danger info link.\'');
+    if (styles.indexOf(style) === -1) {
+      style = 'secondary'
+      Logger.warn('rui-dropdown-trigger: You specified and unsupported \'style\' property so we\'ve defaulted to the secondary style: choose from \'primary secondary success warning danger info link.\'')
     }
 
-    return 'btn ' + this.get('classPrefix') + '-' + resolvedStyle;
+    return 'btn ' + this.get('classPrefix') + '-' + style
   }),
-});
+})

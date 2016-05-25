@@ -1,39 +1,35 @@
-// Rui custom variables
-$rui-nav-bg:                    #fff;
+$rui-nav-bg:                #fff;
 
-$rui-border-color-dark:         #ccc ;
-$rui-border-color-light:        #f3f1ee;
+$gray-dark:                 #58585b;
+$gray:                      #909091;
+$gray-light:                #cccccc;
+$gray-lighter:              #e8e5e3;
+$gray-lightest:             #efeeed;
+$gray-base:                 #f6f5f3;
 
-$rui-text-color:           #58585b;
-$rui-text-color-muted:     #A7B4B5;
-$rui-text-color-light:     #d4d4d4 ;
+$rui-border-color-dark:     $gray-light;
+$rui-border-color-light:    $gray-lighter;
+$rui-divider-color:         $gray-lightest;
 
-// Bootstrap Variable Overrides
-// TBD: Will want to clean this up when we get a sec
-$gray-dark:                 #373a3c;
-$gray:                      #55595c;
-$gray-light:                #818a91;
-$gray-lighter:              #d4d4d4;
-$gray-lightest:             #fbfaf8;
+$rui-text-color:            $gray-dark;
+$rui-text-color-disabled:   $gray-light;
+$rui-text-color-muted:      $gray;
 
-$brand-primary:             #f7931d;
-$brand-success:             #5cb85c;
-$brand-info:                #5bc0de;
-$brand-warning:             #f0ad4e;
-$brand-danger:              #d9534f;
+$brand-danger:              #f26d63 !default;
+$brand-info:                #5b91cc !default;
+$brand-primary:             #f7931d !default;
+$brand-success:             #a3cf62 !default;
+$brand-warning:             #ffc619 !default;
 
 $font-family-sans-serif:     "Open Sans", Helvetica, Arial, sans-serif;
-$body-bg:                    $gray-lightest;
+
+$body-bg:                    $gray-base;
 $body-color:                 $rui-text-color;
 $link-color:                 $brand-primary;
 $font-size-root:             14px;
-$font-size-sm:               .9rem;
-$text-muted:                 $rui-text-color-muted !default;
+$font-size-sm:               .92rem;
+$text-muted:                 $rui-text-color-muted;
 
 // This may get fixed at some point when bs4 stablizes
 $card-border-width:          1px;
 $card-border-radius-inner:   .25rem;
-
-//These are defined in bootstrap but will currently not resolve
-$border-radius-base: 3px;
-$font-size-sm: .85rem;
