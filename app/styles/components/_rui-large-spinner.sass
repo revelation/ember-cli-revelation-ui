@@ -1,0 +1,57 @@
+.center-fix
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: $gray-lightest
+  z-index: 1400
+
+.center-container
+  display: table
+  height: 100%
+  width: 100%
+  vertical-align: middle
+  text-align: center
+  .center
+    display: table-cell
+    vertical-align: middle
+
+.loading-message
+  font-size: 18px
+  color: $rui-text-color-muted
+
+.loading
+  .spinner-lg
+    display: inline-block
+    @include opacity(.5)
+    @include img-retina($reg-loader, $retina-loader, 120px, 120px)
+    width: 120px
+    height: 120px
+    -webkit-animation: spin 2s linear infinite
+    -moz-animation: spin 2s linear infinite
+    animation: spin 2s linear infinite
+    margin-bottom: 10px
+
+.loading-block
+  .center-fix
+    background: rgba(255,255,255,.8)
+
+
+@-moz-keyframes spin
+  0%
+    -moz-transform: rotate(0deg)
+  100%
+    -moz-transform: rotate(360deg)
+
+@-webkit-keyframes spin
+  0%
+    -webkit-transform: rotate(0deg)
+  100%
+    -webkit-transform: rotate(360deg)
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
