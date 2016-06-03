@@ -1,0 +1,234 @@
+$rui-header-height: 4.28572rem //~60px @ 14
+// $rui-footer-height: 3.57143rem //~50px @ 14
+$rui-footer-height: 36px; // 3.57143rem //~50px @ 14 // Retrofit height
+$rui-sidebar-left-width: 240px
+
+$z-footer: 510
+$z-sidebar: 500
+$z-clickblock: 490
+$z-header: 510
+
+// Overlay that captures clicks to collapse menu when open
+.rui-clickblock
+  display: none
+  position: fixed
+  left: 0
+  top: 0
+  z-index: $z-clickblock
+  height: 100%
+  width: 100%
+  background: rgba(0,0,0,.3)
+  touch-action: manipulation
+  cursor: pointer
+
+
+// Header layout defaults (Fixed)
+.rui-header
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  height: $rui-header-height
+  z-index: $z-header
+  background: $rui-nav-bg
+  border-bottom: $border-width solid $rui-border-color-light
+
+// Toggles
+.rui-header-menu-block
+  transition: transform .2s cubic-bezier(.16, .68, .43, .99)
+  transform: translate3d(-54px, 0, 0)
+  .unfix-menu &
+    transform: translate3d(0, 0, 0)
+
+// Expand/Collapses sidebar only when unfixed
+// Hide when fixed
+.rui-show-menu-toggle
+  display: flex
+  height: $rui-header-height
+  align-items: center
+  .rui-show-menu-toggle-btn
+    font-size: 28px
+    line-height: 1
+    padding-right: $spacer
+    padding-left: $spacer
+    &.active,
+    &:active,
+    &:focus
+      outline: 0
+    &.btn
+      color: $rui-text-color
+
+@include media-breakpoint-down(sm)
+  .rui-header-menu-block
+    transform: translate3d(0, 0, 0)
+
+// Fixes/unfixes sidebar
+// Hide when @media(sm)
+.rui-fix-menu-toggle
+  height: $rui-footer-height
+  display: table-cell
+  vertical-align: middle
+  border-right: $border-width solid $rui-border-color-light
+  > .btn
+    color: $rui-text-color
+    padding-left: 1rem
+    padding-right: 1rem
+    line-height: 1
+    &.active,
+    &:active,
+    &:focus
+      outline: 0
+
+// Unfix Menu @media(sm)
+// collapse margin-left
+@include media-breakpoint-down(sm)
+  // Show menu toggle regardless of state
+  .rui-show-menu-toggle
+    display: flex !important
+
+  // Hide fix menu toggle regardless of state
+  .rui-fix-menu-toggle
+    display: none
+
+// Main content region
+// Left margin when fixed, none when fixed
+.rui-main
+  margin-top: $rui-header-height
+  margin-left: $rui-sidebar-left-width
+  .unfix-menu &
+    margin-left: 0
+
+// Unfix Menu @media(sm)
+// collapse margin-left
+@include media-breakpoint-down(sm)
+  .rui-main
+    margin-left: 0
+
+// Sidebar layout defaults
+.rui-sidebar-left
+  position: fixed
+  top: $rui-header-height
+  bottom: 0
+  left: 0
+  z-index: $z-sidebar
+  width: $rui-sidebar-left-width
+  background: $rui-nav-bg
+  border-right: $border-width solid $rui-border-color-light
+  // Sidebar unfixed
+  // Flush top and off-canvas by default
+  .unfix-menu &
+    top: 0
+    left: -$rui-sidebar-left-width
+
+// Unfix Menu @media(sm)
+// Flush top and off-canvas by default
+@include media-breakpoint-down(sm)
+  .rui-sidebar-left
+    top: 0
+    left: -$rui-sidebar-left-width
+
+// Powered by Focusvision logo
+.rui-sidebar-footer-logo
+  position: fixed
+  background: #e4e4e4
+  z-index: $z-sidebar + 10
+  left: 0
+  bottom: 0
+  width: $rui-sidebar-left-width - 1px
+  padding: $spacer*1.7 0 $spacer
+  text-align: center
+  background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 100%) /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 25%,rgba(255,255,255,1) 100%) /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 25%,rgba(255,255,255,1) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  .unfix-menu &,
+  .show-menu &,
+  .unfix-menu.show-menu &
+    left: -$rui-sidebar-left-width
+  img
+    height: 12px
+
+// Footer layout defaults
+.rui-footer
+  position: fixed
+  bottom: 0
+  right: 0
+  left: $rui-sidebar-left-width
+  height: $rui-footer-height
+  z-index: $z-footer
+  background: $rui-nav-bg
+  border-top: $border-width solid $rui-border-color-light
+  // Footer unfixed
+  // Flush left
+  .unfix-menu &
+    left: 0
+
+// Unfix Menu @media(sm)
+// fix to bottom of sidebar, position and width
+@include media-breakpoint-down(sm)
+  .rui-footer
+    z-index: $z-footer
+    left: -$rui-sidebar-left-width
+    right: auto
+    width: $rui-sidebar-left-width - 1px
+    .unfix-menu &,
+    .show-menu &,
+    .unfix-menu.show-menu &
+      z-index: $z-footer !important
+      left: -$rui-sidebar-left-width
+
+// Transition for all objects that animate together
+.rui-header,
+.rui-main,
+.rui-sidebar-left,
+.rui-footer
+  transition: transform .2s cubic-bezier(.16, .68, .43, .99)
+
+// Shows menu when unfixed
+.unfix-menu.show-menu
+  overflow-x: hidden // Disable scrolling on x-axis
+  .rui-header,
+  .rui-main,
+  .rui-sidebar-left,
+  .rui-footer
+    transform: translate3d($rui-sidebar-left-width, 0, 0) // Move all elements right
+  .rui-header,
+  .rui-footer
+    z-index: $z-clickblock - 5 // Put the footer behind the clickblock when not @media(sm)
+  .rui-sidebar-left
+    border-right-color: transparent
+  .rui-clickblock
+    display: block
+    animation: fadeIn .2s  // Fade in clickblock, animation required to toggle display and fade in
+
+
+
+// Unfix Menu @media(sm)
+// Should expand menu as if unfixed
+@include media-breakpoint-down(sm)
+  .show-menu
+    overflow-x: hidden
+    .rui-header,
+    .rui-main,
+    .rui-sidebar-left,
+    .rui-footer
+      transform: translate3d($rui-sidebar-left-width, 0, 0)
+    .rui-header
+      z-index: $z-clickblock - 5 // Put the footer behind the clickblock when not @media(sm)
+      // filter: blur(5px) grayscale(.7)
+    .rui-sidebar-left
+      border-right-color: transparent
+    .rui-main
+      // filter: blur(5px) grayscale(.7)
+    .rui-clickblock
+      display: block
+      animation: fadeIn .2s
+
+// Clickblock fadein animation
+@keyframes fadeIn
+  from {opacity: 0}
+  to {opacity: 1}
+
+// @include media-breakpoint-down(xl)
+// @include media-breakpoint-down(lg)
+// @include media-breakpoint-down(md)
+// @include media-breakpoint-down(sm)

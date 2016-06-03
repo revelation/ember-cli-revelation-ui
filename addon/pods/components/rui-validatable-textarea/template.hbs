@@ -1,0 +1,18 @@
+{{textarea
+value=value
+placeholder=placeholder
+class='form-control'
+name=valuePath}}
+
+{{#if isValid}}
+  <p class='input-valid'>
+    Looks Good!
+  </p>
+{{/if}}
+
+{{#if showMessage}}
+  <p class='input-error'>
+    {{v-get model valuePath 'message'}}
+  </p>
+{{/if}}
+
