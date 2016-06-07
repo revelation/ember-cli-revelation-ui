@@ -14,10 +14,7 @@ export default Component.extend({
   classNameBindings: ['sizeComputed'],
 
   src: '', //passed in
-  noAvatar: computed('src', function() {
-    const src = this.get('src')
-    return !src
-  }),
+  noAvatar: computed.not('src'),
 
   // Constructors
   classPrefix: 'rui-avatar',
