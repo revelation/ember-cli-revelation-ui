@@ -14,9 +14,9 @@ export default Component.extend({
   classNameBindings: ['sizeComputed'],
 
   src: '', //passed in
-  showPlaceholder: computed('src', function() {
+  noAvatar: computed('src', function() {
     const src = this.get('src')
-    return src === undefined || src === ''
+    return !src
   }),
 
   // Constructors
