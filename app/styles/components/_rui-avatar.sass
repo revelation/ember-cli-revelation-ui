@@ -1,14 +1,28 @@
 .rui-avatar
-  width: 2.2857142857rem // ~32px at base 14
-  height: auto
+  background: url($default-avatar-small) top left no-repeat
+  background-size: 100% 100%
+  border-radius: $border-radius
+  display: inline-block
+  overflow: hidden
+  vertical-align: middle
+  &,
+  & img
+    height: $avatar-dim
+    width: $avatar-dim
 
 .rui-avatar-sm
-  width: 1.7142857143rem // ~24px at base 14
+  &,
+  & img
+    height: $avatar-sm-dim
+    width: $avatar-sm-dim
 
 .rui-avatar-lg
-  width: 3rem // ~42px at base 14
+  &,
+  & img
+    height: $avatar-lg-dim
+    width: $avatar-lg-dim
 
 .rui-avatar-participant
-  border-width: $border-width * 2
-  border-style: solid
   border-radius: $border-radius
+  border-style: solid
+  border-width: $border-width * 2
