@@ -30,12 +30,12 @@ export default Component.extend({
     const resolvedSize = findSize
 
     if (!findSize) {
-      return null
+      return false
     }
 
     if (sizes.indexOf(findSize) === -1) {
       Logger.warn('rui-avatar: You specified an unsupported \'size\' property, so we\'ve set it to the standard size. Please either omit the attribute for standard size or choose from one of the following: [\'lg\', \'sm\'].')
-      return null
+      return false
     }
 
     return this.get('classPrefix') + '-' + resolvedSize
