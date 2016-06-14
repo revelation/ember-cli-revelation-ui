@@ -30,9 +30,15 @@ $font-size-root:             14px;
 $font-size-sm:               .92rem;
 $text-muted:                 $rui-text-color-muted;
 
+$avatar-dim: 2.2857142857rem; // ~32px
+$avatar-sm-dim: 1.7142857143rem; // ~24px
+$avatar-lg-dim: 3rem; // ~42px
+
 // This may get fixed at some point when bs4 stablizes
 $card-border-width:          1px;
 $card-border-radius-inner:   .25rem;
 
-$reg-loader: '../ember-cli-revelation-ui/assets/images/loader-big.png';
-$retina-loader: '../ember-cli-revelation-ui/assets/images/loader-big@2x.png';
+$reg-loader: '/ember-cli-revelation-ui/assets/images/loader-big.png';
+$retina-loader: '/ember-cli-revelation-ui/assets/images/loader-big@2x.png';
+$default-avatar-small: '/ember-cli-revelation-ui/assets/images/default-avatar-small.png';
+$default-avatar-large: '/ember-cli-revelation-ui/assets/images/default-avatar-large.png';
