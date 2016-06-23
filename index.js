@@ -3,6 +3,9 @@
 
 module.exports = {
   name: 'ember-cli-revelation-ui',
+  fingerprint: {
+    enabled: true
+  },
 
   included: function(app) {
     this._super.included(app);
