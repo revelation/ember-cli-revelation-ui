@@ -24,7 +24,7 @@ export default Ember.Component.extend({
     return { id: this.get('selection') };
   }),
 
-  didInitAttrs() {
+  init() {
     this._super(...arguments);
     if (!this.get('content')) {
       this.set('content', []);
