@@ -11,7 +11,7 @@ export default Ember.Component.extend({
   classPrefix: 'fa',
 
   // Computed
-  nameComputed: Ember.computed('style', function() {
+  nameComputed: Ember.computed('name', function() {
     // Builds the icon class.
     // REVIEW: I wonder if there's an "easy" way to have this check if the icon
     //   name exists that doesn't rely on manually updating an array. It would
