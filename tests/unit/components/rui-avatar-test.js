@@ -14,8 +14,8 @@ test('it renders', function(assert) {
 
   // NOTE: `tagName` comparison is case-sensitive
   assert.equal(
-    this.$().get(0).tagName.toLowerCase(), 'img',
-    'it renders the component with an `img` tag'
+    this.$().get(0).tagName.toLowerCase(), 'span',
+    'it renders the component with an `span` tag'
   );
   assert.ok(
     this.$().hasClass('rui-avatar'),
@@ -29,7 +29,7 @@ test('it displays the correct image', function(assert) {
   this.render();
 
   assert.equal(
-    this.$().attr('src'), 'http://placehold.it/32?text=%20',
+    this.$().text().trim(), '',
     'it should fallback to a placeholder when a `src` is not supplied'
   );
 
@@ -37,7 +37,7 @@ test('it displays the correct image', function(assert) {
     component.set('src', '');
   });
   assert.equal(
-    this.$().attr('src'), 'http://placehold.it/32?text=%20',
+    this.$().text().trim(), '',
     'it should fallback to a placeholder when `src` is empty'
   );
 
@@ -45,7 +45,7 @@ test('it displays the correct image', function(assert) {
     component.set('src', 'http://placehold.it/32x32');
   });
   assert.equal(
-    this.$().attr('src'), 'http://placehold.it/32x32',
+    this.$().children().attr('src'), 'http://placehold.it/32x32',
     'it should display the provided `src` image'
   );
 });
