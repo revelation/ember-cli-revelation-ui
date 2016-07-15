@@ -14,5 +14,14 @@
     <div class="rui-error-template-tagline">
       {{tagline}}
     </div>
+    {{#if link}}
+      <div class='rui-error-button'>
+        <a href={{link}}>
+          {{#rui-button size='lg'}}
+            {{link-message}}
+          {{/rui-button}}
+        </a>
+      </div>
+    {{/if}}
   </div>
 </div>
