@@ -15,9 +15,15 @@
       {{tagline}}
     </div>
     {{#if link}}
-      <a class='btn btn-secondary btn-lg rui-error-button' href={{link}}>
-        {{link-message}}
-      </a>
+      {{#if externalLink}}
+        <a class='btn btn-secondary btn-lg rui-error-button' href={{link}}>
+          {{link-message}}
+        </a>
+      {{else}}
+        {{#link-to link class='btn btn-secondary btn-lg rui-error-button'}}
+          {{link-message}}
+        {{/link-to}}
+      {{/if}}
     {{/if}}
   </div>
 </div>

@@ -5,6 +5,12 @@ export default Ember.Component.extend({
   classNames: ['rui-error-template'],
   layout,
 
+  externalLink: Ember.computed(function() {
+    let link = this.get('link')
+
+    return link.indexOf('http') >= 0 ? true : false
+  }),
+
   actions: {
     back(event){
       event.preventDefault()
