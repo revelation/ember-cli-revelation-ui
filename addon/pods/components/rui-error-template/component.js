@@ -1,9 +1,9 @@
 import Ember from 'ember'
 import layout from './template'
 
-const { computed } = Ember
+const { Component, computed } = Ember
 
-export default Ember.Component.extend({
+export default Component.extend({
   classNames: ['rui-error-template'],
   layout,
 
