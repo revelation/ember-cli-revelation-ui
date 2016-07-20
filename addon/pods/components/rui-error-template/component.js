@@ -1,9 +1,13 @@
 import Ember from 'ember'
 import layout from './template'
 
-export default Ember.Component.extend({
+const { Component, computed } = Ember
+
+export default Component.extend({
   classNames: ['rui-error-template'],
   layout,
+
+  externalLink: computed.match('link',  /^(http|https)/),
 
   actions: {
     back(event){
