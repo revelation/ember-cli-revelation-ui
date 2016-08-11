@@ -1,3 +1,24 @@
+@mixin svgColor($color)
+  svg
+    path
+      fill: $color
+
+.btn
+  border-bottom-width: 2px
+  &-primary
+    @include svgColor($btn-primary-color)
+  &-secondary
+    @include svgColor($btn-secondary-color)
+  &-info
+    @include svgColor($btn-info-color)
+  &-success
+    @include svgColor($btn-success-color)
+  &-warning
+    @include svgColor($btn-warning-color)
+  &-danger
+    @include svgColor($btn-danger-color)
+
+
 // Remove any chrome from button element
 .btn-unstyled
   background: transparent

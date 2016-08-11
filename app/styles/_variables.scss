@@ -42,3 +42,32 @@ $reg-loader: '/ember-cli-revelation-ui/assets/images/loader-big.png';
 $retina-loader: '/ember-cli-revelation-ui/assets/images/loader-big@2x.png';
 $default-avatar-small: '/ember-cli-revelation-ui/assets/images/default-avatar-small.png';
 $default-avatar-large: '/ember-cli-revelation-ui/assets/images/default-avatar-large.png';
+
+// Buttons
+@function borderColor($color) {
+  @return darken($color, 8%)
+}
+
+$btn-primary-color:              #fff;
+$btn-primary-bg:                 $brand-primary;
+$btn-primary-border:             borderColor($brand-primary);
+
+$btn-secondary-color:            $rui-text-color;
+$btn-secondary-bg:               $gray-base;
+$btn-secondary-border:           $rui-border-color-dark;
+
+$btn-info-color:                 #fff;
+$btn-info-bg:                    $brand-info;
+$btn-info-border:                borderColor($brand-info);
+
+$btn-success-color:              #fff;
+$btn-success-bg:                 $brand-success;
+$btn-success-border:             borderColor($brand-success);
+
+$btn-warning-color:              #fff;
+$btn-warning-bg:                 $brand-warning;
+$btn-warning-border:             borderColor($brand-warning);
+
+$btn-danger-color:               #fff;
+$btn-danger-bg:                  $brand-danger;
+$btn-danger-border:              borderColor($brand-danger);
