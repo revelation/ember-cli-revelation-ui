@@ -1,4 +1,4 @@
-@mixin svgColor($color)
+@mixin svg-fill-color($color)
   svg
     path
       fill: $color
@@ -6,17 +6,17 @@
 .btn
   border-bottom-width: 2px
   &-primary
-    @include svgColor($btn-primary-color)
+    @include svg-fill-color($btn-primary-color)
   &-secondary
-    @include svgColor($btn-secondary-color)
+    @include svg-fill-color($btn-secondary-color)
   &-info
-    @include svgColor($btn-info-color)
+    @include svg-fill-color($btn-info-color)
   &-success
-    @include svgColor($btn-success-color)
+    @include svg-fill-color($btn-success-color)
   &-warning
-    @include svgColor($btn-warning-color)
+    @include svg-fill-color($btn-warning-color)
   &-danger
-    @include svgColor($btn-danger-color)
+    @include svg-fill-color($btn-danger-color)
 
 
 // Remove any chrome from button element
