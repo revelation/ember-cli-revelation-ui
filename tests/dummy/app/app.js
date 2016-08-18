@@ -13,6 +13,17 @@ App = Ember.Application.extend({
   Resolver: Resolver
 });
 
+Ember.Component.reopen({
+  attributeBindings: ['dataTest:data-test'],
+  dataTest: Ember.computed(function() {
+    const suffix = this.get('dataTestSuffix')
+    let baseId = (this._debugContainerKey || '')
+      .replace(/.*component:/g, '')
+      .replace(/\//g, '-')
+    return suffix ? `${baseId}-${suffix}` : baseId
+  })
+})
+
 loadInitializers(App, config.modulePrefix);
 
 export default App;
