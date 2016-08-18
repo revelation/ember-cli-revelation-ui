@@ -8,7 +8,6 @@ const {
 } = Ember
 
 export default Component.extend({
-  attributeBindings: ['data-test-id'],
   classNameBindings: ['showErrorClass:has-error', 'isValid:has-success'],
   classNames: ['rui-validatable-input'],
   layout,

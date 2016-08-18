@@ -6,10 +6,7 @@ export default Ember.Component.extend({
   tagName: 'div',
   classNames: 'dropdown-menu',
   classNameBindings: 'alignComputed',
-  attributeBindings: [
-    'aria-labelledby',
-    'data-test-id'
-  ],
+  attributeBindings: ['aria-labelledby'],
 
   // Defaults
   prefixClass: 'dropdown-menu-',
