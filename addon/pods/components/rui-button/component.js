@@ -6,7 +6,7 @@ export default Ember.Component.extend({
   tagName: 'button',
   classNames: ['btn'],
   classNameBindings: ['styleComputed', 'sizeComputed', 'blockComputed', 'isLoading'],
-  attributeBindings: ['disabled', 'data-test-id'],
+  attributeBindings: ['disabled'],
   disabled: false,
   isLoading: false,
   action: Ember.K,

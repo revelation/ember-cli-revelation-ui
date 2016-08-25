@@ -15,7 +15,6 @@ export default Component.extend({
   attributeBindings: [
     'aria-expanded',
     'aria-haspopup',
-    'data-test-id',
     'data-toggle',
     'type'
   ],
