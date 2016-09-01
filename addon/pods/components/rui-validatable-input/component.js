@@ -14,8 +14,6 @@ export default Component.extend({
   model: null,
   placeholder: '',
   type: 'text',
-  validation: null,
-  value: null,
   valuePath: '',
   async: false,
 
@@ -26,8 +24,30 @@ export default Component.extend({
     defineProperty(this, 'value', computed.alias(`model.${valuePath}`))
   },
 
-  didChange: computed('value', function() {
-    let attrsChanged = this.get('model') ? this.get('model').changedAttributes() : []
+  // This method ensures that if presence is required
+  // But the initial value is undefined or an empty string
+  // (the case with new records) we can still validate even though
+  // the `didChange` attr would report it had not
+
+  validatePresenceWithEmptyDefault: computed('value', function() {
+    const validationOptions = Object.keys(
+      this.get(`model.validations.attrs.${this.get('valuePath')}.options`))
+
+    return (validationOptions.indexOf('presence') !== -1) &&
+      (this.get('value') === '') ||
+      (this.get('value') === undefined)
+  }),
+
+  // The attribute has changed UNLESS
+  // the validator includes presence and
+  // the value is undefined or empty
+
+  didChange: computed('value', 'model.hasDirtyAttributes', 'isSaving', function() {
+    if (this.get('validatePresenceWithEmptyDefault')) {
+        return true
+    }
+
+    const attrsChanged = this.get('model') ? this.get('model').changedAttributes() : {}
     return this.get('valuePath') in attrsChanged
   }),
 
