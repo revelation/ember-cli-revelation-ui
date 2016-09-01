@@ -96,5 +96,5 @@ export default Component.extend({
   // Checks property `_didValidate` on controller
   // Used to only show validation if `async` is true
 
-  _didValidate: computed.oneWay('targetObject._didValidate')
+  _didValidate: computed.oneWay('targetObject.didValidate')
 })
