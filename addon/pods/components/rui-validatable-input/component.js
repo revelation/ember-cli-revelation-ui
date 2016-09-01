@@ -20,7 +20,9 @@ export default Component.extend({
   init() {
     this._super(...arguments)
     const valuePath = this.get('valuePath')
-    defineProperty(this, 'validation', computed.oneWay(`model.validations.attrs.${valuePath}`))
+    defineProperty(this,
+      'validation',
+      computed.oneWay(`model.validations.attrs.${valuePath}`))
     defineProperty(this, 'value', computed.alias(`model.${valuePath}`))
   },
 
@@ -42,12 +44,18 @@ export default Component.extend({
   // the validator includes presence and
   // the value is undefined or empty
 
-  didChange: computed('value', 'model.hasDirtyAttributes', 'model.isSaving', function() {
-    if (this.get('validatePresenceWithEmptyDefault')) { return true }
+  didChange: computed(
+    'value',
+    'model.hasDirtyAttributes',
+    'model.isSaving',
+    function() {
+      if (this.get('validatePresenceWithEmptyDefault')) { return true }
 
-    const attrsChanged = this.get('model') ? this.get('model').changedAttributes() : {}
-    return this.get('valuePath') in attrsChanged
-  }),
+      const attrsChanged = this.get('model') ?
+        this.get('model').changedAttributes() : {}
+      return this.get('valuePath') in attrsChanged
+    }
+  ),
 
   // Checks for in processing statuses
   // Ensures validations don't show when:
