@@ -42,23 +42,11 @@ export default Component.extend({
   // the validator includes presence and
   // the value is undefined or empty
 
-  didChange: computed('value', 'model.hasDirtyAttributes', 'isSaving', function() {
+  didChange: computed('value', 'model.hasDirtyAttributes', 'model.isSaving', function() {
     if (this.get('validatePresenceWithEmptyDefault')) { return true }
 
     const attrsChanged = this.get('model') ? this.get('model').changedAttributes() : {}
     return this.get('valuePath') in attrsChanged
-  }),
-
-  // Compute the property to give priority to
-  // `isSaving` property if found on controller
-
-  isSavingComputed: computed('model.isSaving', 'targetObject.isSaving', function() {
-    const isSavingFromController = this.get('targetObject.isSaving')
-    if ((typeof isSavingFromController !== 'undefined') &&
-      (isSavingFromController !== null)) {
-        return isSavingFromController
-      }
-    return this.get('model.isSaving')
   }),
 
   // Checks for in processing statuses
@@ -68,11 +56,11 @@ export default Component.extend({
   validatable: computed(
     'didChange',
     'validation.isValidating',
-    'isSavingComputed',
+    'model.isSaving',
     function() {
       return this.get('didChange') &&
       !this.get('validation.isValidating') &&
-      !this.get('isSavingComputed')
+      !this.get('model.isSaving')
     }
   ),
 
