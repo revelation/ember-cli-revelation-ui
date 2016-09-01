@@ -9,7 +9,7 @@ const {
 
 export default Component.extend({
   classNameBindings: ['isInvalid:has-error', 'isValid:has-success'],
-  classNames: ['rui-validatable-input'],
+  classNames: ['rui-_validatable-input'],
   layout,
   model: null,
   placeholder: '',
@@ -26,30 +26,46 @@ export default Component.extend({
     defineProperty(this, 'value', computed.alias(`model.${valuePath}`))
   },
 
+  // Validation binding attributes with check for async settings
+  // if async is true, don't display either until `_didValidate`
+
+  isInvalid: computed('_isInvalid', '_didValidate', function() {
+    if (this.get('async')) {
+      return this.get('_isInvalid') && this.get('_didValidate')
+    }
+    return this.get('_isInvalid')
+  }),
+
+  isValid: computed('_isValid', '_didValidate', function() {
+    if (this.get('async')) {
+      return this.get('_isValid') && this.get('_didValidate')
+    }
+    return this.get('_isValid')
+  }),
+
   // This method ensures that if presence is required
   // But the initial value is undefined or an empty string
   // (the case with new records) we can still validate even though
-  // the `didChange` attr would report it had not
+  // the `_didChange` attr would report it had not
 
-  validatePresenceWithEmptyDefault: computed('value', function() {
+  _validatePresenceWithEmptyDefault: computed('value', function() {
     const validationOptions = Object.keys(
       this.get(`model.validations.attrs.${this.get('valuePath')}.options`))
 
     return (validationOptions.indexOf('presence') !== -1) &&
-      (this.get('value') === '') ||
-      (this.get('value') === undefined)
+      (this.get('value') === undefined) ||
+      (this.get('value') === '')
   }),
 
   // The attribute has changed UNLESS
   // the validator includes presence and
   // the value is undefined or empty
 
-  didChange: computed(
+  _didChange: computed(
     'value',
     'model.hasDirtyAttributes',
-    'model.isSaving',
     function() {
-      if (this.get('validatePresenceWithEmptyDefault')) { return true }
+      if (this.get('_validatePresenceWithEmptyDefault')) { return true }
 
       const attrsChanged = this.get('model') ?
         this.get('model').changedAttributes() : {}
@@ -61,12 +77,12 @@ export default Component.extend({
   // Ensures validations don't show when:
   // input is clean, is validating, model is saving
 
-  validatable: computed(
-    'didChange',
+  _validatable: computed(
+    '_didChange',
     'validation.isValidating',
     'model.isSaving',
     function() {
-      return this.get('didChange') &&
+      return this.get('_didChange') &&
       !this.get('validation.isValidating') &&
       !this.get('model.isSaving')
     }
@@ -74,28 +90,11 @@ export default Component.extend({
 
   // Base values that compute validation state
 
-  _isInvalid: computed.and('validation.isInvalid', 'validatable'),
-  _isValid: computed.and('validation.isValid', 'validatable'),
+  _isInvalid: computed.and('validation.isInvalid', '_validatable'),
+  _isValid: computed.and('validation.isValid', '_validatable'),
 
-  // Checks property `didValidate` on controller
+  // Checks property `_didValidate` on controller
   // Used to only show validation if `async` is true
 
-  didValidate: computed.oneWay('targetObject.didValidate'),
-
-  // Validation binding attributes with check for async settings
-  // if async is true, don't display either until `didValidate`
-
-  isInvalid: computed('_isInvalid', 'didValidate', function() {
-    if (this.get('async')) {
-      return this.get('_isInvalid') && this.get('didValidate')
-    }
-    return this.get('_isInvalid')
-  }),
-
-  isValid: computed('_isValid', 'didValidate', function() {
-    if (this.get('async')) {
-      return this.get('_isValid') && this.get('didValidate')
-    }
-    return this.get('_isValid')
-  })
+  _didValidate: computed.oneWay('targetObject._didValidate')
 })
