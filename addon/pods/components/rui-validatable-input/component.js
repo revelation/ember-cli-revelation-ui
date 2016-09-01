@@ -43,9 +43,7 @@ export default Component.extend({
   // the value is undefined or empty
 
   didChange: computed('value', 'model.hasDirtyAttributes', 'isSaving', function() {
-    if (this.get('validatePresenceWithEmptyDefault')) {
-        return true
-    }
+    if (this.get('validatePresenceWithEmptyDefault')) { return true }
 
     const attrsChanged = this.get('model') ? this.get('model').changedAttributes() : {}
     return this.get('valuePath') in attrsChanged
