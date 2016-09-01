@@ -9,13 +9,23 @@ const {
 
 export default Component.extend({
   classNameBindings: ['isInvalid:has-error', 'isValid:has-success'],
-  classNames: ['rui-_validatable-input'],
+  classNames: ['rui-validatable-input'],
   layout,
-  model: null,
-  placeholder: '',
+
+  // Default Attrs
+
   type: 'text',
-  valuePath: '',
   async: false,
+
+  // Passed Attrs
+
+  // valuePath: string
+  // model: object
+
+  // Init Attrs
+
+  // value: @alias model.valuePath
+  // validation: @oneway model.validations.attrs.valuePath
 
   init() {
     this._super(...arguments)
