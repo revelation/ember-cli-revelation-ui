@@ -33,7 +33,6 @@ export default Component.extend({
 
   // Compute the property to give priority to
   // `isSaving` property if found on controller
-  // passed in via the
 
   isSavingComputed: computed('model.isSaving', 'targetObject.isSaving', function() {
     const isSavingFromController = this.get('targetObject.isSaving')
@@ -64,15 +63,13 @@ export default Component.extend({
   _isInvalid: computed.and('validation.isInvalid', 'validatable'),
   _isValid: computed.and('validation.isValid', 'validatable'),
 
-  // Checks property `targetObject.didValidate`
-  // Toggled true when `model.validate()` is called
+  // Checks property `didValidate` on controller
   // Used to only show validation if `async` is true
 
   didValidate: computed.oneWay('targetObject.didValidate'),
 
   // Validation binding attributes with check for async settings
   // if async is true, don't display either until `didValidate`
-  // is toggled manually by valling `model.validate()` before `save()`
 
   isInvalid: computed('_isInvalid', 'didValidate', function() {
     if (this.get('async')) {
