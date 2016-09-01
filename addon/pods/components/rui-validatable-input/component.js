@@ -31,6 +31,19 @@ export default Component.extend({
     return this.get('valuePath') in attrsChanged
   }),
 
+  // Compute the property to give priority to
+  // `isSaving` property if found on controller
+  // passed in via the
+
+  isSavingComputed: computed('model.isSaving', 'targetObject.isSaving', function() {
+    const isSavingFromController = this.get('targetObject.isSaving')
+    if ((typeof isSavingFromController !== 'undefined') &&
+      (isSavingFromController !== null)) {
+        return isSavingFromController
+      }
+    return this.get('model.isSaving')
+  }),
+
   // Checks for in processing statuses
   // Ensures validations don't show when:
   // input is clean, is validating, model is saving
@@ -38,11 +51,11 @@ export default Component.extend({
   validatable: computed(
     'didChange',
     'validation.isValidating',
-    'model.isSaving',
+    'isSavingComputed',
     function() {
       return this.get('didChange') &&
       !this.get('validation.isValidating') &&
-      !this.get('model.isSaving')
+      !this.get('isSavingComputed')
     }
   ),
 
@@ -51,7 +64,7 @@ export default Component.extend({
   _isInvalid: computed.and('validation.isInvalid', 'validatable'),
   _isValid: computed.and('validation.isValid', 'validatable'),
 
-  // Checks property `target.didValidate`
+  // Checks property `targetObject.didValidate`
   // Toggled true when `model.validate()` is called
   // Used to only show validation if `async` is true
 
