@@ -58,7 +58,7 @@ export default Component.extend({
   // (the case with new records) we can still validate even though
   // the `_didChange` attr would report it had not
 
-  _validatePresenceWithEmptyDefault: computed('value', function() {
+  _forcePresenceValidation: computed('value', function() {
     const validationOptions = Object.keys(this.get('validation.options'))
 
     return (validationOptions.indexOf('presence') !== -1) &&
@@ -74,7 +74,7 @@ export default Component.extend({
     'value',
     'model.hasDirtyAttributes',
     function() {
-      if (this.get('_validatePresenceWithEmptyDefault')) { return true }
+      if (this.get('_forcePresenceValidation')) { return true }
 
       const attrsChanged = this.get('model') ?
         this.get('model').changedAttributes() : {}
