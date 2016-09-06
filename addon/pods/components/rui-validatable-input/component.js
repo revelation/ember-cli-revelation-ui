@@ -59,8 +59,7 @@ export default Component.extend({
   // the `_didChange` attr would report it had not
 
   _validatePresenceWithEmptyDefault: computed('value', function() {
-    const validationOptions = Object.keys(
-      this.get(`model.validations.attrs.${this.get('valuePath')}.options`))
+    const validationOptions = Object.keys(this.get('validation.options'))
 
     return (validationOptions.indexOf('presence') !== -1) &&
       (this.get('value') === undefined) ||
