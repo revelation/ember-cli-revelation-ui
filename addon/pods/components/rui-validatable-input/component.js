@@ -8,7 +8,10 @@ const {
 } = Ember
 
 export default Component.extend({
-  classNameBindings: ['isInvalid:has-error', 'isValid:has-success'],
+  classNameBindings: [
+    'isInvalid:has-error',
+    'isValid:has-success'
+  ],
   classNames: ['rui-validatable-input'],
   layout,
 
@@ -30,10 +33,16 @@ export default Component.extend({
   init() {
     this._super(...arguments)
     const valuePath = this.get('valuePath')
-    defineProperty(this,
+    defineProperty(
+      this,
       'validation',
-      computed.oneWay(`model.validations.attrs.${valuePath}`))
-    defineProperty(this, 'value', computed.alias(`model.${valuePath}`))
+      computed.oneWay(`model.validations.attrs.${valuePath}`)
+    )
+    defineProperty(
+      this,
+      'value',
+      computed.alias(`model.${valuePath}`)
+    )
   },
 
   // Validation binding attributes with check for async settings
