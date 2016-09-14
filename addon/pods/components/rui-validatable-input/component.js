@@ -51,7 +51,7 @@ export default Component.extend({
   isInvalid: computed('_isInvalid', '_didValidate', function() {
     if (this.get('async')) {
       return this.get('_isInvalid') &&
-      this.get('_didValidate')
+        this.get('_didValidate')
     }
     return this.get('_isInvalid')
   }),
@@ -59,7 +59,7 @@ export default Component.extend({
   isValid: computed('_isValid', '_didValidate', function() {
     if (this.get('async')) {
       return this.get('_isValid') &&
-      this.get('_didValidate')
+        this.get('_didValidate')
     }
     return this.get('_isValid')
   }),
