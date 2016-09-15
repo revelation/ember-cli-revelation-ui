@@ -11,9 +11,8 @@ name=valuePath}}
   </p>
 {{/if}}
 
-{{#if showMessage}}
+{{#if isInvalid}}
   <p class='input-error'>
     {{v-get model valuePath 'message'}}
   </p>
 {{/if}}
-
