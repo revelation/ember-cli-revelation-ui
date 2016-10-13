@@ -4,7 +4,8 @@ import layout from './template'
 const {
   Component,
   computed,
-  defineProperty
+  defineProperty,
+  Logger: { warn }
 } = Ember
 
 export default Component.extend({
@@ -48,18 +49,18 @@ export default Component.extend({
   // Validation binding attributes with check for async settings
   // if async is true, don't display either until `_didValidate`
 
-  isInvalid: computed('_isInvalid', '_didValidate', function() {
+  isInvalid: computed('_isInvalid', 'didValidate', function() {
     if (this.get('async')) {
       return this.get('_isInvalid') &&
-        this.get('_didValidate')
+        this.get('didValidate')
     }
     return this.get('_isInvalid')
   }),
 
-  isValid: computed('_isValid', '_didValidate', function() {
+  isValid: computed('_isValid', 'didValidate', function() {
     if (this.get('async')) {
       return this.get('_isValid') &&
-        this.get('_didValidate')
+        this.get('didValidate')
     }
     return this.get('_isValid')
   }),
@@ -113,8 +114,12 @@ export default Component.extend({
   _isInvalid: computed.and('validation.isInvalid', '_validatable'),
   _isValid: computed.and('validation.isValid', '_validatable'),
 
-  // Checks property `_didValidate` on controller
-  // Used to only show validation if `async` is true
-
-  _didValidate: computed.oneWay('targetObject.didValidate')
+  didValidate: computed('async', function() {
+    if (this.get('async')) {
+      warn(
+        'rui-validatable-input: If async is true, you must send in a value' +
+        'for `didValidate` in order to trigger when the validation should occur'
+      )
+    }
+  })
 })
