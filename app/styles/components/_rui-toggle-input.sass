@@ -17,12 +17,10 @@ $toggle-transition-speed: .3s
 
 .toggle-input
   position: relative
-  @if $show-toggle-input-labels == true
-    padding: 0px 22px 0 24px
   display: inline-block
 
-  @if $show-toggle-input-labels == true
-    // On/Off Labels
+  &.show-labels
+    padding: 0px 22px 0 24px
     &::after,
     &::before
       color: $rui-text-color-muted
